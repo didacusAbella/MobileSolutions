@@ -1,0 +1,8 @@
+<!ELEMENT data (ordini+)>
+<!ELEMENT ordini (idordine, datainoltro, modalitaSpe, modalitaPay, totalePag, cliente)>
+<!ELEMENT idordine (#PCDATA)>
+<!ELEMENT datainoltro (#PCDATA)>
+<!ELEMENT modalitaSpe (#PCDATA)>
+<!ELEMENT modalitaPay (#PCDATA)>
+<!ELEMENT totalePag (#PCDATA)>
+<!ELEMENT cliente (#PCDATA)>

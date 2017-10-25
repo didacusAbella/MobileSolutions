@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2004 The Apache Software Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>Welcome to Tomcat</display-name>
+    <description>
+    Welcome to Tomcat
+  </description>
+    <!-- JSPC servlet mappings start -->
+    <servlet>
+        <servlet-name>loginCliente</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.LoginCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginCliente</servlet-name>
+        <url-pattern>/login_cliente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>logoutCliente</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.LogoutCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutCliente</servlet-name>
+        <url-pattern>/logout_cliente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>loginGestore</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.LoginGestore</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginGestore</servlet-name>
+        <url-pattern>/login_gestore</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>logoutGestore</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.LogoutGestore</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutGestore</servlet-name>
+        <url-pattern>/logout_gestore</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>registra</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.Registrazione</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registra</servlet-name>
+        <url-pattern>/registrazione</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ordine</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.InvioOrdini</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ordine</servlet-name>
+        <url-pattern>/invioOrdini</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>inserimento</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.InserisciCell</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>inserimento</servlet-name>
+        <url-pattern>/inserimento</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>lista</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.ListaCellulari</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>lista</servlet-name>
+        <url-pattern>/lista</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>completa</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.CompletaCell</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>completa</servlet-name>
+        <url-pattern>/completaCell</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>completaDispon</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.CompletaDispon</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>completaDispon</servlet-name>
+        <url-pattern>/completaDispon</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>completaAcquisti</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.CompletaAcquisti</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>completaAcquisti</servlet-name>
+        <url-pattern>/completaAcquisti</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cerca</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.Ricerca</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cerca</servlet-name>
+        <url-pattern>/ricerca</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cercaAvanzata</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.RicercaAvanzata</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cercaAvanzata</servlet-name>
+        <url-pattern>/ricercaAvanzata</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>mod</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.ModificaCell</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mod</servlet-name>
+        <url-pattern>/modificaCellulare</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>modCaratt</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.ModCaratteristiche</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modCaratt</servlet-name>
+        <url-pattern>/modCaratt</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cancellaCell</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.CancellaCell</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cancellaCell</servlet-name>
+        <url-pattern>/cancellaCell</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cancellaCliente</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.CancellaCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cancellaCliente</servlet-name>
+        <url-pattern>/cancella</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>modificaCliente</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.ModificaCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modificaCliente</servlet-name>
+        <url-pattern>/modificaCli</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>insCarr</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.InserisciCarrello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>insCarr</servlet-name>
+        <url-pattern>/insertCarrello</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rimCarr</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.RimuoviCarrello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rimCarr</servlet-name>
+        <url-pattern>/rimuoviCarrello</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>acqCarr</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.AcquistaCarrello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>acqCarr</servlet-name>
+        <url-pattern>/acquistaCarrello</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>import</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.Importazione</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>import</servlet-name>
+        <url-pattern>/importazione</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>scorta</servlet-name>
+        <servlet-class>com.didacusabella.mobilesolutions.servlet.Esaurimento</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>scorta</servlet-name>
+        <url-pattern>/scortaMinima</url-pattern>
+    </servlet-mapping>
+    <!-- JSPC servlet mappings end -->
+</web-app>

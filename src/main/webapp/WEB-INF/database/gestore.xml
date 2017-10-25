@@ -1,0 +1,10 @@
+<?xml version = "1.0"?>
+<!DOCTYPE dati SYSTEM "gestore.dtd">
+<dati>
+	<gestore>
+	   <username>gestore</username>
+	   <password>gestore</password>
+	   <nome>Carmine</nome>
+	   <cognome>ilGrande</cognome>
+	</gestore>
+</dati>

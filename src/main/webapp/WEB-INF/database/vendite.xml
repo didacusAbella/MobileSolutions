@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE data SYSTEM "vendite.dtd">
+<data>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>umber</cliente>
+ </vendita>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>umber</cliente>
+ </vendita>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>luigi</cliente>
+ </vendita>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>luigi</cliente>
+ </vendita>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>umber</cliente>
+ </vendita>
+ <vendita>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <prezzo>150</prezzo>
+  <cliente>luigi</cliente>
+ </vendita>
+</data>
+

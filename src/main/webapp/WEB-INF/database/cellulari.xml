@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE data SYSTEM "cellulari.dtd">
+<data>
+ <cellulare>
+  <codice>1</codice>
+  <marca>nokia</marca>
+  <modello>6630</modello>
+  <tecnologia>Umts</tecnologia>
+  <rete>Gsm-Quadriband</rete>
+  <sisoper>Symbian</sisoper> 
+  <peso>80</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>Si</fotocamera>
+  <memoriaint>Si</memoriaint>
+  <memoriaest>Si</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>Si</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>1</autonomia>
+  <autonomiast>100</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>Si</browser>
+  <giochi>Si</giochi>
+  <messaggi>Sms</messaggi>
+  <java>Si</java>
+  <videochiamata>Si</videochiamata>
+  <gps>Si</gps>
+  <lettori>Mp3-Wma-Mpeg</lettori>
+  <vivavoce>Si</vivavoce>
+  <radio>Si</radio>
+  <suonerie>Polifoniche</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+ <cellulare>
+  <codice>2</codice>
+  <marca>nokia</marca>
+  <modello>6631</modello>
+  <tecnologia>Umts</tecnologia>
+  <rete>Gsm-Quadriband</rete>
+  <sisoper>Symbian</sisoper> 
+  <peso>80</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>Si</fotocamera>
+  <memoriaint>Si</memoriaint>
+  <memoriaest>Si</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>Si</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>1</autonomia>
+  <autonomiast>100</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>Si</browser>
+  <giochi>Si</giochi>
+  <messaggi>Sms</messaggi>
+  <java>Si</java>
+  <videochiamata>Si</videochiamata>
+  <gps>Si</gps>
+  <lettori>Mp3-Wma-Mpeg</lettori>
+  <vivavoce>Si</vivavoce>
+  <radio>Si</radio>
+  <suonerie>Polifoniche</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+<cellulare>
+  <codice>3</codice>
+  <marca>nokia</marca>
+  <modello>6632</modello>
+  <tecnologia>sis</tecnologia>
+  <sisoper>symbian</sisoper> 
+  <rete>gprs</rete>
+  <peso>10</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>1.3 megapixel</fotocamera>
+  <memoriaint>10 MB</memoriaint>
+  <memoriaest>100 MB</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>SI</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>5</autonomia>
+  <autonomiast>10</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>web</browser>
+  <giochi>SI</giochi>
+  <messaggi>sms</messaggi>
+  <java>si</java>
+  <videochiamata>si</videochiamata>
+  <gps>si</gps>
+  <lettori>mp3</lettori>
+  <vivavoce>si</vivavoce>
+  <radio>si</radio>
+  <suonerie>si</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+<cellulare>
+  <codice>4</codice>
+  <marca>nokia</marca>
+  <modello>6633</modello>
+  <tecnologia>sis</tecnologia>
+  <sisoper>symbian</sisoper> 
+  <rete>gprs</rete>
+  <peso>10</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>1.3 megapixel</fotocamera>
+  <memoriaint>10 MB</memoriaint>
+  <memoriaest>100 MB</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>SI</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>5</autonomia>
+  <autonomiast>10</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>web</browser>
+  <giochi>SI</giochi>
+  <messaggi>sms</messaggi>
+  <java>si</java>
+  <videochiamata>si</videochiamata>
+  <gps>si</gps>
+  <lettori>mp3</lettori>
+  <vivavoce>si</vivavoce>
+  <radio>si</radio>
+  <suonerie>si</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+<cellulare>
+  <codice>5</codice>
+  <marca>nokia</marca>
+  <modello>6634</modello>
+  <tecnologia>sis</tecnologia>
+  <sisoper>symbian</sisoper> 
+  <rete>gprs</rete>
+  <peso>10</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>1.3 megapixel</fotocamera>
+  <memoriaint>10 MB</memoriaint>
+  <memoriaest>100 MB</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>SI</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>5</autonomia>
+  <autonomiast>10</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>web</browser>
+  <giochi>SI</giochi>
+  <messaggi>sms</messaggi>
+  <java>si</java>
+  <videochiamata>si</videochiamata>
+  <gps>si</gps>
+  <lettori>mp3</lettori>
+  <vivavoce>si</vivavoce>
+  <radio>si</radio>
+  <suonerie>si</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+<cellulare>
+  <codice>6</codice>
+  <marca>nokia</marca>
+  <modello>6635</modello>
+  <tecnologia>sis</tecnologia>
+  <sisoper>symbian</sisoper> 
+  <rete>gprs</rete>
+  <peso>10</peso> 
+  <dimensioni>110 x 60 x 20,6</dimensioni>
+  <risSchermo>65535 colori</risSchermo>
+  <fotocamera>1.3 megapixel</fotocamera>
+  <memoriaint>10 MB</memoriaint>
+  <memoriaest>100 MB</memoriaest>
+  <connettivita>Bluetooth</connettivita>
+  <vibrazione>SI</vibrazione>
+  <batteria>IONI di Litio</batteria>
+  <autonomia>5</autonomia>
+  <autonomiast>10</autonomiast>
+  <antenna>integrata</antenna>
+  <browser>web</browser>
+  <giochi>SI</giochi>
+  <messaggi>sms</messaggi>
+  <java>si</java>
+  <videochiamata>si</videochiamata>
+  <gps>si</gps>
+  <lettori>mp3</lettori>
+  <vivavoce>si</vivavoce>
+  <radio>si</radio>
+  <suonerie>si</suonerie>
+  <immagine>nokia_6630.jpg</immagine>
+  <prezzo>150</prezzo>
+ </cellulare>
+</data>
+

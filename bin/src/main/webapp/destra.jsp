@@ -41,6 +41,15 @@
 
 <% if ((Gestore.isLoggato()==false) && (Cliente.isLoggato()==false))  { %>
 
+ <p align="center"><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
+swflash.cab#version=5,0,0,0" WIDTH=170 HEIGHT=100 >
+<PARAM NAME=movie VALUE="img/cliArea.swf">
+<PARAM NAME=quality VALUE=high>
+<EMBED src="intestazionePer.swf" quality=high width=170 HEIGHT=100
+type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
+P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT></p>
+
 <table border="0" align="center">
 
   <form name="login_cliente" method="post" action="login_cliente">
@@ -53,6 +62,15 @@
 </form>
 </table>
 
+
+<p align="center"><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
+swflash.cab#version=5,0,0,0" WIDTH=170 HEIGHT=100 >
+<PARAM NAME=movie VALUE="img/amnArea.swf">
+<PARAM NAME=quality VALUE=high>
+<EMBED src="intestazionePer.swf" quality=high width=170 HEIGHT=100
+type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
+P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT></p>
 
 <table border="0" align="center">
 

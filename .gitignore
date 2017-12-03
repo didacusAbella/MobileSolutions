@@ -1,0 +1,5 @@
+/target/
+.settings/
+nb-configuration.xml
+.project
+/src/main/webapp/WEB-INF/database/

@@ -1,4 +1,4 @@
-package com.didacusabella.mobilesolutions.servlet;;
+package com.didacusabella.mobilesolutions.servlet;
 
 import java.io.*;
 import java.util.ArrayList;

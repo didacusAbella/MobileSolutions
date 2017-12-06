@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="ms" %>
 
-<ms:layout title="Login">
+<ms:layout title="Login Admin">
   <jsp:body>
     <div class="grid-container">
       <div class="grid-x align-center">
         <div class="large-8 medium-8 small-12 cell">
-          <form name="login_cliente" method="post" action="login_cliente">
+          <form name="login_gestore" method="post" action="login_gestore">
             <fieldset class="fieldset">
               <legend>Login to MobileSolutions</legend>
             <label> Username

@@ -27,12 +27,9 @@
 				
 				
 			%>
-			
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
 		<% if (arr.size()==0) { %>
 				<br><label><p align="center"> NON E' REGISTRATO NESSUN CLIENTE</p> </label>

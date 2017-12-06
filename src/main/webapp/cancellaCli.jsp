@@ -13,12 +13,10 @@
  	<jsp:useBean id="Gestore" class="com.didacusabella.mobilesolutions.beans.Gestore" scope="session"/>
 	<jsp:useBean id="Cliente" class="com.didacusabella.mobilesolutions.beans.Cliente" scope="session"/>
 		<%@page import="java.util.*,com.didacusabella.mobilesolutions.beans.*,com.didacusabella.mobilesolutions.gestioneDB.*" %>
-		
-	<jsp:include page="intestazione.jsp"/> 
+		 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
                 <br>
 		<p align="center"><b>Chiudendo il tuo account i tuoi dati verranno persi</b></p>

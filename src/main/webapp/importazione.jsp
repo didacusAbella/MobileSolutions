@@ -10,12 +10,9 @@
 </head>
 
 <body>
- 
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
 		<p>DA QUESTA PAGINA PUOI IMPORTARE UN FILE XML ESTERNO<br>
 		    Ricorda di inserire il file XML esterno nella cartella database di WEB-INF prima di importarlo.<br>

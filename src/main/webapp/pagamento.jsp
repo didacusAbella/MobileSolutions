@@ -49,11 +49,9 @@
 
 
 
-	<jsp:include page="intestazione.jsp"/> 
 	
  <table border="0" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
                         <br>  
 			<h2 align=center>Spedizione e Pagamento</h2> <br><br><br>

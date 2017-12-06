@@ -19,11 +19,9 @@
 				arr.clear();
 				arr = db.listaCell(); %>
  
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
 		<p>Scegli il Cellulare da modificare</p>
 		<form action="modificaCellulare">

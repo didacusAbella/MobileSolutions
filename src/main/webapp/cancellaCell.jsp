@@ -19,11 +19,10 @@
 				arr.clear();
 				arr = db.listaCell(); %>
 				
-	<jsp:include page="intestazione.jsp"/> 
+	
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
 		<p align="center"> DA QUESTA PAGINA PUOI ELIMINARE UN CELLULARE </p>
 			<form action="cancellaCell">

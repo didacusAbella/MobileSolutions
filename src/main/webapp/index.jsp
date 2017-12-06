@@ -24,15 +24,4 @@
 
     </table>
   </form>
-
-  <p align="center">Effettua una ricerca personalizzata alle tue esigenze seguendo il link <a href="ricercaAvanzata.jsp">Ricerca Avanzata</a></p>
-
-
-  <table border="0" align="center" valign="top" width="900">
-
-    <tr>
-      <td valign="top" width="160"> jsp:include page="sinistra.jsp"/> </td>
-      <td valign="top"> jsp:include page="centro.jsp"/> </td>
-      <td valign="top" width="160"> jsp:include page="destra.jsp"/> </td>
-    </tr>
-  </table>-->
+-->

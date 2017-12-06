@@ -16,11 +16,8 @@
 
     <%@page import="java.util.*,com.didacusabella.mobilesolutions.beans.*,com.didacusabella.mobilesolutions.gestioneDB.*" %>
 
-    <jsp:include page="intestazione.jsp"/> 
-
     <table border="1" align="center" valign="top" width="900">
       <tr>
-        <td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
         <td valign="top">
           <br>
           <p align="center"><b>LE DISPONIBILITA PER QUESTO MODELLO SONO:</b></p>

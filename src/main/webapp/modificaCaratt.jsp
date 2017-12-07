@@ -64,7 +64,6 @@
           <br>
           <a href="javascript:history.go(-1)"> Indietro </a>	
         </td>
-        <td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
       </tr>
     </table>
 

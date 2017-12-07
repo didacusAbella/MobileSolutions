@@ -210,5 +210,13 @@
         <servlet-name>scorta</servlet-name>
         <url-pattern>/scortaMinima</url-pattern>
     </servlet-mapping>
+    <servlet>
+      <servlet-name>admin</servlet-name>
+      <servlet-class>com.didacusabella.mobilesolutions.servlet.Admin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>admin</servlet-name>
+      <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
     <!-- JSPC servlet mappings end -->
 </web-app>

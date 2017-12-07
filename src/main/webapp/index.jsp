@@ -7,7 +7,7 @@
     <!--jsp:include page="centro.jsp"/>-->
   </jsp:body>
 </ms:layout>
-   <!--   jsp:include page="intestazione.jsp"/>
+   <!--
     <table align="center">
       <form name="ricerca" action="ricerca" method="get">
 

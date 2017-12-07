@@ -66,7 +66,6 @@
 		   <% } %>
 
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

@@ -21,7 +21,6 @@
 			<p align="center"><img src="img/ok.jpg" alt="OK"></p> <br><br><br>
 			<p align="center"><a href="index.jsp">CONTINUA</a></p>
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

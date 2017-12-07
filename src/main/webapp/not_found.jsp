@@ -9,17 +9,13 @@
 
 <ms:layout title="Not Found">
   <jsp:body>
-    <div class="grid-container fluid">
+    <div class="grid-container">
       <div class="grid-x">
-        <div class="large-6 medium-6 small-12 cell">
-          <h1>404</h1>
+        <div class="cell">
+          <h1 class="text-center">404</h1>
+          <h2 class="subheader text-center">Pagina non trovata</h2>
+          <h4 class="text-center">La pagina che stai cercando non è presente sui nostri server.</h4>
         </div>
-        <div class="large-6 medium-6 small-12 cell">
-          <h1>Errore</h1>
-          <h1>Qualcosa è andato</h1>
-          <h1>Storto!</h1>
-        </div>
-        <h3>Per qualche ragione la pagina che hai richiesto non è stata trovata sul nostro server</h3>
       </div>
     </div>
   </jsp:body>

@@ -29,7 +29,6 @@
 				<br><br>
 			<p align="center"><a href="index.jsp">Indietro</a></p>
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

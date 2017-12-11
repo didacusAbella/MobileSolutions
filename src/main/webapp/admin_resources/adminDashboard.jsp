@@ -28,7 +28,5 @@
       <div class="off-canvas-content" data-off-canvas-content>
         <button type="button" class="button" data-toggle="offcanvas">Open Menu</button>
         <jsp:include page="${partial}"/>
-      </div>
-    </div>
   </jsp:body>
 </ms:layout>

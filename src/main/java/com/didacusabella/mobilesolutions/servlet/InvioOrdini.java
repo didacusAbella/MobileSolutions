@@ -18,7 +18,7 @@ public class InvioOrdini extends HttpServlet
 		String username = request.getParameter("username");
 		
 	    Ordini ord = new Ordini();
-	      ord.setDataInoltro(request.getParameter("datainoltro"));
+	    ord.setDataInoltro(request.getParameter("datainoltro"));
 		ord.setModalitaSpe(request.getParameter("modalitaSpe"));
 		ord.setModalitaPay(request.getParameter("modalitaPay"));
 		ord.setTotalePag(request.getParameter("totalePag"));

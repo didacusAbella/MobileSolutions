@@ -16,7 +16,7 @@ public class Importazione extends HttpServlet
 		String url = getServletConfig().getServletContext().getRealPath("/WEB-INF/database/cellulari.xml").toString();
 		String url2 = getServletConfig().getServletContext().getRealPath("/WEB-INF/database/magazzino.xml").toString();
 		
-		String esterno = request.getParameter("esterno");
+		String esterno = request.getParameter("esterno"); //è il file
 		String urlExt = getServletConfig().getServletContext().getRealPath("/WEB-INF/database/"+esterno).toString();
 		
 		DBCell db = new DBCell(url);

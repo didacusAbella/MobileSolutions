@@ -1,4 +1,4 @@
-package java.mobilesolutions.old;
+package mobilesolutions.old;
 
 import org.junit.Assert;
 import org.junit.Before;

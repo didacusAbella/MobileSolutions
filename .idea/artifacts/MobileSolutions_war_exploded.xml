@@ -33,6 +33,7 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.9-rc" />
         </element>
       </element>
       <element id="directory" name="META-INF">

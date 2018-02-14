@@ -1,4 +1,4 @@
-package mobilesolutions.testutilities;
+package java.mobilesolutions.testutilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

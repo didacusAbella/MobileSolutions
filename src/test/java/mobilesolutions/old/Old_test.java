@@ -1,6 +1,5 @@
-package mobilesolutions.old;
+package java.mobilesolutions.old;
 
-import mobilesolutions.testutilities.SeleniumDriverFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.mobilesolutions.testutilities.SeleniumDriverFactory;
 
 /**
  * @author Domenico Antonio Tropeano on 12/02/2018 at 14:56
@@ -18,7 +19,7 @@ public class Old_test {
 
     @Before
     public void setUp() {
-        driver = SeleniumDriverFactory.createDriver("opera");
+        driver = SeleniumDriverFactory.createDriver("chrome");
         driver.get("http://localhost:8080/MobileSolutions/");
     }
 
@@ -160,11 +161,24 @@ public class Old_test {
         Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
         driver.close();
     }
-    public void testEliminaAccount(){}
+    @Test
+    public void testEliminaAccount(){
+        WebElement usernameStuff = driver.findElement(By.name("username"));
+        usernameStuff.sendKeys("dom");
+        WebElement passwordStuff = driver.findElement(By.name("password"));
+        passwordStuff.sendKeys("dom");
+        WebElement form = driver.findElement(By.name("login_cliente"));
+        form.submit();
+        driver.get("http://localhost:8080/MobileSolutions/cancellaCli.jsp");
+        WebElement button = driver.findElement(By.cssSelector("input[value='CHIUDI ACCOUNT']"));
+        button.click();
+        Assert.assertEquals(driver.getPageSource().contains("password"), true);
+        driver.close();
+
+    }
     public void testEliminaCarrello(){}
     public void testModificaCarrello(){}
-    public void testRegistrazione(){}   //Attenzione
-    
+
     public void testModificaAccount(){
       WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
       usernameStuff.sendKeys("umber");

@@ -29,7 +29,7 @@
               <tr><td><label>IMMAGINE</label></td> <td><input type="text" name="immagine" value="<%=Cellulari.getImmagine()%>"></td></tr>
               <tr><td><label>DIMENSIONI</label></td> <td><input type="text" name="dimensioni" value="<%=Cellulari.getDimensioni()%>"></td></tr>
               <tr><td><label>FOTOCAMERA</label></td> <td><input type="text" name="fotocamera" value="<%=Cellulari.getFotocamera()%>"></td></tr>
-              <tr><td><label>MEMORIA</label></td> <td><input type="text" name="memoria" value="<%=Cellulari.getMemoria()%>"></td></tr>
+              <tr><td><label>MEMORIA</label></td> <td><input type="text" name="memoria" value="<%=Cellulari.getMemoriaint()%>"></td></tr>
               <tr><td><label>RISOLUZIONE SCHERMO</label></td> <td><input type="text" name="risSchermo" value="<%=Cellulari.getRisSchermo()%>"></td></tr>
               <tr><td><label>CONNETTIVITA'</label></td> <td><input type="text" name="connettivita" value="<%=Cellulari.getConnettivita()%>"></td></tr>
               <tr><td><label>PREZZO</label></td> <td><input type="text" name="prezzo" value="<%=Cellulari.getPrezzo()%>"></td></tr>

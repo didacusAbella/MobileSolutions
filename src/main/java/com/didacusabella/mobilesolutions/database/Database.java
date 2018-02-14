@@ -1,3 +1,4 @@
+package com.didacusabella.mobilesolutions.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -32,7 +32,7 @@ public class SmartphoneManagerTest {
     }
 
     public void testAddSmartphone(){
-   
+
     }
 
 

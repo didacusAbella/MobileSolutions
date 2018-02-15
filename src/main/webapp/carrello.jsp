@@ -18,11 +18,10 @@
 			Cellulari cell = new Cellulari(); 
 			int totale=0; %>
 			
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
+  	
 	<td valign="top">
 		<% if (carr.size()==0) { %>
 			<p align="center"><img src="img/carrello.jpg" alt="CARRELLO" width="70" height="50"></p><br>
@@ -67,7 +66,6 @@
 		   <% } %>
 
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

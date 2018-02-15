@@ -28,6 +28,17 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-web-api:7.0" level="project" />
     <orderEntry type="library" name="Maven: jdom:jdom:1.0b8" level="project" />
+    <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:foundation:6.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:modernizr:2.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:fastclick:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jQuery-Autocomplete:1.2.7" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery-cookie:1.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:Placeholders.js:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:normalize.css:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:what-input:4.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:foundation-icon-fonts:d596a3cfb3" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:3.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:3.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:3.9.1" level="project" />

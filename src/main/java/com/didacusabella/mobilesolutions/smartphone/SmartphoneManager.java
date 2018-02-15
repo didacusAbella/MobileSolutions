@@ -38,7 +38,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     @Override
     public boolean addSmartphone(Smartphone smartphone) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(queryAddSmartphone);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_ADD_SMARTPHONE);
             statement.setString(1, smartphone.getBrand());
             statement.setString(2, smartphone.getModel());
             statement.setString(3, smartphone.getDisplayInch());
@@ -66,7 +66,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         try {
             List<Smartphone> returnSmartphones = new ArrayList<>();
 
-            PreparedStatement statement = dbConnection.prepareStatement(queryGetAllSmarphone);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_ALL_SMARTPHONE);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 returnSmartphones.add(mapRow(rs));
@@ -82,7 +82,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     public List<Smartphone> getSmartphoneOUT(int min) {
         try {
             List<Smartphone> returnSmartphoneOut = new ArrayList<>();
-            PreparedStatement statement = dbConnection.prepareStatement(queryGetSmartphoneOUT);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_SMARTPHONE_OUT);
             statement.setInt(1, min);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -98,7 +98,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     @Override
     public boolean deleteSmartphone(int id) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(queryDeleteSmartphone);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_DELETE_SMARTPHONE);
             statement.setInt(1, id);
             int deleteSuccess = statement.executeUpdate();
             if (deleteSuccess == 1) {
@@ -114,7 +114,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     @Override
     public boolean editSmartphone(Smartphone sm) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(queryUpdateSmartphone);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_UPDATE_SMARTPHONE);
             statement.setString(1, sm.getBrand());
             statement.setString(2, sm.getModel());
             statement.setString(3, sm.getDisplayInch());
@@ -160,11 +160,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         return null;
     }
 
-    private static String queryAddSmartphone = "INSERT INTO `mobilesolutions`.`smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-    private static String queryDeleteSmartphone = "DELETE FROM `mobilesolutions`.`smartphone` WHERE `id`=?;";
-    private static String queryGetSmartphoneOUT = "SELECT t.brand FROM mobilesolutions.smartphone t WHERE t.quantita=?";
-    private static String queryGetAllSmarphone = "SELECT t.brand FROM mobilesolutions.smartphone t";
-    private static String queryUpdateSmartphone = "UPDATE mobilesolutions.client SET brand=?,model=?," +
+    private static final String QUERY_ADD_SMARTPHONE = "INSERT INTO `mobilesolutions`.`smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String QUERY_DELETE_SMARTPHONE = "DELETE FROM `mobilesolutions`.`smartphone` WHERE `id`=?;";
+    private static final String QUERY_GET_SMARTPHONE_OUT = "SELECT t.brand FROM mobilesolutions.smartphone t WHERE t.quantita=?";
+    private static final String QUERY_GET_ALL_SMARTPHONE = "SELECT t.brand FROM mobilesolutions.smartphone t";
+    private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE mobilesolutions.smartphone SET brand=?,model=?," +
             "displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?," +
             "LTE=?,camera=?,price=?,quantity=? WHERE id=?;";
 

@@ -35,7 +35,7 @@ public class AdminManager implements AdminDAO {
     @Override
     public boolean login(String username, String password) {
         try {
-            PreparedStatement ps = this.dbConnection.prepareStatement(queryGetAdmin);
+            PreparedStatement ps = this.dbConnection.prepareStatement(QUERY_GET_ADMIN);
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             if (rs != null && rs.next() && rs.getString("password").equals(password)) {
@@ -47,5 +47,5 @@ public class AdminManager implements AdminDAO {
         return false;
     }
 
-    public static final String queryGetAdmin = "SELECT t FROM mobilesolutions.admin WHERE username=?";
+    public static final String QUERY_GET_ADMIN = "SELECT t FROM mobilesolutions.admin WHERE username=?";
 }

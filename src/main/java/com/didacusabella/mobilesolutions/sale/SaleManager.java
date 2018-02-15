@@ -55,7 +55,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
     public List<Sale> GetAllSaleForClient(int clientID) {
         try {
             List<Sale> returnSales = new ArrayList<>();
-            PreparedStatement statement = dbConnection.prepareStatement(queryGetAllSaleForClient);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_ALL_SALE_FOR_USER);
             statement.setInt(1, clientID);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -71,7 +71,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
     @Override
     public boolean BuyProduct(Sale sl) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(queryBuyProduct);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_BUY_PRODUCT);
             statement.setInt(1, sl.getProduct());
             statement.setInt(2, sl.getUsername());
             statement.setTimestamp(3, sl.getDate());
@@ -86,8 +86,8 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
         return false;
     }
 
-    private static String queryGetAllSaleForClient = "SELECT t FROM mobilesolutions.sale t WHERE t.username=?";
-    private static String queryBuyProduct = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
+    private static String QUERY_GET_ALL_SALE_FOR_USER = "SELECT t FROM mobilesolutions.sale t WHERE t.username=?";
+    private static String QUERY_BUY_PRODUCT = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
             "quantity, price, shipmentType, `paymentType`) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
 }

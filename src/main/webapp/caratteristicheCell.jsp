@@ -16,11 +16,9 @@
        
 		<%@page import="java.util.*,com.didacusabella.mobilesolutions.beans.*,com.didacusabella.mobilesolutions.gestioneDB.*" %>
 		
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
         <br>
 	<p align="center"><b>SCHEDA TECNICA DEL CELLULARE</b></p>
@@ -73,7 +71,6 @@
 			<p align="center"><a href="javascript:history.go(-1)"> Indietro </a></p>
 	
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

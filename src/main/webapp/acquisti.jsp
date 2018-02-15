@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8" %>
 <html>
 
   <head>
@@ -23,11 +24,9 @@
       DBOrdini dbo = new DBOrdini(path + "WEB-INF/database/ordini.xml");
       array = dbo.listaOrdini(cliente); %>
 
-    <jsp:include page="intestazione.jsp"/> 
 
     <table border="1" align="center" valign="top" width="900">
       <tr>
-        <td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
         <td valign="top">
           <% if (arr.size() == 0) { %>
           <br><p align="center"><b> NON HAI EFFETTUATO ALCUN ACQUISTO </b></p>
@@ -44,8 +43,8 @@
 
             <tr><td><b>Id Ordine</b> </td><td><%=ord.getIdordine()%></td></tr>
             <tr><td><b>Data Ordine</b> </td> <td><%=ord.getDataInoltro()%> </td>  </tr>
-            <tr><td><b>Modalità Spedizione</b></td><td><%=ord.getModalitaSpe()%></td></tr>
-            <tr><td><b>Modalità Pagamento</b> </td><td><%=ord.getModalitaPay()%></td></tr>
+            <tr><td><b>Modalitï¿½ Spedizione</b></td><td><%=ord.getModalitaSpe()%></td></tr>
+            <tr><td><b>Modalitï¿½ Pagamento</b> </td><td><%=ord.getModalitaPay()%></td></tr>
             <tr><td> <b>Totale Pagamamento</b> </td><td> <%=ord.getTotalePag()%></td></tr>
 
             <% } %>
@@ -81,7 +80,6 @@
 
           <% }%>	
         </td>
-        <td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
       </tr>
     </table>
 

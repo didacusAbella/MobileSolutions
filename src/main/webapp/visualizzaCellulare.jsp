@@ -15,20 +15,12 @@
 	<jsp:useBean id="Cellulari" class="com.didacusabella.mobilesolutions.beans.Cellulari" scope="session"/>
 	     <%@ page import="java.util.*,com.didacusabella.mobilesolutions.beans.*,com.didacusabella.mobilesolutions.gestioneDB.*" %>
 		
-	<jsp:include page="intestazione.jsp"/> 
 	
 
 <table align="center">
         <form name="ricerca" action="ricerca" method="get">
 
-<tr><td><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
-swflash.cab#version=5,0,0,0" WIDTH=120 HEIGHT=100 >
-<PARAM NAME=movie VALUE="img/ric24b.swf">
-<PARAM NAME=quality VALUE=high>
-<EMBED src="ric24b.swf" quality=high width=120 HEIGHT=100
-type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
-P1_Prod_Version=ShockwaveFlash"></EMBED>
-</OBJECT></td>
+<tr>
 
                                                  <td><label>MARCA:</label></td> <td><select name="marca">
 							   	<option selected>nokia</option>
@@ -38,14 +30,7 @@ P1_Prod_Version=ShockwaveFlash"></EMBED>
 							   	
 	     <td><label>MODELLO:</label></td> <td><input type="text" name="modello"></td>
 	     <td><input type="submit" value="Start" class="pulsante"></td>
-<td><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
-swflash.cab#version=5,0,0,0" WIDTH=120 HEIGHT=100 >
-<PARAM NAME=movie VALUE="img/ric24b.swf">
-<PARAM NAME=quality VALUE=high>
-<EMBED src="ric24b.swf" quality=high width=120 HEIGHT=100
-type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
-P1_Prod_Version=ShockwaveFlash"></EMBED>
-</OBJECT></td></tr>
+</tr>
  </form>
 </table>
 
@@ -117,7 +102,6 @@ P1_Prod_Version=ShockwaveFlash"></EMBED>
 	
 	
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
 

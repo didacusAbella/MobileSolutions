@@ -16,11 +16,9 @@
 		 <% ArrayList lista = new ArrayList();
 			lista=(ArrayList)session.getAttribute("esaur"); %>
 				
-	<jsp:include page="intestazione.jsp"/> 
 	
   <table border="1" align="center" valign="top" width="900">
   <tr>
-  	<td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
 	<td valign="top">
 			<%if (lista.size()!=0)
 				{ %>
@@ -49,7 +47,6 @@
 	
 		
 	</td>
-	<td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
   </tr>
  </table>
     

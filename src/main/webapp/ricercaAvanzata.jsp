@@ -1,110 +1,43 @@
-<html>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="ms" %>
 
-  <head>
-    <title>BENVENUTI SU MOBILE MANIA</title>
-    <link rel="stylesheet" type="text/css" href="stile.css">
-    <LINK REL="shortcut icon" HREF="img/favicon.ICO">
-    <meta name="author" content=Attanasio Carmine">
-          <meta name="description" content="MOBILE'S INFINITY">
-    <meta name="generator" content="jEdit">
-  </head>
-
-  <body>
-
-    <jsp:include page="intestazione.jsp"/> 
-
-    <table align="center">
-      <form name="ricerca" action="ricerca" method="get">
-
-        <tr><td><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
-                        swflash.cab#version=5,0,0,0" WIDTH=120 HEIGHT=100 >
-              <PARAM NAME=movie VALUE="img/ric24b.swf">
-              <PARAM NAME=quality VALUE=high>
-              <EMBED src="ric24b.swf" quality=high width=120 HEIGHT=100
-                     type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
-                     P1_Prod_Version=ShockwaveFlash"></EMBED>
-            </OBJECT></td>
-          <td><label>MARCA:</label></td> <td><select name="marca">
-              <option selected>nokia</option>
-              <option>Nokia</option>
-              <option>samsung</option>
-            </select></td>
-
-          <td><label>MODELLO:</label></td> <td><input type="text" name="modello"></td>
-          <td><input type="submit" value="Start" class="pulsante"></td>
-
-          <td><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
-                      swflash.cab#version=5,0,0,0" WIDTH=120 HEIGHT=100 >
-              <PARAM NAME=movie VALUE="img/ric24b.swf">
-              <PARAM NAME=quality VALUE=high>
-              <EMBED src="ric24b.swf" quality=high width=120 HEIGHT=100
-                     type="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?
-                     P1_Prod_Version=ShockwaveFlash"></EMBED>
-            </OBJECT></td></tr>
-    </table>
-  </form>
-  <p align="center"><b>Rieffettua una ricerca semplice oppure effettua qui sotto una ricerca personalizzata</b></p>
-
-
-  <table border="0" align="center" valign="top" width="900">
-    <tr>
-      <td valign="top" width="160"> <jsp:include page="sinistra.jsp"/> </td>
-      <td valign="top">
-
-        <hr>       
-
-        <br><br><br>
-        <form name="ricerca" action="ricercaAvanzata" method="get">
-          <table border="0">
-
-            <tr> <td><label>TECNOLOGIA:</label></td>
-              <td>
-                <select name="tecnologia">
-                  <option selected>Gsm</option>
-                  <option>Gprs</option>
-                  <option>Umts</option>
-                  <option>Satellitare</option>
-                  <option>Edge</option>
-                  <option>Hscsd</option>
-
-                </select>
-              </td> 
-              <td><label>CONNETTIVITA':</label></td>
-              <td>
-                <select name="connettivita">
-                  <option selected>Bluetooth</option>
-                  <option>Infrarossi</option>
-                  <option>I-Mode</option>
-                  <option>Wi-fi</option>
-                  <option>ModemInterno</option>
-                  <option>Bluetoot/Infraross</option>
-                  <option>Usb</option>
-                  <option>Sincro-PC/PDA</option>
-                </select> </td> </tr>
-            <tr><td>&nbsp</td></tr> 
-            <tr> <td><label>PREZZO MASSIMO:</label></td>
-              <td>
-                <select name="prezzoMassimo">
-                  <option selected>100</option>
-                  <option>150</option>
-                  <option>200</option>
-                  <option>250</option>
-                  <option>300</option>
-                  <option>350</option>
-                  <otion>400</option>
-                </select> <label>�</label>
-              </td> 
-              <td><label>SUONERIE:</label></td>
-              <td>
-                <select name="suonerie">
+<ms:layout title="Ricerca Avanzata">
+  <jsp:body>
+    <form name="ricerca" action="ricercaAvanzata" method="get">
+      <div class="grid-container fluid">
+        <h2 class="text-center">Effettua qui sotto una ricerca personalizzata</h2>
+        <div class="grid-x">
+          <div class="large-10 medium-10 small-12 cell">
+            <label>Tecnologia
+              <select name="tecnologia">
+                <option selected>Gsm</option>
+                <option>Gprs</option>
+                <option>Umts</option>
+                <option>Satellitare</option>
+                <option>Edge</option>
+                <option>Hscsd</option>
+              </select>
+            </label>
+            <label>Connetività
+              <select name="connettivita">
+                <option selected>Bluetooth</option>
+                <option>Infrarossi</option>
+                <option>I-Mode</option>
+                <option>Wi-fi</option>
+                <option>ModemInterno</option>
+                <option>Bluetoot/Infraross</option>
+                <option>Usb</option>
+                <option>Sincro-PC/PDA</option>
+              </select>
+            </label>
+            <label>Suonerie:
+              <select name="suonerie">
                   <option selected>Polifoniche</option>
                   <option>Scaricabili</option>
                   <option>Polif/Scaric</option>
-
-                </select> </td> </tr>
-            <tr><td>&nbsp</td></tr>
-            <tr> <td><label>MESSAGGISTICA:</label></td>
-              <td>
+                </select>
+            </label>
+            <label>Messagistica
                 <select name="messaggi">
                   <option selected>Sms</option>
                   <option>Mms</option>
@@ -122,21 +55,18 @@
                     <option>Sms-Mms-Email-Chat</option> 
                     <option>Sms-Mms-Ems-Email</option>
                 </select>
-              </td> 
-              <td><label>RETE:</label></td>
-              <td>
-                <select name="rete">
+            </label>
+            <label>Rete
+            <select name="rete">
                   <option selected>Gsm</option>
                   <option>Gsm-Dualband</option>
                   <option>Gsm-Triband</option>
                   <option>Gsm-Quadriband</option>
                   <option>Gsm-Umts</option>
-                </select> </td> </tr>
-            <tr><td>&nbsp</td></tr>
-
-            <tr> <td><label>AUTONOMIA CONV.:</label></td>
-              <td>
-                <select name="autonomia">
+                </select>
+            </label>
+            <label>Autonomia Conv.
+            <select name="autonomia">
                   <option selected>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -144,11 +74,10 @@
                   <option>5</option>
                   <option>6</option>
                   <otion>7</option>
-                </select> <label>h</label>
-              </td> 
-              <td><label>AUTONOMIA ST.:</label></td>
-              <td>
-                <select name="autonomiast">
+                </select>
+            </label>
+            <label>Autonomia St
+              <select name="autonomiast">
                   <option selected>100</option>
                   <option>200</option>
                   <option>300</option>
@@ -156,80 +85,25 @@
                   <option>400</option>
                   <option>450</option>
                   <option>500</option>
-                </select> <label>h</label> </td> </tr>
-            <tr><td>&nbsp</td></tr> 
-            <tr> <td><label>SISTEMA OPERATIVO:</label></td>
-              <td>
-                <select name="sisoper">
+                </select>
+            </label>
+            <label>Sistema Operativo
+             <select name="sisoper">
                   <option selected>Symbian</option>
                   <option>Mobile</option>
-
                 </select>
-              </td> 
-              <td><label>PESO MASSIMO:</label></td>
-              <td>
-                <select name="peso">
+            </label>
+             <label>Peso Massimo
+              <select name="peso">
                   <option selected>80</option>
                   <option>100</option>
                   <option>130</option>
                   <option>160</option>
                   <option>200</option>
-
-                </select> <label>g</label> </td> </tr>
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>VIBRAZIONE:</label></td>
-              <td>
-                <select name="vibrazione">
-                  <option selected>Si</option>
-                  <option>No</option>
-
                 </select>
-              </td> 
-              <td><label>BROWSER:</label></td>
-              <td>
-                <select name="browser">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-
-
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>GIOCHI:</label></td>
-              <td>
-                <select name="giochi">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>
-              </td> 
-              <td><label>JAVA:</label></td>
-              <td>
-                <select name="java">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>VIDEOCHIAMATA:</label></td>
-              <td>
-                <select name="videochiamata">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>
-              </td> 
-              <td><label>GPS:</label></td>
-              <td>
-                <select name="gps">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>LETTORI:</label></td>
-              <td>
-                <select name="lettori">
+             </label>
+            <label>Lettori:
+             <select name="lettori">
                   <option selected>Mp3</option>
                   <option>Wma</option>
                   <option>Mpeg</option>
@@ -238,60 +112,68 @@
                   <option>Wma-Mpeg</option>
                   <option>Mp3-Wma-Mpeg</option>
                 </select>
-              </td> 
-              <td><label>VIVAVOCE:</label></td>
-              <td>
-                <select name="vivavoce">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>RADIO:</label></td>
-              <td>
-                <select name="radio">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>
-              </td> 
-              <td><label>FOTOCAMERA:</label></td>
-              <td>
-                <select name="fotocamera">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-            <tr><td>&nbsp</td></tr>   
-            <tr> <td><label>MEMORIA INTERNA:</label></td>
-              <td>
-                <select name="memoriaint">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>
-              </td> 
-              <td><label>MEMORIA ESTERNA:</label></td>
-              <td>
-                <select name="memoriaest">
-                  <option selected>Si</option>
-                  <option>No</option>
-
-                </select>  </td> </tr>
-
-            <tr> <td> &nbsp </td> <td> &nbsp </td> </tr>
-
-            <tr><td>&nbsp</td><td> <input type="submit" value="Start" class="pulsante"></td><td>&nbsp</td> <td><input type="reset" value="Reset" class="pulsante"><td></tr>
-          </table>
-
-
-        </form> <br><br><br>
-        <p align="center"><a href="index.jsp">Indietro</a></p>
-      </td>
-      <td valign="top" width="160"> <jsp:include page="destra.jsp"/> </td>
-    </tr>
-  </table>
-
-</body>
-
-</html>
+            </label>
+          </div>
+          <div class="large-10 medium-10 small-12 cell">
+            <fieldset>
+              <legend>Vibrazione</legend>
+              <input type="radio" name="vibrazione"  id="vibr_t" required><label for="vibr_t">Sì</label>
+              <input type="radio" name="vibrazione"  id="vibr_f"><label for="vibr_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Browser</legend>
+              <input type="radio" name="browser"  id="brw_t" required><label for="brw_t">Sì</label>
+              <input type="radio" name="browser"  id="brw_f"><label for="brw_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Giochi</legend>
+              <input type="radio" name="giochi"  id="game_t" required><label for="game_t">Sì</label>
+              <input type="radio" name="giochi"  id="game_f"><label for="game_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Java</legend>
+              <input type="radio" name="java"  id="vibr_t" required><label for="java_t">Sì</label>
+              <input type="radio" name="java"  id="vibr_f"><label for="java_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Videochiamata</legend>
+              <input type="radio" name="videochiamata"  id="video_t" required><label for="video_t">Sì</label>
+              <input type="radio" name="videochiamata"  id="video_f"><label for="video_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>GPS</legend>
+              <input type="radio" name="gps" id="gps_t" required><label for="gps_t">Sì</label>
+              <input type="radio" name="gps" id="gps_f"><label for="gps_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Vivavoce</legend>
+              <input type="radio" name="vivavoce" id="voice_t" required><label for="voice_t">Sì</label>
+              <input type="radio" name="vivavoce" id="voice_f"><label for="voice_f">No</label>
+            </fieldset>
+            <fieldset>
+              <legend>Fotocamera</legend>
+              <input type="radio" name="fotocamera" id="fot_t" required><label for="fot_t">Sì</label>
+              <input type="radio" name="fotocamera" id="fot_f"><label for="fot_f">No</label>
+            </fieldset>
+              <fieldset>
+              <legend>Radio</legend>
+              <input type="radio" name="radio" id="rad_t" required><label for="rad_t">Sì</label>
+              <input type="radio" name="radio" id="rad_f"><label for="rad_f">No</label>
+            </fieldset>
+              <fieldset>
+              <legend>Memoria Interna</legend>
+              <input type="radio" name="memoriaint" id="memi_t" required><label for="memi_t">Sì</label>
+              <input type="radio" name="memoriaint" id="memi_f"><label for="memi_f">No</label>
+            </fieldset>
+              <fieldset>
+              <legend>Memoria Esterna</legend>
+              <input type="radio" name="memoriaest" id="meme_t" required><label for="meme_t">Sì</label>
+              <input type="radio" name="memoriaest" id="meme_f"><label for="meme_f">No</label>
+            </fieldset>
+            <input type="submit" class="button" value="Ricerca"/>
+          </div>
+        </div>
+      </div>
+    </form>
+  </jsp:body>
+</ms:layout>

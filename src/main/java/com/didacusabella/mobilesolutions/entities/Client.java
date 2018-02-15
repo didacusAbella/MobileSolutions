@@ -9,18 +9,15 @@ public class Client {
   
   private int id;
   private String name, last_name, tax_code, address, cap, city, province, 
-          tel_phone, mobile_phone, fax, username, password;
+          tel_phone, mobile_phone, fax, username, password, email;
 
   public Client() {
     super();
   }
-  
-  
 
-  public Client(int id, String name, String last_name, String tax_code, String address, 
-          String cap, String city, String province, String tel_phone, String mobile_phone, 
-          String fax, String username, String password) {
-    this.id = id;
+  public Client(String name, String last_name, String tax_code, 
+          String address, String cap, String city, String province, String tel_phone, 
+          String mobile_phone, String fax, String username, String password, String email) {
     this.name = name;
     this.last_name = last_name;
     this.tax_code = tax_code;
@@ -33,7 +30,17 @@ public class Client {
     this.fax = fax;
     this.username = username;
     this.password = password;
+    this.email = email;
   }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+  
 
   public int getId() {
     return id;

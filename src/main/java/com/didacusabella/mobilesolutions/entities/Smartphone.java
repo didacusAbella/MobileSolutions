@@ -1,142 +1,158 @@
 package com.didacusabella.mobilesolutions.entities;
 
 /**
- *
  * @author didacusAbella
  * entity class that map <i>smartphone</i> table
  */
 public class Smartphone {
-  
-  private int quantity, ram, internal_storage, camera;
-  private String brand,model, displayInch, os, cpu;
-  private boolean bluetooth, lte;
-  private double price;
 
-  public Smartphone() {
-    super();
-  }
+    private int id, quantity, ram, internal_storage, camera;
+    private String brand, model, displayInch, os, cpu;
+    private boolean bluetooth, lte;
+    private double price;
 
-  public Smartphone(int quantity, int ram, int internal_storage, int camera, 
-          String brand, String model, String displayInch, String os, String cpu, 
-          boolean bluetooth, boolean lte, double price) {
-    this.quantity = quantity;
-    this.ram = ram;
-    this.internal_storage = internal_storage;
-    this.camera = camera;
-    this.brand = brand;
-    this.model = model;
-    this.displayInch = displayInch;
-    this.os = os;
-    this.cpu = cpu;
-    this.bluetooth = bluetooth;
-    this.lte = lte;
-    this.price = price;
-  }
+    public Smartphone() {
+        super();
+    }
 
-  public int getQuantity() {
-    return quantity;
-  }
+    public Smartphone(int id, int quantity, int ram, int internal_storage, int camera,
+                      String brand, String model, String displayInch, String os, String cpu,
+                      boolean bluetooth, boolean lte, double price) {
+        this.id = id;
+        this.quantity = quantity;
+        this.ram = ram;
+        this.internal_storage = internal_storage;
+        this.camera = camera;
+        this.brand = brand;
+        this.model = model;
+        this.displayInch = displayInch;
+        this.os = os;
+        this.cpu = cpu;
+        this.bluetooth = bluetooth;
+        this.lte = lte;
+        this.price = price;
+    }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public int getRam() {
-    return ram;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setRam(int ram) {
-    this.ram = ram;
-  }
+    public int getQuantity() {
+        return quantity;
+    }
 
-  public int getInternal_storage() {
-    return internal_storage;
-  }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-  public void setInternal_storage(int internal_storage) {
-    this.internal_storage = internal_storage;
-  }
+    public int getRam() {
+        return ram;
+    }
 
-  public int getCamera() {
-    return camera;
-  }
+    public void setRam(int ram) {
+        this.ram = ram;
+    }
 
-  public void setCamera(int camera) {
-    this.camera = camera;
-  }
+    public int getInternal_storage() {
+        return internal_storage;
+    }
 
-  public String getBrand() {
-    return brand;
-  }
+    public void setInternal_storage(int internal_storage) {
+        this.internal_storage = internal_storage;
+    }
 
-  public void setBrand(String brand) {
-    this.brand = brand;
-  }
+    public int getCamera() {
+        return camera;
+    }
 
-  public String getModel() {
-    return model;
-  }
+    public void setCamera(int camera) {
+        this.camera = camera;
+    }
 
-  public void setModel(String model) {
-    this.model = model;
-  }
+    public String getBrand() {
+        return brand;
+    }
 
-  public String getDisplayInch() {
-    return displayInch;
-  }
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-  public void setDisplayInch(String displayInch) {
-    this.displayInch = displayInch;
-  }
+    public String getModel() {
+        return model;
+    }
 
-  public String getOs() {
-    return os;
-  }
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-  public void setOs(String os) {
-    this.os = os;
-  }
+    public String getDisplayInch() {
+        return displayInch;
+    }
 
-  public String getCpu() {
-    return cpu;
-  }
+    public void setDisplayInch(String displayInch) {
+        this.displayInch = displayInch;
+    }
 
-  public void setCpu(String cpu) {
-    this.cpu = cpu;
-  }
+    public String getOs() {
+        return os;
+    }
 
-  public boolean isBluetooth() {
-    return bluetooth;
-  }
+    public void setOs(String os) {
+        this.os = os;
+    }
 
-  public void setBluetooth(boolean bluetooth) {
-    this.bluetooth = bluetooth;
-  }
+    public String getCpu() {
+        return cpu;
+    }
 
-  public boolean isLte() {
-    return lte;
-  }
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
 
-  public void setLte(boolean lte) {
-    this.lte = lte;
-  }
+    public boolean isBluetooth() {
+        return bluetooth;
+    }
 
-  public double getPrice() {
-    return price;
-  }
+    public void setBluetooth(boolean bluetooth) {
+        this.bluetooth = bluetooth;
+    }
 
-  public void setPrice(double price) {
-    this.price = price;
-  }
+    public boolean isLte() {
+        return lte;
+    }
 
-  @Override
-  public String toString() {
-    return "Smartphone{" + "quantity=" + quantity + ", ram=" + ram + ", internal_storage=" 
-            + internal_storage + ", camera=" + camera + ", brand=" + brand +
-            ", model=" + model + ", displayInch=" + displayInch + ", os=" + os +
-            ", cpu=" + cpu + ", bluetooth=" + bluetooth + ", lte=" +
-            lte + ", price=" + price + '}';
-  }
-  
-  
+    public void setLte(boolean lte) {
+        this.lte = lte;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", ram=" + ram +
+                ", internal_storage=" + internal_storage +
+                ", camera=" + camera +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", displayInch='" + displayInch + '\'' +
+                ", os='" + os + '\'' +
+                ", cpu='" + cpu + '\'' +
+                ", bluetooth=" + bluetooth +
+                ", lte=" + lte +
+                ", price=" + price +
+                '}';
+    }
 }

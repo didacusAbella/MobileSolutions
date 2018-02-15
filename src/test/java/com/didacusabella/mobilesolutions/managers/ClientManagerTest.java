@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.didacusabella.mobilesolutions.client;
+package com.didacusabella.mobilesolutions.managers;
 
+import com.didacusabella.mobilesolutions.client.ClientManager;
 import com.didacusabella.mobilesolutions.entities.Client;
 import java.sql.SQLException;
 import java.util.List;

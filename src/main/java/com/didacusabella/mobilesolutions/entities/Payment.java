@@ -15,8 +15,7 @@ public class Payment {
     super();
   }
 
-  public Payment(int id, String name, double price) {
-    this.id = id;
+  public Payment(String name, double price) {
     this.name = name;
     this.price = price;
   }

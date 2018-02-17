@@ -9,8 +9,8 @@ import java.util.List;
  * @project MobileSolutions
  */
 public interface SaleDAO {
-    List<Sale> GetAllSaleForClient(int clientID);
+    List<Sale> getAllSaleForClient(int clientID);
 
-    boolean BuyProduct(Sale sl);
+    boolean buyProduct(Sale sl);
 
 }

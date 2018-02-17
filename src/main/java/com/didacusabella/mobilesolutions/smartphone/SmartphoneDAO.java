@@ -26,6 +26,7 @@ public interface SmartphoneDAO {
      */
     List<Smartphone> getAllSmartphone();
 
+    Smartphone getSmartphoneByID(int id);
 
     List<Smartphone> getSmartphoneOUT(int min);
 

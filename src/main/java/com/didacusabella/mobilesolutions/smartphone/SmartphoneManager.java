@@ -4,10 +4,7 @@ import com.didacusabella.mobilesolutions.database.Database;
 import com.didacusabella.mobilesolutions.database.Mappable;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -38,18 +35,19 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     @Override
     public boolean addSmartphone(Smartphone smartphone) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(QUERY_ADD_SMARTPHONE);
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_ADD_SMARTPHONE, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, smartphone.getBrand());
             statement.setString(2, smartphone.getModel());
             statement.setString(3, smartphone.getDisplayInch());
             statement.setString(4, smartphone.getOs());
             statement.setString(5, smartphone.getCpu());
             statement.setInt(6, smartphone.getRam());
-            statement.setBoolean(7, smartphone.isBluetooth());
-            statement.setBoolean(8, smartphone.isLte());
-            statement.setInt(9, smartphone.getCamera());
-            statement.setDouble(10, smartphone.getPrice());
-            statement.setInt(11, smartphone.getQuantity());
+            statement.setInt(7, smartphone.getInternal_storage());
+            statement.setBoolean(8, smartphone.isBluetooth());
+            statement.setBoolean(9, smartphone.isLte());
+            statement.setInt(10, smartphone.getCamera());
+            statement.setDouble(11, smartphone.getPrice());
+            statement.setInt(12, smartphone.getQuantity());
             int insertionSuccess = statement.executeUpdate();
             if (insertionSuccess == 1) {
                 this.dbConnection.commit();
@@ -72,6 +70,21 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
                 returnSmartphones.add(mapRow(rs));
             }
             return returnSmartphones;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Smartphone getSmartphoneByID(int id) {
+        try {
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_SMARTPHONE);
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                return mapRow(rs);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -141,29 +154,28 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
 
     @Override
     public Smartphone mapRow(ResultSet rs) throws SQLException {
-        if (rs.next()) {
-            Smartphone returnSmartphone = new Smartphone();
-            returnSmartphone.setBrand(rs.getString("brand"));
-            returnSmartphone.setModel(rs.getString("model"));
-            returnSmartphone.setDisplayInch(rs.getString("displayInch"));
-            returnSmartphone.setOs(rs.getString("os"));
-            returnSmartphone.setCpu(rs.getString("cpu"));
-            returnSmartphone.setRam(rs.getInt("ram"));
-            returnSmartphone.setInternal_storage(rs.getInt("internal_storage"));
-            returnSmartphone.setBluetooth(rs.getBoolean("bluetooth"));
-            returnSmartphone.setLte(rs.getBoolean("LTE"));
-            returnSmartphone.setCamera(rs.getInt("camera"));
-            returnSmartphone.setPrice(rs.getDouble("price"));
-            returnSmartphone.setQuantity(rs.getInt("quantity"));
-            return returnSmartphone;
-        }
-        return null;
+        Smartphone returnSmartphone = new Smartphone();
+        returnSmartphone.setId(rs.getInt("id"));
+        returnSmartphone.setBrand(rs.getString("brand"));
+        returnSmartphone.setModel(rs.getString("model"));
+        returnSmartphone.setDisplayInch(rs.getString("displayInch"));
+        returnSmartphone.setOs(rs.getString("os"));
+        returnSmartphone.setCpu(rs.getString("cpu"));
+        returnSmartphone.setRam(rs.getInt("ram"));
+        returnSmartphone.setInternal_storage(rs.getInt("internal_storage"));
+        returnSmartphone.setBluetooth(rs.getBoolean("bluetooth"));
+        returnSmartphone.setLte(rs.getBoolean("LTE"));
+        returnSmartphone.setCamera(rs.getInt("camera"));
+        returnSmartphone.setPrice(rs.getDouble("price"));
+        returnSmartphone.setQuantity(rs.getInt("quantity"));
+        return returnSmartphone;
     }
 
+    private static final String QUERY_GET_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone WHERE id=?";
     private static final String QUERY_ADD_SMARTPHONE = "INSERT INTO `mobilesolutions`.`smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String QUERY_DELETE_SMARTPHONE = "DELETE FROM `mobilesolutions`.`smartphone` WHERE `id`=?;";
-    private static final String QUERY_GET_SMARTPHONE_OUT = "SELECT t.brand FROM mobilesolutions.smartphone t WHERE t.quantita=?";
-    private static final String QUERY_GET_ALL_SMARTPHONE = "SELECT t.brand FROM mobilesolutions.smartphone t";
+    private static final String QUERY_GET_SMARTPHONE_OUT = "SELECT * FROM mobilesolutions.smartphone  WHERE quantity<=?";
+    private static final String QUERY_GET_ALL_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone ";
     private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE mobilesolutions.smartphone SET brand=?,model=?," +
             "displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?," +
             "LTE=?,camera=?,price=?,quantity=? WHERE id=?;";

@@ -52,7 +52,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
     }
 
     @Override
-    public List<Sale> GetAllSaleForClient(int clientID) {
+    public List<Sale> getAllSaleForClient(int clientID) {
         try {
             List<Sale> returnSales = new ArrayList<>();
             PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_ALL_SALE_FOR_USER);
@@ -69,7 +69,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
     }
 
     @Override
-    public boolean BuyProduct(Sale sl) {
+    public boolean buyProduct(Sale sl) {
         try {
             PreparedStatement statement = dbConnection.prepareStatement(QUERY_BUY_PRODUCT);
             statement.setInt(1, sl.getProduct());
@@ -79,14 +79,18 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
             statement.setDouble(5, sl.getPrice());
             statement.setInt(6, sl.getShipmentType());
             statement.setInt(7, sl.getPaymentType());
-            return statement.execute();
+            int insertionSuccess = statement.executeUpdate();
+            if (insertionSuccess == 1) {
+                this.dbConnection.commit();
+                return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
-    private static String QUERY_GET_ALL_SALE_FOR_USER = "SELECT t FROM mobilesolutions.sale t WHERE t.username=?";
+    private static String QUERY_GET_ALL_SALE_FOR_USER = "SELECT * FROM mobilesolutions.sale  WHERE username=?";
     private static String QUERY_BUY_PRODUCT = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
             "quantity, price, shipmentType, `paymentType`) VALUES (?, ?, ?, ?, ?, ?, ?);";
 

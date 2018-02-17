@@ -4,8 +4,8 @@
     Author     : didacusAbella
 --%>
 <div class="title-bar" data-responsive-toggle="ms" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="ms"></button>
-  <div class="title-bar-title">Menu</div>
+    <button class="menu-icon" type="button" data-toggle="ms"></button>
+    <div class="title-bar-title">Menu</div>
 </div>
 <nav class="top-bar" id="ms">
   <div class="top-bar-left">

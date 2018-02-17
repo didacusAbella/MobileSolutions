@@ -45,5 +45,6 @@ public interface ClientDao {
    * @return true if the client was found into the database
    */
   boolean login(String username, String password);
-  
+
+  Client getClient(String username);
 }

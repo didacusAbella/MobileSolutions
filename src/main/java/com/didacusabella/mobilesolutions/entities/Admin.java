@@ -1,13 +1,17 @@
 package com.didacusabella.mobilesolutions.entities;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  *
  * @author diego
  * Entity mapping of <i>admin</i> table
  */
 public class Admin {
-  
+  @NotNull
   private int id;
+  @Size(min = 4, max = 20)
   private String username, lastName, firstName, password;
 
   public Admin() {

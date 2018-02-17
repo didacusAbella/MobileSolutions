@@ -2,22 +2,28 @@
 <%@taglib tagdir="/WEB-INF/tags/" prefix="ms" %>
 <ms:layout title="Registrazione">
   <jsp:body>
-    <form name="registra" action="registrazione" method="post">
+    <form name="signup" action="/SignupClient" method="post" novalidate="true" data-abide>
+      <div data-abide-error class="alert callout" style="display: none;">
+        <p><i class="fi-alert"></i> Ci sono errori in qualche campo della form.</p>
+      </div>
       <div class="grid-container fluid">
         <h2 class="text-center">Registrati subito e diventa nostro cliente</h2>
         <div class="grid-x grid-padding-x">
           <div class="large-6 medium-6 small-12 cell">
             <label>Nome
-              <input type="text" name="nome" placeholder="Inserisci Nome"/>
+              <input type="text" name="name" placeholder="Inserisci Nome" required="true" pattern="alpha"/>
+              <span class="form-error">Il campo nome deve contenere solo lettere</span>
             </label>
             <label>Codice Fiscale
-              <input type="text" name="cofiscale" placeholder="Inserisci Codice Fiscale"/>
+              <input type="text" name="taxCode" placeholder="Inserisci Codice Fiscale" required="true" pattern="alpha_numeric"/>
+              <span class="form-error">Il campo codice fiscale deve caratteri alfanumerici</span>
             </label>
             <label>Indirizzo
-              <input type="text" name="indirizzo" placeholder="Indirizzo"/>
+              <input type="text" name="address" placeholder="Indirizzo" pattern="alpha" required="true"/>
+              <span class="form-error">Il campo indirizzo deve contenere solo lettere</span>
             </label>
             <label>Provincia
-              <select name="prov">
+              <select name="province">
                 <option selected>Agrigento</option>
                 <option>Alessandria</option>
                 <option>Ancona</option>
@@ -128,50 +134,47 @@
               </select>
             </label>
             <label>Telefono-Cellulare
-              <input type="text" name="telcel" placeholder="Telefono Cellulare"/>
+              <input type="text" name="mobilePhone" placeholder="Telefono Cellulare" pattern="integer" required="true"/>
+              <span class="form-error">Il campo telefono deve contenere solo numeri</span>
             </label>
             <label>Username
-              <input type="text" name="username" placeholder="Username"/>
+              <input type="text" name="username" placeholder="Username" pattern="alpha_numeric" required="true"/>
+              <span class="form-error">Il username deve contenere solo lettere o numeri</span>
             </label>
-            <label>Conferma Password
-              <input type="password" name="confpassword" placeholder="Conferma password"/>
+            <label>Città
+              <input type="text" name="city" placeholder="Inserisci città" required="true" pattern="alpha" required="true"/>
+              <span class="form-error">Il campo password deve contenere solo lettere</span>
             </label>
           </div>
           <div class="large-6 medium-6 small-12 cell">
             <label>Cognome
-              <input type="text" name="cognome" placeholder="Inserisci Cognome"/>
-            </label>
-            <label> Indirizzo
-              <select name="tipoindirizzo">
-                <option selected>Largo</option>
-                <option>Piazza</option>
-                <option>Porta</option>
-                <option>Via</option> 
-                <option>Viale</option>
-                <option>Vicolo</option>  
-              </select>
+              <input type="text" name="lastName" placeholder="Inserisci Cognome" pattern="alpha" required="true"/>
+              <span class="form-error">Il campo cognome deve contenere solo lettere</span>
             </label>
             <label>Cap
-              <input type="text" name="cap" placeholder="Inserisci CAP"/>
+              <input type="text" name="cap" placeholder="Inserisci CAP" pattern="integer" required="true"/>
+              <span class="form-error">Il campo CAP deve contenere solo numeri</span>
             </label>
             <label>Telefono-Casa
-              <input type="text" name="telcas" placeholder="Inserisci Telefono"/>
+              <input type="text" name="telephoneNumber" placeholder="Inserisci Telefono" pattern="integer" required="true"/>
+              <span class="form-error">Il campo telefono deve contenere solo numeri</span>
             </label>
             <label>Fax
-              <input type="text" name="fax" placeholder="Inserisci Fax"/>
+              <input type="text" name="fax" placeholder="Inserisci Fax" pattern="integer" required="true"/>
+              <span class="form-error">Il campo fax deve contenere solo numeri</span>
             </label>
             <label>Password
-              <input type="password" name="password" placeholder="Inserisci Password"/>
+              <input type="password" name="password" placeholder="Inserisci Password" pattern="alpha_numeric" required="true"/>
+              <span class="form-error">Il campo password deve essere composto da lettere e numeri</span>
             </label>
             <label>Email
-              <input type="email" name="email" placeholder="Inserisci password"/>
+              <input name="email" type="text" placeholder="Inserisci Email" pattern="email" required="true"/>
+              <span class="form-error">Il campo email non è valido</span>
             </label>
           </div>
           <div class="large-6 medium-6 small-12 cell">
              <fieldset>
               <p>Leggi <a href="privacy.jsp">L'INFORMATIVA</a> relativa al trattamento dei tuoi dati personali</p>
-              <input id="clausola1" type="checkbox" name="clausola1"><label for="clausola1">Termini per il servizio</label>
-              <input id="clausola2" type="checkbox" name="clausola2"><label for="clausola2">Trattamento dei dati personali</label>
             </fieldset>
           </div>
            <div class="large-6 medium-6 small-12 cell">

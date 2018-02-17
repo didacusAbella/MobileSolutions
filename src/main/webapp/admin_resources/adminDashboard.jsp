@@ -18,6 +18,7 @@
           <li><a href="/MobileSolutions/dashboard?page=clienti.jsp">Visualizza Clienti</a></li>
           <li><a href="/MobileSolutions/dashboard?page=esaurimento.jsp">Esaurimento Cellulari</a></li>
           <li><a href="/MobileSolutions/dashboard?page=importazione.jsp">Importa XML esterno</a></li>
+          <li><a href="/MobileSolutions/dashboard?page=managePhones.jsp">Gestione Smartphone</a></li>
           <li>
             <form action="logout_gestore">
               <input type="submit" class="button" value="LOGOUT"/>

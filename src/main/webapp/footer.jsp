@@ -3,7 +3,7 @@
     Created on : 22-nov-2017, 15.33.17
     Author     : didacusAbella
 --%>
-<div class="grid-container fluid" style="background-color:#e6e6e6">
+<div class="grid-container fluid" style="background-color:#e6e6e6;">
   <div class="grid-x">
     <div class="small-12 medium-6 large-6 cell">
       <h5 class="text-center"><em>Usiamo i pi&ugrave; sicuri sistemi di pagamento per le transazioni, oltre a quelli pi&ugrave; tradizionali</em></h5>

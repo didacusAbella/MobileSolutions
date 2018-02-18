@@ -34,4 +34,6 @@ public interface SmartphoneDAO {
 
     boolean editSmartphone(Smartphone sm);
 
+    boolean importXML(String pathToXML);
+
 }

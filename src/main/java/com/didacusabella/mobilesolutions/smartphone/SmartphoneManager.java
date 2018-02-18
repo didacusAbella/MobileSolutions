@@ -153,6 +153,18 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     }
 
     @Override
+    public boolean importXML(String pathToXML) {
+        try {
+            PreparedStatement statement = dbConnection.prepareStatement(QUERY_IMPORT_DATA);
+            statement.setString(1, pathToXML);
+            return statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public Smartphone mapRow(ResultSet rs) throws SQLException {
         Smartphone returnSmartphone = new Smartphone();
         returnSmartphone.setId(rs.getInt("id"));
@@ -179,6 +191,9 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE mobilesolutions.smartphone SET brand=?,model=?," +
             "displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?," +
             "LTE=?,camera=?,price=?,quantity=? WHERE id=?;";
+    private static final String QUERY_IMPORT_DATA = "LOAD XML LOCAL INFILE ? " +
+            " INTO TABLE smartphone " +
+            " ROWS IDENTIFIED BY '<ROW>';";
 
 
 }

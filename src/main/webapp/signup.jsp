@@ -2,7 +2,7 @@
 <%@taglib tagdir="/WEB-INF/tags/" prefix="ms" %>
 <ms:layout title="Registrazione">
     <jsp:body>
-        <form name="signup" action="signupClient" method="post" novalidate="true" data-abide>
+        <form name="signup" action="Signup" method="post" novalidate="true" data-abide>
             <div data-abide-error class="alert callout" style="display: none;">
                 <p><i class="fi-alert"></i> Ci sono errori in qualche campo della form.</p>
             </div>

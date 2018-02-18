@@ -4,22 +4,14 @@ import com.didacusabella.mobilesolutions.entities.Smartphone;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.when;
 
 /**
  * @author Domenico Antonio Tropeano on 15/02/2018 at 16:35
@@ -53,7 +45,7 @@ public class SmartphoneManagerTest {
         smartphone.setOs("Android");
         smartphone.setCpu("Snapdragon 4.5Ghz");
         smartphone.setRam(4);
-        smartphone.setInternal_storage(32);
+        smartphone.setInternalStorage(32);
         smartphone.setBluetooth(true);
         smartphone.setLte(true);
         smartphone.setCamera(12);
@@ -78,7 +70,7 @@ public class SmartphoneManagerTest {
         smartphone.setOs("Android");
         smartphone.setCpu("Snapdragon 4.5Ghz");
         smartphone.setRam(4);
-        smartphone.setInternal_storage(32);
+        smartphone.setInternalStorage(32);
         smartphone.setBluetooth(true);
         smartphone.setLte(true);
         smartphone.setCamera(12);

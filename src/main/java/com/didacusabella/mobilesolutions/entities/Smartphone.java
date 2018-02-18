@@ -1,27 +1,41 @@
 package com.didacusabella.mobilesolutions.entities;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * @author didacusAbella
  * entity class that map <i>smartphone</i> table
  */
-public class Smartphone {
 
-    private int id, quantity, ram, internal_storage, camera;
-    private String brand, model, displayInch, os, cpu;
+public class Smartphone {
+    @NotNull
+    private int id, quantity, ram, internalStorage, camera;
+    @Size(min = 4, max = 20)
+    @NotNull
+    private String brand, model, cpu;
+    @NotNull
+    @Size(min = 0, max = 4)
+    private String displayInch;
+    @NotNull
+    @Size(min = 0, max = 10)
+    private String os;
     private boolean bluetooth, lte;
+    @Min(0)
     private double price;
 
     public Smartphone() {
         super();
     }
 
-    public Smartphone(int id, int quantity, int ram, int internal_storage, int camera,
+    public Smartphone(int id, int quantity, int ram, int internalStorage, int camera,
                       String brand, String model, String displayInch, String os, String cpu,
                       boolean bluetooth, boolean lte, double price) {
         this.id = id;
         this.quantity = quantity;
         this.ram = ram;
-        this.internal_storage = internal_storage;
+        this.internalStorage = internalStorage;
         this.camera = camera;
         this.brand = brand;
         this.model = model;
@@ -57,12 +71,12 @@ public class Smartphone {
         this.ram = ram;
     }
 
-    public int getInternal_storage() {
-        return internal_storage;
+    public int getInternalStorage() {
+        return internalStorage;
     }
 
-    public void setInternal_storage(int internal_storage) {
-        this.internal_storage = internal_storage;
+    public void setInternalStorage(int internalStorage) {
+        this.internalStorage = internalStorage;
     }
 
     public int getCamera() {
@@ -143,7 +157,7 @@ public class Smartphone {
                 "id=" + id +
                 ", quantity=" + quantity +
                 ", ram=" + ram +
-                ", internal_storage=" + internal_storage +
+                ", internalStorage=" + internalStorage +
                 ", camera=" + camera +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +

@@ -42,7 +42,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             statement.setString(4, smartphone.getOs());
             statement.setString(5, smartphone.getCpu());
             statement.setInt(6, smartphone.getRam());
-            statement.setInt(7, smartphone.getInternal_storage());
+            statement.setInt(7, smartphone.getInternalStorage());
             statement.setBoolean(8, smartphone.isBluetooth());
             statement.setBoolean(9, smartphone.isLte());
             statement.setInt(10, smartphone.getCamera());
@@ -134,7 +134,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             statement.setString(4, sm.getOs());
             statement.setString(5, sm.getCpu());
             statement.setInt(6, sm.getRam());
-            statement.setInt(7, sm.getInternal_storage());
+            statement.setInt(7, sm.getInternalStorage());
             statement.setBoolean(8, sm.isBluetooth());
             statement.setBoolean(9, sm.isLte());
             statement.setInt(10, sm.getCamera());
@@ -162,7 +162,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         returnSmartphone.setOs(rs.getString("os"));
         returnSmartphone.setCpu(rs.getString("cpu"));
         returnSmartphone.setRam(rs.getInt("ram"));
-        returnSmartphone.setInternal_storage(rs.getInt("internal_storage"));
+        returnSmartphone.setInternalStorage(rs.getInt("internal_storage"));
         returnSmartphone.setBluetooth(rs.getBoolean("bluetooth"));
         returnSmartphone.setLte(rs.getBoolean("LTE"));
         returnSmartphone.setCamera(rs.getInt("camera"));

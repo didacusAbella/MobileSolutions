@@ -1,160 +1,169 @@
 package com.didacusabella.mobilesolutions.entities;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
- *
  * @author diego
  * Entity that maps <i>client</i>
  */
 public class Client {
-  
-  private int id;
-  private String name, last_name, tax_code, address, cap, city, province, 
-          tel_phone, mobile_phone, fax, username, password, email;
 
-  public Client() {
-    super();
-  }
+    private int id;
+    @NotNull
+    @Size(min = 4, max = 45)
+    private String name, lastName, address, cap, city,
+            mobilePhone, username, password, email;
+    private String telPhone, fax;
+    @NotNull
+    private String taxCode;
+    @NotNull
+    @Size(min = 1, max = 3)
+    private String province;
 
-  public Client(String name, String last_name, String tax_code, 
-          String address, String cap, String city, String province, String tel_phone, 
-          String mobile_phone, String fax, String username, String password, String email) {
-    this.name = name;
-    this.last_name = last_name;
-    this.tax_code = tax_code;
-    this.address = address;
-    this.cap = cap;
-    this.city = city;
-    this.province = province;
-    this.tel_phone = tel_phone;
-    this.mobile_phone = mobile_phone;
-    this.fax = fax;
-    this.username = username;
-    this.password = password;
-    this.email = email;
-  }
+    public Client() {
+        super();
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public Client(String name, String lastName, String taxCode,
+                  String address, String cap, String city, String province, String telPhone,
+                  String mobilePhone, String fax, String username, String password, String email) {
+        this.name = name;
+        this.lastName = lastName;
+        this.taxCode = taxCode;
+        this.address = address;
+        this.cap = cap;
+        this.city = city;
+        this.province = province;
+        this.telPhone = telPhone;
+        this.mobilePhone = mobilePhone;
+        this.fax = fax;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
-  
+    public String getEmail() {
+        return email;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
 
-  public String getName() {
-    return name;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public String getLast_name() {
-    return last_name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setLast_name(String last_name) {
-    this.last_name = last_name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getTax_code() {
-    return tax_code;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public void setTax_code(String tax_code) {
-    this.tax_code = tax_code;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public String getAddress() {
-    return address;
-  }
+    public String getTaxCode() {
+        return taxCode;
+    }
 
-  public void setAddress(String address) {
-    this.address = address;
-  }
+    public void setTaxCode(String taxCode) {
+        this.taxCode = taxCode;
+    }
 
-  public String getCap() {
-    return cap;
-  }
+    public String getAddress() {
+        return address;
+    }
 
-  public void setCap(String cap) {
-    this.cap = cap;
-  }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-  public String getCity() {
-    return city;
-  }
+    public String getCap() {
+        return cap;
+    }
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
 
-  public String getProvince() {
-    return province;
-  }
+    public String getCity() {
+        return city;
+    }
 
-  public void setProvince(String province) {
-    this.province = province;
-  }
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-  public String getTel_phone() {
-    return tel_phone;
-  }
+    public String getProvince() {
+        return province;
+    }
 
-  public void setTel_phone(String tel_phone) {
-    this.tel_phone = tel_phone;
-  }
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-  public String getMobile_phone() {
-    return mobile_phone;
-  }
+    public String getTelPhone() {
+        return telPhone;
+    }
 
-  public void setMobile_phone(String mobile_phone) {
-    this.mobile_phone = mobile_phone;
-  }
+    public void setTelPhone(String telPhone) {
+        this.telPhone = telPhone;
+    }
 
-  public String getFax() {
-    return fax;
-  }
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
 
-  public void setFax(String fax) {
-    this.fax = fax;
-  }
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
 
-  public String getUsername() {
-    return username;
-  }
+    public String getFax() {
+        return fax;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public String getUsername() {
+        return username;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  @Override
-  public String toString() {
-    return "Client{" + "id=" + id + ", name=" + name + ", last_name=" + last_name 
-            + ", tax_code=" + tax_code + ", address=" + address + ", cap=" + cap +
-            ", city=" + city + ", province=" + province + ", tel_phone=" + tel_phone +
-            ", mobile_phone=" + mobile_phone + ", fax=" + fax + ", username=" + username +
-            ", password=" + password + '}';
-  }
-  
-  
-  
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" + "id=" + id + ", name=" + name + ", lastName=" + lastName
+                + ", taxCode=" + taxCode + ", address=" + address + ", cap=" + cap +
+                ", city=" + city + ", province=" + province + ", telPhone=" + telPhone +
+                ", mobilePhone=" + mobilePhone + ", fax=" + fax + ", username=" + username +
+                ", password=" + password + '}';
+    }
+
+
 }

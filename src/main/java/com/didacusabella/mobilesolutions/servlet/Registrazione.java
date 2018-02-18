@@ -1,57 +1,53 @@
 package com.didacusabella.mobilesolutions.servlet;
 
-import java.io.*;
+import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
+import com.didacusabella.mobilesolutions.client.ClientManager;
+import com.didacusabella.mobilesolutions.database.BeanValidator;
+import com.didacusabella.mobilesolutions.entities.Client;
+import org.apache.commons.beanutils.BeanUtils;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 
-import com.didacusabella.mobilesolutions.beans.*;
-import com.didacusabella.mobilesolutions.gestioneDB.*;
+@WebServlet("/signupClient")
+public class Registrazione extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-public class Registrazione extends HttpServlet
-{
-	public void doGet (HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
-	{
-		String url = getServletConfig().getServletContext().getRealPath("/WEB-INF/database/cliente.xml").toString();
-		
-		String username = request.getParameter("username");
-		
-		Cliente cli = new Cliente();
-		cli.setNome(request.getParameter("nome"));
-		cli.setCognome(request.getParameter("cognome"));
-		cli.setCodicefiscale(request.getParameter("cofiscale"));
-		cli.setTipoindirizzo(request.getParameter("tipoindirizzo"));
-		cli.setIndirizzo(request.getParameter("indirizzo"));
-		cli.setCap(request.getParameter("cap"));
-		cli.setCitta(request.getParameter("citta"));
-		cli.setProvincia(request.getParameter("prov"));
-		cli.setTelcasa(request.getParameter("telcas"));
-		cli.setTelcell(request.getParameter("telcel"));
-		cli.setFax(request.getParameter("fax"));
-		cli.setUsername(request.getParameter("username"));
-		cli.setPassword(request.getParameter("password"));
-		cli.setEmail(request.getParameter("email"));
-		cli.setClausola1(request.getParameter("clausola1"));
-		cli.setClausola2(request.getParameter("clausola2"));
-		DBCliente db = new DBCliente(url);
-		boolean trovato = db.control(username);
-		if (!trovato)
-		{
-			db.addCliente(cli);
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/ok.jsp");
-			disp.forward(request,response);
-		}
-		else
-		{
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/errore.jsp");
-			disp.forward(request,response);
-		}
-		
-		
-	}
-	
-	public void doPost (HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
-	{
-		doGet(request,response);
-	}
+        try {
+            ClientManager clientManager = ClientManager.getInstance();
+            Client newClient = new Client();
+            BeanUtils.populate(newClient, request.getParameterMap());
+            System.out.println(newClient.toString());
+            if (BeanValidator.<Client>validateBean(newClient)) {
+                if (clientManager.insertClient(newClient)) {
+                    RequestDispatcher disp = getServletContext().getRequestDispatcher("/ok.jsp");
+                } else {
+                    RequestDispatcher disp = getServletContext().getRequestDispatcher("/error.jsp");
+                }
+            } else {
+                System.out.println("Client non ben formato");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (UsernameAlreadyExistException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

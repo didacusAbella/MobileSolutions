@@ -23,7 +23,7 @@
               <span class="form-error">nel prezzo devono esserci solo numeri</span>
             </label>
             <label>Memoria Interna
-              <input type="number" name="internal_storage" placeholder="Memoria Interna" pattern="integer"/>
+              <input type="number" name="internalStorage" placeholder="Memoria Interna" pattern="integer"/>
               <span class="form-error">nel campo memoria devono esserci solo numeri</span>
             </label>
             <label>RAM

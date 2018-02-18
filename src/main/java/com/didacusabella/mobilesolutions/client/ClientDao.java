@@ -1,5 +1,6 @@
 package com.didacusabella.mobilesolutions.client;
 
+import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.entities.Client;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public interface ClientDao {
    * @param client the client to add
    * @return true if the insertion goes successfully
    */
-  boolean insertClient(Client client);
+  boolean insertClient(Client client) throws UsernameAlreadyExistException;
   /**
    * Update a client's infomation
    * @param client the client to update

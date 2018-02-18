@@ -3,16 +3,20 @@ package com.didacusabella.mobilesolutions.servlet;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import javax.jws.WebService;
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import com.didacusabella.mobilesolutions.admin.AdminManager;
 import com.didacusabella.mobilesolutions.beans.*;
+import com.didacusabella.mobilesolutions.database.BeanValidator;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import com.didacusabella.mobilesolutions.gestioneDB.*;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import org.apache.commons.beanutils.BeanUtils;
 
+@WebServlet("/addSmartphone")
 public class InserisciCell extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SmartphoneManager smartphoneManager = null;
@@ -26,11 +30,15 @@ public class InserisciCell extends HttpServlet {
         }
         HttpSession session = request.getSession(true);
         String username = request.getParameter("username");
-        if (adminManager.getAdminByUsername(username) != null) {
+        if (true || adminManager.getAdminByUsername(username) != null) {
             Smartphone smartphone = new Smartphone();
             try {
                 BeanUtils.populate(smartphone, request.getParameterMap());
-                smartphoneManager.addSmartphone(smartphone);
+                if (BeanValidator.<Smartphone>validateBean(smartphone)) {
+                    smartphoneManager.addSmartphone(smartphone);
+                } else {
+                    System.out.println("Smartphon not well formed");
+                }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {

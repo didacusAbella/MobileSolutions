@@ -1,6 +1,7 @@
 package com.didacusabella.mobilesolutions.client;
 
 
+import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.database.Database;
 import com.didacusabella.mobilesolutions.database.Mappable;
 import com.didacusabella.mobilesolutions.entities.Client;
@@ -58,14 +59,14 @@ public class ClientManager implements Mappable<Client>, ClientDao {
         Client returnClient = new Client();
         returnClient.setId(rs.getInt("id"));
         returnClient.setName(rs.getString("name"));
-        returnClient.setLast_name(rs.getString("last_name"));
-        returnClient.setTax_code(rs.getString("tax_code"));
+        returnClient.setLastName(rs.getString("last_name"));
+        returnClient.setTaxCode(rs.getString("tax_code"));
         returnClient.setAddress(rs.getString("address"));
         returnClient.setCap(rs.getString("cap"));
         returnClient.setCity(rs.getString("city"));
         returnClient.setProvince(rs.getString("province"));
-        returnClient.setTel_phone(rs.getString("tel_phone"));
-        returnClient.setMobile_phone(rs.getString("mobile_phone"));
+        returnClient.setTelPhone(rs.getString("tel_phone"));
+        returnClient.setMobilePhone(rs.getString("mobile_phone"));
         returnClient.setFax(rs.getString("fax"));
         returnClient.setUsername(rs.getString("username"));
         returnClient.setPassword(rs.getString("password"));
@@ -107,26 +108,30 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     }
 
     @Override
-    public boolean insertClient(Client client) {
+    public boolean insertClient(Client client) throws UsernameAlreadyExistException {
         try {
             PreparedStatement statement = dbConnection.prepareStatement(CREATE_CLIENT);
-            statement.setString(1, client.getName());
-            statement.setString(2, client.getLast_name());
-            statement.setString(3, client.getTax_code());
-            statement.setString(4, client.getAddress());
-            statement.setString(5, client.getCap());
-            statement.setString(6, client.getCity());
-            statement.setString(7, client.getProvince());
-            statement.setString(8, client.getTel_phone());
-            statement.setString(9, client.getMobile_phone());
-            statement.setString(10, client.getFax());
-            statement.setString(11, client.getUsername());
-            statement.setString(12, client.getPassword());
-            statement.setString(13, client.getEmail());
-            int insertionSuccess = statement.executeUpdate();
-            if (insertionSuccess == 1) {
-                this.dbConnection.commit();
-                return true;
+            if (getInstance().getClient(client.getId()) != null) {
+                throw new UsernameAlreadyExistException();
+            } else {
+                statement.setString(1, client.getName());
+                statement.setString(2, client.getLastName());
+                statement.setString(3, client.getTaxCode());
+                statement.setString(4, client.getAddress());
+                statement.setString(5, client.getCap());
+                statement.setString(6, client.getCity());
+                statement.setString(7, client.getProvince());
+                statement.setString(8, client.getTelPhone());
+                statement.setString(9, client.getMobilePhone());
+                statement.setString(10, client.getFax());
+                statement.setString(11, client.getUsername());
+                statement.setString(12, client.getPassword());
+                statement.setString(13, client.getEmail());
+                int insertionSuccess = statement.executeUpdate();
+                if (insertionSuccess == 1) {
+                    this.dbConnection.commit();
+                    return true;
+                }
             }
         } catch (SQLException ex) {
             clientManagerLogger.log(Level.SEVERE, null, ex);
@@ -155,14 +160,14 @@ public class ClientManager implements Mappable<Client>, ClientDao {
         try {
             PreparedStatement statement = this.dbConnection.prepareStatement(UPDATE_CLIENT);
             statement.setString(1, client.getName());
-            statement.setString(2, client.getLast_name());
-            statement.setString(3, client.getTax_code());
+            statement.setString(2, client.getLastName());
+            statement.setString(3, client.getTaxCode());
             statement.setString(4, client.getAddress());
             statement.setString(5, client.getCap());
             statement.setString(6, client.getCity());
             statement.setString(7, client.getProvince());
-            statement.setString(8, client.getTel_phone());
-            statement.setString(9, client.getMobile_phone());
+            statement.setString(8, client.getTelPhone());
+            statement.setString(9, client.getMobilePhone());
             statement.setString(10, client.getFax());
             statement.setString(11, client.getUsername());
             statement.setString(12, client.getPassword());

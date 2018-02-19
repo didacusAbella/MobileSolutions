@@ -15,6 +15,6 @@
   <div class="card-section">
     <h5>${phone.model}</h5>
     <p>Prezzo: ${phone.price}</p>
-    <p><a href="/MobileSolutions/phoneDetails?id=${phone.id}">Visualizza Dettagli</a></p>
+    <p><a href="/MobileSolutions/PhoneDetails?id=${phone.id}">Visualizza Dettagli</a></p>
   </div>
 </div>

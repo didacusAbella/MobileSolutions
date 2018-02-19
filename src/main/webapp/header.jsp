@@ -16,8 +16,7 @@
         <ul class="menu vertical">
           <li><a href="carrello.jsp">Visualizza Carrello</a></li>
           <li><a href="acquisti.jsp">Visualizza Acquisti</a></li>
-          <li><a href="modificaCli.jsp">Modifica Profilo</a></li>
-          <li><a href="cancellaCli.jsp">Chiudi l'account</a></li>
+          <li><a href="editProfile.jsp">Modifica Profilo</a></li>
           <li>
             <form action="">
               <input type="submit" value="Logout" class="button">

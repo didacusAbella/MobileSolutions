@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.didacusabella.mobilesolutions.smartphone;
 
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -39,7 +33,7 @@ public class AllPhones extends HttpServlet {
     try {
       List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
       request.setAttribute("phones", phones);
-      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=managePhones.jsp").forward(request, response);
+      this.getServletContext().getRequestDispatcher("/AdminDashboard?page=managePhones.jsp").forward(request, response);
     } catch (SQLException ex) {
       Logger.getLogger(AllPhones.class.getName()).log(Level.SEVERE, null, ex);
     }

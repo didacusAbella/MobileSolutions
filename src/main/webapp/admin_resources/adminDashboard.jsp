@@ -13,8 +13,8 @@
       <div class="off-canvas position-left" id="offcanvas" data-off-canvas>
         <ul class="vertical menu">
           <li><a href="/MobileSolutions/ShowClients">Visualizza Clienti</a></li>
-          <li><a href="/MobileSolutions/Admin?page=remainingPhones.jsp">Esaurimento Cellulari</a></li>
-          <li><a href="/MobileSolutions/Admin?page=importXml.jsp">Importa XML esterno</a></li>
+          <li><a href="/MobileSolutions/AdminDashboard?page=remainingPhones.jsp">Esaurimento Cellulari</a></li>
+          <li><a href="/MobileSolutions/AdminDashboard?page=importXml.jsp">Importa XML esterno</a></li>
           <li><a href="/MobileSolutions/AllPhones">Gestione Smartphone</a></li>
           <li>
             <form action="logout_gestore">

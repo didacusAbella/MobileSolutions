@@ -1,7 +1,12 @@
 package com.didacusabella.mobilesolutions.admin;
 
+import com.didacusabella.mobilesolutions.entities.Smartphone;
+import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +31,9 @@ public class Admin extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    this.getServletContext().getRequestDispatcher("/admin_resources/adminDashboard.jsp").forward(request, response);
+      String page = (request.getParameter("page") != null) ? request.getParameter("page") : "clients.jsp";
+      request.setAttribute("partial", page);
+      this.getServletContext().getRequestDispatcher("/admin_resources/adminDashboard.jsp").forward(request, response);
   }
 
   /**

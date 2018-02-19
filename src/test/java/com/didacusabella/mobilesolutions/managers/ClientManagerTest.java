@@ -5,6 +5,7 @@
  */
 package com.didacusabella.mobilesolutions.managers;
 
+import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.client.ClientManager;
 import com.didacusabella.mobilesolutions.entities.Client;
 import java.sql.SQLException;
@@ -65,7 +66,7 @@ public class ClientManagerTest {
    * Test of insertClient method, of class ClientManager.
    */
   @Test
-  public void testInsertClient() {
+  public void testInsertClient() throws UsernameAlreadyExistException {
      Client client = new Client("Diego", "Avella", "VLLDGI93A08C361G", "Via Starza 10", 
             "84013", "Cava de\' Tirreni", "SA", "089341367", "3315807943", "089348956", 
             "didacusabella", "delucia", "diego_avella@libero.it");

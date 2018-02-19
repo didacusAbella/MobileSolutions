@@ -3,16 +3,13 @@ package com.didacusabella.mobilesolutions.smartphone;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
-import javax.jws.WebService;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import com.didacusabella.mobilesolutions.admin.AdminManager;
-import com.didacusabella.mobilesolutions.beans.*;
 import com.didacusabella.mobilesolutions.database.BeanValidator;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
-import com.didacusabella.mobilesolutions.gestioneDB.*;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import org.apache.commons.beanutils.BeanUtils;
 

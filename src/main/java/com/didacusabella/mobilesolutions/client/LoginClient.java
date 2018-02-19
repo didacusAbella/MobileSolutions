@@ -1,6 +1,5 @@
 package com.didacusabella.mobilesolutions.client;
 
-import com.didacusabella.mobilesolutions.entities.Booking;
 import com.didacusabella.mobilesolutions.entities.Client;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 @WebServlet(name = "LoginClient", urlPatterns = {"/LoginClient"})
 public class LoginClient extends HttpServlet {
@@ -27,8 +25,6 @@ public class LoginClient extends HttpServlet {
                 Client client = manager.getClient(username);
                 HttpSession session = request.getSession(true);
                 session.setAttribute("user", client);
-                ArrayList<Booking> cart = new ArrayList();
-                session.setAttribute("cart", cart);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
                 dispatcher.forward(request, response);
             } else {

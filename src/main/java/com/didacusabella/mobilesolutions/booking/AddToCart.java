@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -18,20 +19,22 @@ import java.util.ArrayList;
 public class AddToCart extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Client client = (Client) request.getAttribute("username");
+        BookingManager bookingManager = null;
+        try {
+            bookingManager = BookingManager.getInstance();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         if (client == null) {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/errore.jsp");
             dispatcher.forward(request, response);
         } else {
-            ArrayList<Booking> cart = new ArrayList<>();
-            HttpSession session = request.getSession(true);
-            cart = (ArrayList<Booking>) session.getAttribute("Cart");
             Booking newBooking = new Booking();
-            newBooking.setProduct((Integer) request.getAttribute("idProduct"));
+            newBooking.setProductID((Integer) request.getAttribute("idProduct"));
             newBooking.setUsername((Integer) request.getAttribute("idUser"));
             newBooking.setDate(new Timestamp(System.currentTimeMillis()));
             newBooking.setQuantity((Integer) request.getAttribute("quantity"));
-            cart.add(newBooking);
-            session.setAttribute("Cart", cart);
+            bookingManager.addBooking(newBooking);
 
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ok.jsp");
             dispatcher.forward(request, response);

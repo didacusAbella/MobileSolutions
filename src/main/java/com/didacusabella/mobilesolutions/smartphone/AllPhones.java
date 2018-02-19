@@ -1,8 +1,13 @@
-package com.didacusabella.mobilesolutions.admin;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.didacusabella.mobilesolutions.smartphone;
 
 import com.didacusabella.mobilesolutions.entities.Smartphone;
-import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -17,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author diego
  */
-@WebServlet(name = "Admin", urlPatterns = {"/Admin"})
-public class Admin extends HttpServlet {
+@WebServlet(name = "AllPhones", urlPatterns = {"/AllPhones"})
+public class AllPhones extends HttpServlet {
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -31,9 +36,14 @@ public class Admin extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-      String page = (request.getParameter("page") != null) ? request.getParameter("page") : "clients.jsp";
-      request.setAttribute("partial", page);
-      this.getServletContext().getRequestDispatcher("/admin_resources/adminDashboard.jsp").forward(request, response);
+    try {
+      List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
+      request.setAttribute("phones", phones);
+      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=managePhones.jsp").forward(request, response);
+    } catch (SQLException ex) {
+      Logger.getLogger(AllPhones.class.getName()).log(Level.SEVERE, null, ex);
+    }
+   
   }
 
   /**
@@ -57,7 +67,7 @@ public class Admin extends HttpServlet {
    */
   @Override
   public String getServletInfo() {
-    return "Admin dashboard";
-  }
+    return "Short description";
+  }// </editor-fold>
 
 }

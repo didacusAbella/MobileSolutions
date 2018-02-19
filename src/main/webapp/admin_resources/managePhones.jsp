@@ -7,22 +7,26 @@
   <c:otherwise>
     <div class="grid-container fluid">
       <h2>Lista Modelli</h2>
+      <a href="inserimento.jsp" class="button">Aggiungi Telefono</a>
       <div class="grid-x">
         <div class="cell">
           <table class="stack">
             <thead>
               <tr>
                 <th>Modello</th>
+                <th>Modifica</th>
                 <th>Elimina</th>
               </tr>
             </thead>
             <tbody>
-              <c:forEach items="${phones}" var="phone_model">
+              <c:forEach items="${phones}" var="phone">
                 <tr>
-                  <td>${phone_model}</td>
+                  <td>${phone.model}</td>
+                  <td><a class="button" href="/MobileSolutions/EditPhone?id=${phone.id}">Modifica ${phone.model}</a></td>
                   <td>
-                    <form action="cancellaCell">
-                      <input type="submit" class="button" value="Elimina ${phone_model}"/>
+                    <form>
+                      <input type="hidden" value="${phone.id}" name="id"/>
+                      <input type="sumbit" class="button" value="Elimina ${phone.model}"/>
                     </form>
                   </td>
                 </tr>

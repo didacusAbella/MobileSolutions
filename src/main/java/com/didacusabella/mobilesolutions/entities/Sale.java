@@ -4,97 +4,101 @@ package com.didacusabella.mobilesolutions.entities;
 import java.sql.Timestamp;
 
 /**
- *
  * @author diego
  * Entity that maps <i>sale</i>
  */
 public class Sale {
-  
-  private int product, username, quantity, shipmentType, paymentType;
-  private Timestamp date;
-  private double price;
 
-  public Sale() {
-    super();
-  }
-  
-  
+    private int product, username, quantity, shipmentType, paymentType;
+    private Timestamp date;
+    private double price;
 
-  public Sale(int product, int username, int quantity, int shipmentType, 
-          int paymentType, Timestamp date, double price) {
-    this.product = product;
-    this.username = username;
-    this.quantity = quantity;
-    this.shipmentType = shipmentType;
-    this.paymentType = paymentType;
-    this.date = date;
-    this.price = price;
-  }
+    public Sale() {
+        super();
+    }
 
-  public int getProduct() {
-    return product;
-  }
 
-  public void setProduct(int product) {
-    this.product = product;
-  }
+    public Sale(int product, int username, int quantity, int shipmentType,
+                int paymentType, Timestamp date, double price) {
+        this.product = product;
+        this.username = username;
+        this.quantity = quantity;
+        this.shipmentType = shipmentType;
+        this.paymentType = paymentType;
+        this.date = date;
+        this.price = price;
+    }
 
-  public int getUsername() {
-    return username;
-  }
+    public int getProduct() {
+        return product;
+    }
 
-  public void setUsername(int username) {
-    this.username = username;
-  }
+    public void setProduct(int product) {
+        this.product = product;
+    }
 
-  public int getQuantity() {
-    return quantity;
-  }
+    public int getUsername() {
+        return username;
+    }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
+    public void setUsername(int username) {
+        this.username = username;
+    }
 
-  public int getShipmentType() {
-    return shipmentType;
-  }
+    public int getQuantity() {
+        return quantity;
+    }
 
-  public void setShipmentType(int shipmentType) {
-    this.shipmentType = shipmentType;
-  }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-  public int getPaymentType() {
-    return paymentType;
-  }
+    public int getShipmentType() {
+        return shipmentType;
+    }
 
-  public void setPaymentType(int paymentType) {
-    this.paymentType = paymentType;
-  }
+    public void setShipmentType(int shipmentType) {
+        this.shipmentType = shipmentType;
+    }
 
-  public Timestamp getDate() {
-    return date;
-  }
+    public int getPaymentType() {
+        return paymentType;
+    }
 
-  public void setDate(Timestamp date) {
-    this.date = date;
-  }
+    public void setPaymentType(int paymentType) {
+        this.paymentType = paymentType;
+    }
 
-  public double getPrice() {
-    return price;
-  }
+    public Timestamp getDate() {
+        return date;
+    }
 
-  public void setPrice(double price) {
-    this.price = price;
-  }
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
 
-  @Override
-  public String toString() {
-    return "Sale{" + "product=" + product + ", username=" + username +
-            ", quantity=" + quantity + ", shipmentType=" + shipmentType + 
-            ", paymentType=" + paymentType + ", date=" + date + ", price=" +
-            price + '}';
-  }
-  
-  
-  
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void injectBooking(Booking booking) {
+        this.username = booking.getUsername();
+        this.product = booking.getProductID();
+        this.quantity = booking.getQuantity();
+
+    }
+
+    @Override
+    public String toString() {
+        return "Sale{" + "product=" + product + ", username=" + username +
+                ", quantity=" + quantity + ", shipmentType=" + shipmentType +
+                ", paymentType=" + paymentType + ", date=" + date + ", price=" +
+                price + '}';
+    }
+
+
 }

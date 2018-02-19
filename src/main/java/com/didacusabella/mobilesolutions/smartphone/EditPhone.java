@@ -1,5 +1,6 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -27,7 +28,14 @@ public class EditPhone extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    doPost(request, response);
+    try {
+      int id = Integer.parseInt(request.getParameter("id"));
+      Smartphone smartphone = SmartphoneManager.getInstance().getSmartphoneByID(id);
+      request.setAttribute("phone", smartphone);
+      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=editPhone.jsp").forward(request, response);
+    } catch (SQLException ex) {
+      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+    }
   }
 
   /**
@@ -44,10 +52,10 @@ public class EditPhone extends HttpServlet {
     try {
       //TODO Map parameter with apache commons mapper and add validator
       if(SmartphoneManager.getInstance().editSmartphone(null)){
-        this.getServletContext().getRequestDispatcher("/admin_resources/modificaCell.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
       }else{
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("/admin_resources/modificaCaratt.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
       }
     } catch (SQLException ex) {
       Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);

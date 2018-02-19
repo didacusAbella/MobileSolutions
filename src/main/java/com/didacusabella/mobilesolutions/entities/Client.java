@@ -12,14 +12,31 @@ public class Client {
     private int id;
     @NotNull
     @Size(min = 4, max = 45)
-    private String name, lastName, address, cap, city,
-            mobilePhone, username, password, email;
-    private String telPhone, fax;
+    private String name, lastName;
+    @NotNull
+    @Size(min = 4, max = 100)
+    private String address;
+    @NotNull
+    @Size(min = 4, max = 100)
+    private String city;
+    private String cap;
+    @NotNull
+    @Size(min = 4, max = 25)
+    private String email;
+    @NotNull
+    @Size(min = 4, max = 14)
+    private String telPhone, fax, mobilePhone;
     @NotNull
     private String taxCode;
     @NotNull
-    @Size(min = 1, max = 3)
+    @Size(min = 1, max = 4)
     private String province;
+    @NotNull
+    @Size(min = 2, max = 16)
+    private String username;
+    @NotNull
+    @Size(min = 4, max = 65)
+    private String password;
 
     public Client() {
         super();

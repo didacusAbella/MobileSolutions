@@ -4,73 +4,74 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- *
  * @author diego
  * Entity mapping of <i>admin</i> table
  */
 public class Admin {
-  @NotNull
-  private int id;
-  @Size(min = 4, max = 20)
-  private String username, lastName, firstName, password;
+    @NotNull
+    private int id;
+    @Size(min = 4, max = 20)
+    private String username, lastName, firstName;
+    @NotNull
+    @Size(min = 4, max = 65)
+    private String password;
 
-  public Admin() {
-    super();
-  }
-  
-  public Admin(int id, String username, String lastName, String firstName, String password) {
-    this.id = id;
-    this.username = username;
-    this.lastName = lastName;
-    this.firstName = firstName;
-    this.password = password;
-  }
+    public Admin() {
+        super();
+    }
 
-  public int getId() {
-    return id;
-  }
+    public Admin(int id, String username, String lastName, String firstName, String password) {
+        this.id = id;
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.password = password;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public String getUsername() {
-    return username;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public String getUsername() {
+        return username;
+    }
 
-  public String getLastName() {
-    return lastName;
-  }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public String getFirstName() {
-    return firstName;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+    public String getFirstName() {
+        return firstName;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public String getPassword() {
+        return password;
+    }
 
-  @Override
-  public String toString() {
-    return "Admin{" + "id=" + id + ", username=" + username + ", lastName=" + lastName + ", firstName=" + firstName + ", password=" + password + '}';
-  }
-  
-  
-  
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "AdminDashboard{" + "id=" + id + ", username=" + username + ", lastName=" + lastName + ", firstName=" + firstName + ", password=" + password + '}';
+    }
+
+
 }

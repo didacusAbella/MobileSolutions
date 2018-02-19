@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author diego
  */
-@WebServlet(name = "Admin", urlPatterns = {"/Admin"})
-public class Admin extends HttpServlet {
+@WebServlet(name = "AdminDashboard", urlPatterns = {"/AdminDashboard"})
+public class AdminDashboard extends HttpServlet {
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -50,7 +50,7 @@ public class Admin extends HttpServlet {
    */
   @Override
   public String getServletInfo() {
-    return "Admin dashboard";
+    return "AdminDashboard dashboard";
   }
 
 }

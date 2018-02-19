@@ -12,17 +12,18 @@
                     <div class="large-6 medium-6 small-12 cell">
                         <label>Nome
                             <input type="text" name="name" placeholder="Inserisci Nome" required="true"
-                                   pattern="[a-zA-Z0-9\s]+"/>
+                                   pattern="[a-zA-Z0-9\s]+" minlength="2" maxlength="40"/>
                             <span class="form-error">Il campo nome deve contenere solo lettere</span>
                         </label>
                         <label>Codice Fiscale
-                            <input type="text" name="taxCode" placeholder="Inserisci Codice Fiscale" required="true"
+                            <input type="text" name="taxCode" placeholder="Inserisci Codice Fiscale" minlength="2"
+                                   maxlength="16" required="true"
                                    pattern="alpha_numeric"/>
                             <span class="form-error">Il campo codice fiscale deve caratteri alfanumerici</span>
                         </label>
                         <label>Indirizzo
                             <input type="text" name="address" placeholder="Indirizzo" pattern="[a-zA-Z0-9\s]+"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="40"/>
                             <span class="form-error">Il campo indirizzo deve contenere solo lettere</span>
                         </label>
                         <label>Provincia
@@ -138,17 +139,17 @@
                         </label>
                         <label>Telefono-Cellulare
                             <input type="text" name="mobilePhone" placeholder="Telefono Cellulare" pattern="integer"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="14"/>
                             <span class="form-error">Il campo telefono deve contenere solo numeri</span>
                         </label>
                         <label>Username
                             <input type="text" name="username" placeholder="Username" pattern="alpha_numeric"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="16"/>
                             <span class="form-error">Il username deve contenere solo lettere o numeri</span>
                         </label>
                         <label>Città
                             <input type="text" name="city" placeholder="Inserisci città" required="true" pattern="alpha"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="100"/>
                             <span class="form-error">Il campo password deve contenere solo lettere</span>
                         </label>
                     </div>
@@ -160,27 +161,27 @@
                         </label>
                         <label>Cap
                             <input type="text" name="cap" placeholder="Inserisci CAP" pattern="integer"
-                                   required="true"/>
+                                   required="true" minlength="4" maxlength="45"/>
                             <span class="form-error">Il campo CAP deve contenere solo numeri</span>
                         </label>
                         <label>Telefono-Casa
                             <input type="text" name="telPhone" placeholder="Inserisci Telefono" pattern="integer"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="14"/>
                             <span class="form-error">Il campo telefono deve contenere solo numeri</span>
                         </label>
                         <label>Fax
                             <input type="text" name="fax" placeholder="Inserisci Fax" pattern="integer"
-                                   required="true"/>
+                                   required="true" minlength="2" maxlength="14"/>
                             <span class="form-error">Il campo fax deve contenere solo numeri</span>
                         </label>
                         <label>Password
                             <input type="password" name="password" placeholder="Inserisci Password"
-                                   pattern="alpha_numeric" required="true"/>
+                                   pattern="alpha_numeric" required="true" minlength="2" maxlength="20"/>
                             <span class="form-error">Il campo password deve essere composto da lettere e numeri</span>
                         </label>
                         <label>Email
                             <input name="email" type="text" placeholder="Inserisci Email" pattern="email"
-                                   required="true"/>
+                                   required="true" minlength="4" maxlength="25"/>
                             <span class="form-error">Il campo email non è valido</span>
                         </label>
                     </div>

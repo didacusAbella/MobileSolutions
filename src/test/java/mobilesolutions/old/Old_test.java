@@ -122,7 +122,7 @@ public class Old_test {
         WebElement form3 = driver.findElement(By.cssSelector("form[action='insertCarrello']"));
         form3.submit();
         Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
-        driver.get("http://localhost:8080/MobileSolutions/carrello.jsp");
+        driver.get("http://localhost:8080/MobileSolutions/cart.jsp");
         //new stuff
         WebElement form4 = driver.findElement(By.cssSelector("form[action='acquistaCarrello']"));
         form4.submit();

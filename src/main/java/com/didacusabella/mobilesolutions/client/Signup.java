@@ -50,12 +50,13 @@ public class Signup extends HttpServlet {
             ClientManager clientManager = ClientManager.getInstance();
             Client newClient = new Client();
             BeanUtils.populate(newClient, request.getParameterMap());
+            newClient.setPassword(org.apache.commons.codec.digest.DigestUtils.sha256Hex(newClient.getPassword()));
             if (BeanValidator.<Client>validateBean(newClient))
-                if (ClientManager.getInstance().insertClient(null)) {
-                    this.getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
+                if (clientManager.insertClient(newClient)) {
+                    this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
                 } else {
                     response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                    this.getServletContext().getRequestDispatcher("signup.jsp").forward(request, response);
+                    this.getServletContext().getRequestDispatcher("/signup.jsp").forward(request, response);
                 }
         } catch (SQLException ex) {
             Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);

@@ -14,7 +14,7 @@
       <li>
         <a href="signin.jsp">Account</a>
         <ul class="menu vertical">
-          <li><a href="carrello.jsp">Visualizza Carrello</a></li>
+          <li><a href="cart.jsp">Visualizza Carrello</a></li>
           <li><a href="acquisti.jsp">Visualizza Acquisti</a></li>
           <li><a href="editProfile.jsp">Modifica Profilo</a></li>
           <li>

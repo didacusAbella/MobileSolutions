@@ -1,6 +1,11 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Search", urlPatterns = {"/Search"})
 public class Search extends HttpServlet {
   
+  private static Logger searchLogger = Logger.getLogger(Search.class.getName());
+  
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -25,13 +32,13 @@ public class Search extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    String model = request.getParameter("model");
-    //TODO missing simple search method and validation
-    if(true){
-      this.getServletContext().getRequestDispatcher("visualizzaCellulare").forward(request, response);
-    }else {
-      response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-      this.getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
+    try {
+      String brand = request.getParameter("brand");
+      List<Smartphone> smartphones = SmartphoneManager.getInstance().search(brand);
+      request.setAttribute("phones", smartphones);
+      this.getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
+    } catch (SQLException ex) {
+      searchLogger.log(Level.SEVERE, null, ex);
     }
   }
 

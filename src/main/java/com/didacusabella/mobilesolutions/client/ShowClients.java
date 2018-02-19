@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ShowClients", urlPatterns = {"/ShowClients"})
 public class ShowClients extends HttpServlet {
+  
+  private static Logger showClientsLogger = Logger.getLogger(ShowClients.class.getName());
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -32,10 +34,11 @@ public class ShowClients extends HttpServlet {
           throws ServletException, IOException {
     try {
       List<Client> clients = ClientManager.getInstance().getAllClients();
+      request.setAttribute("partial", "clients.jsp");
       request.setAttribute("clients", clients);
-      this.getServletContext().getRequestDispatcher("admin_resources/clienti.jsp").forward(request, response);
+      this.getServletContext().getRequestDispatcher("/admin_resources/adminDashboard.jsp").forward(request, response);
     } catch (SQLException ex) {
-      Logger.getLogger(ShowClients.class.getName()).log(Level.SEVERE, null, ex);
+      showClientsLogger.log(Level.SEVERE, null, ex);
     }
   }
 
@@ -60,7 +63,7 @@ public class ShowClients extends HttpServlet {
    */
   @Override
   public String getServletInfo() {
-    return "Short description";
+    return "Get all clients";
   }// </editor-fold>
 
 }

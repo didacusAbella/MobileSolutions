@@ -10,13 +10,15 @@ import javax.validation.ValidatorFactory;
  *
  * @author diego
  */
-public class BeanValidator<T> {
+public class BeanValidator {
   
   private static Validator validator;
   
   /**
    *
+   * @param <T> the bean class to validate
    * @param bean the bean to validate
+   * @return true if the validations goes ok
    */
    public static <T> boolean validateBean(T bean){
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();

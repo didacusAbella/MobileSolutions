@@ -39,4 +39,6 @@ public interface SmartphoneDAO {
     
     List<Smartphone> advancedSearch(Map<String, String[]> criterias);
 
+    boolean importXML(String pathToXML);
+
 }

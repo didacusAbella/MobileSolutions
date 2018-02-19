@@ -1,10 +1,10 @@
-<form name="scortaMinima" action="scortaMinima" method="get">
+<form name="remainingPhones" action="RemainingPhones" method="get">
   <div class="grid-container">
     <div class="grid-x">
       <div class="cell">
         <em>Inserisci la scorta minima</em>
         <label>Scorta Minima
-          <select name="scorta">
+          <select name="quantity">
             <option selected>1</option>
             <option>2</option>
             <option>3</option>

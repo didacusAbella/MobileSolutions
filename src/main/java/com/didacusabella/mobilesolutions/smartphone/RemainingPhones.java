@@ -35,8 +35,8 @@ public class RemainingPhones extends HttpServlet {
     try {
       int quantity = Integer.parseInt(request.getParameter("quantity"));
       List<Smartphone> smartphones = SmartphoneManager.getInstance().getSmartphoneOUT(quantity);
-      request.setAttribute("smartphones", smartphones);
-      this.getServletContext().getRequestDispatcher("/listaEsaurimento.jsp").forward(request, response);
+      request.setAttribute("phones", smartphones);
+      this.getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
     } catch (SQLException ex) {
       remainingLogger.log(Level.SEVERE, null, ex);
     }

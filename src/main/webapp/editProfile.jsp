@@ -5,6 +5,7 @@
   <jsp:body>
     <div class="grid-container">
     <div class="grid-x">
+      <h3>Aggiorna il tuo profilo</h3>
       <div class="cell">
         <form name="editProfile" action="" method="post">
           <label>Nome:
@@ -40,6 +41,10 @@
           <label>
             <input type="submit" class="button" value="Aggiorna Profilo"/>
           </label>
+          <form method="post" action="">
+            <input type="hidden" name="id" value="${user.id}" readonly="true"/>
+            <input type="sumbit" class="button" value="Rimuovi Account"/>
+          </form>
         </form>
       </div>
     </div>

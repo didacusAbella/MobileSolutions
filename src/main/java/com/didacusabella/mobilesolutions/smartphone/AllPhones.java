@@ -1,8 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.didacusabella.mobilesolutions.smartphone;
 
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -15,8 +22,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author diego
  */
-@WebServlet(name = "EditPhone", urlPatterns = {"/EditPhone"})
-public class EditPhone extends HttpServlet {
+@WebServlet(name = "AllPhones", urlPatterns = {"/AllPhones"})
+public class AllPhones extends HttpServlet {
+
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -29,13 +37,13 @@ public class EditPhone extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      int id = Integer.parseInt(request.getParameter("id"));
-      Smartphone smartphone = SmartphoneManager.getInstance().getSmartphoneByID(id);
-      request.setAttribute("phone", smartphone);
-      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=editPhone.jsp").forward(request, response);
+      List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
+      request.setAttribute("phones", phones);
+      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=managePhones.jsp").forward(request, response);
     } catch (SQLException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(AllPhones.class.getName()).log(Level.SEVERE, null, ex);
     }
+   
   }
 
   /**
@@ -49,17 +57,7 @@ public class EditPhone extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    try {
-      //TODO Map parameter with apache commons mapper and add validator
-      if(SmartphoneManager.getInstance().editSmartphone(null)){
-        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
-      }else{
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    doGet(request, response);
   }
 
   /**
@@ -69,7 +67,7 @@ public class EditPhone extends HttpServlet {
    */
   @Override
   public String getServletInfo() {
-    return "Edit a smartphone";
-  }
+    return "Short description";
+  }// </editor-fold>
 
 }

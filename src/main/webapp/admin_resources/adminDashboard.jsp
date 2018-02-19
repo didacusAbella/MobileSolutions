@@ -12,13 +12,10 @@
     <div class="off-canvas-wrapper">
       <div class="off-canvas position-left" id="offcanvas" data-off-canvas>
         <ul class="vertical menu">
-          <li><a href="/MobileSolutions/Admin?page=inserimento.jsp">Inserisci Cellulare</a></li>
-          <li><a href="/MobileSolutions/Admin?page=modificaCell.jsp">Modifica Cellulare</a></li>
-          <li><a href="/MobileSolutions/Admin?page=cancellaCell.jsp">Cancella Cellulare</a> </li>
           <li><a href="/MobileSolutions/ShowClients">Visualizza Clienti</a></li>
-          <li><a href="/MobileSolutions/Admin?page=esaurimento.jsp">Esaurimento Cellulari</a></li>
-          <li><a href="/MobileSolutions/Admin?page=importazione.jsp">Importa XML esterno</a></li>
-          <li><a href="/MobileSolutions/Admin?page=managePhones.jsp">Gestione Smartphone</a></li>
+          <li><a href="/MobileSolutions/Admin?page=remainingPhones.jsp">Esaurimento Cellulari</a></li>
+          <li><a href="/MobileSolutions/Admin?page=importXml.jsp">Importa XML esterno</a></li>
+          <li><a href="/MobileSolutions/AllPhones">Gestione Smartphone</a></li>
           <li>
             <form action="logout_gestore">
               <input type="submit" class="button" value="LOGOUT"/>

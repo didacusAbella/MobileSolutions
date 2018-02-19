@@ -10,3 +10,4 @@ nb-configuration.xml
 \.idea/
 
 MobileSolutions\.iml
+/nbactions.xml

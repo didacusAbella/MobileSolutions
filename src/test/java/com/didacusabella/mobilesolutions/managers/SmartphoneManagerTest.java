@@ -11,7 +11,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.eq;
 
 /**
  * @author Domenico Antonio Tropeano on 15/02/2018 at 16:35
@@ -45,7 +44,6 @@ public class SmartphoneManagerTest {
         smartphone.setOs("Android");
         smartphone.setCpu("Snapdragon 4.5Ghz");
         smartphone.setRam(4);
-        smartphone.setInternalStorage(32);
         smartphone.setBluetooth(true);
         smartphone.setLte(true);
         smartphone.setCamera(12);

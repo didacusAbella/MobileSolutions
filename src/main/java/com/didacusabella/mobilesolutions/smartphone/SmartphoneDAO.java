@@ -4,6 +4,7 @@ package com.didacusabella.mobilesolutions.smartphone;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Domenico Antonio Tropeano on 15/02/2018 at 11:51
@@ -33,6 +34,10 @@ public interface SmartphoneDAO {
     boolean deleteSmartphone(int id);
 
     boolean editSmartphone(Smartphone sm);
+    
+    List<Smartphone> search(String brand);
+    
+    List<Smartphone> advancedSearch(Map<String, String[]> criterias);
 
     boolean importXML(String pathToXML);
 

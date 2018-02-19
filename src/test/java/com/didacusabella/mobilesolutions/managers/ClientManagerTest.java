@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.didacusabella.mobilesolutions.managers;
 
 import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
@@ -42,8 +37,19 @@ public class ClientManagerTest {
      */
     @Test
     public void testMapRow() throws Exception {
-
+      
     }
+
+  /**
+   * Test of insertClient method, of class ClientManager.
+   */
+  @Test
+  public void testInsertClient() throws UsernameAlreadyExistException {
+     Client client = new Client("Diego", "Avella", "VLLDGI93A08C361G", "Via Starza 10", 
+            "84013", "Cava de\' Tirreni", "SA", "089341367", "3315807943", "089348956", 
+            "didacusabella", "delucia", "diego_avella@libero.it");
+     assertTrue(this.manager.insertClient(client));
+  }
 
     /**
      * Test of getClient method, of class ClientManager.
@@ -64,20 +70,6 @@ public class ClientManagerTest {
         assertEquals(2, result.size());
     }
 
-    /**
-     * Test of insertClient method, of class ClientManager.
-     */
-    @Test
-    public void testInsertClient() {
-        Client client = new Client("Diego", "Avella", "VLLDGI93A08C361G", "Via Starza 10",
-                "84013", "Cava de\' Tirreni", "SA", "089341367", "3315807943", "089348956",
-                "didacusabella", "delucia", "diego_avella@libero.it");
-        try {
-            assertTrue(this.manager.insertClient(client));
-        } catch (UsernameAlreadyExistException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Test of deleteClient method, of class ClientManager.

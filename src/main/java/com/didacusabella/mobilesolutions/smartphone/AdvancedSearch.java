@@ -1,6 +1,11 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "AdvancedSearch", urlPatterns = {"/AdvancedSearch"})
 public class AdvancedSearch extends HttpServlet {
 
-
-  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+  private static Logger advacedSearchLogger = Logger.getLogger(AdvancedSearch.class.getName());
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -27,12 +31,12 @@ public class AdvancedSearch extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    //TODO missing search method and request mapping and validation
-    if(true){
+    try {
+      List<Smartphone> smartphones = SmartphoneManager.getInstance().advancedSearch(request.getParameterMap());
+      request.setAttribute("smartphones", smartphones);
       this.getServletContext().getRequestDispatcher("visCellAvanzata.jsp").forward(request, response);
-    }else {
-      response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-      this.getServletContext().getRequestDispatcher("advancedSearch.jsp").forward(request, response);
+    } catch (SQLException ex) {
+      advacedSearchLogger.log(Level.SEVERE, null, ex);
     }
   }
 

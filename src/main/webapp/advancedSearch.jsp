@@ -3,7 +3,7 @@
 
 <ms:layout title="Ricerca Avanzata">
   <jsp:body>
-    <form name="ricerca" action="ricercaAvanzata" method="get" novalidate="true" data-abide>
+    <form name="advancedSearch" action="" method="get" novalidate="true" data-abide>
        <div data-abide-error class="alert callout" style="display: none;">
          <p><i class="fi-alert"></i>La compilazione del form ha degli errori</p>
        </div>
@@ -18,9 +18,9 @@
                 <option>IOS</option>
               </select>
             </label>
-            <label>Prezzo Massimo
-              <input type="number" name="price" placeholder="Inserisci Prezzo Massimo" pattern="number"/>
-              <span class="form-error">nel prezzo devono esserci solo numeri</span>
+            <label>Display
+              <input type="number" name="displayInch" placeholder="Display in pollici" pattern="integer"/>
+              <span class="form-error">nel campo display devono esserci solo numeri</span>
             </label>
             <label>Memoria Interna
               <input type="number" name="internalStorage" placeholder="Memoria Interna" pattern="integer"/>

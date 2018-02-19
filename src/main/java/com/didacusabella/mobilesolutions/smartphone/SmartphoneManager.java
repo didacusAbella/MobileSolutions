@@ -7,6 +7,8 @@ import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.StringJoiner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -182,6 +184,43 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         returnSmartphone.setQuantity(rs.getInt("quantity"));
         return returnSmartphone;
     }
+    
+  @Override
+  public List<Smartphone> search(String brand) {
+      try {
+        List<Smartphone> smartphones = new ArrayList<>();
+        PreparedStatement ps = this.dbConnection.prepareStatement(QUERY_SEARCH_SMARTPHONE);
+        ps.setString(1, brand);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+          smartphones.add(mapRow(rs));
+        }
+        return smartphones;
+      } catch (SQLException ex) {
+        smartphoneManagerLogger.log(Level.SEVERE, null, ex);
+      }
+    return null;
+  }
+
+  @Override
+  public List<Smartphone> advancedSearch(Map<String, String[]> criterias) {
+      try {
+        StringJoiner queryBuilder = new StringJoiner(" AND ", "SELECT * FROM mobilesolutions.smartphone WHERE ", ";");
+        criterias.forEach((param, value) -> {
+          queryBuilder.add(param.concat("=").concat(value[0]));
+        });
+        PreparedStatement ps = this.dbConnection.prepareStatement(queryBuilder.toString());
+        List<Smartphone> smartphones = new ArrayList<>();
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+          smartphones.add(mapRow(rs));
+        }
+        return smartphones;
+      } catch (SQLException ex) {
+        smartphoneManagerLogger.log(Level.SEVERE, null, ex);
+      }
+      return null;
+  }
 
     private static final String QUERY_GET_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone WHERE id=?";
     private static final String QUERY_ADD_SMARTPHONE = "INSERT INTO `mobilesolutions`.`smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -191,6 +230,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
     private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE mobilesolutions.smartphone SET brand=?,model=?," +
             "displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?," +
             "LTE=?,camera=?,price=?,quantity=? WHERE id=?;";
+    private static final String QUERY_SEARCH_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone WHERE brand=?;";
     private static final String QUERY_IMPORT_DATA = "LOAD XML LOCAL INFILE ? " +
             " INTO TABLE smartphone " +
             " ROWS IDENTIFIED BY '<ROW>';";

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-@WebServlet("/AddToCart")
+@WebServlet(name = "AddToCart", urlPatterns = {"/AddToCart"})
 public class AddToCart extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Client client = (Client) request.getAttribute("username");

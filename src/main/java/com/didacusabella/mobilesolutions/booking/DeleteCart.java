@@ -1,6 +1,5 @@
 package com.didacusabella.mobilesolutions.booking;
 
-import com.didacusabella.mobilesolutions.booking.BookingManager;
 import com.didacusabella.mobilesolutions.entities.Booking;
 import com.didacusabella.mobilesolutions.entities.Client;
 

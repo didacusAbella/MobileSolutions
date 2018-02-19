@@ -1,4 +1,4 @@
-package com.didacusabella.mobilesolutions.servlet;
+package com.didacusabella.mobilesolutions.client;
 
 import com.didacusabella.mobilesolutions.client.ClientManager;
 import com.didacusabella.mobilesolutions.entities.Client;

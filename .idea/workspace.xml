@@ -10,19 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2de3a2ff-dcc9-4834-bf89-1a88af5dedd2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/DeleteAccount.java" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/MobileSolutions_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MobileSolutions_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" afterPath="" />
       <change beforePath="$PROJECT_DIR$/MobileSolutions.iml" afterPath="$PROJECT_DIR$/MobileSolutions.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/Signup.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/Signup.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/CancellaCliente.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Importazione.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/InserisciCarrello.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/AddToCart.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/RimuoviCarrello.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/deleteCart.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/UsernameAlreadyExistException.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/customException/UsernameAlreadyExistException.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/AddToCart.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/AddToCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/CancellaCell.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/DeleteAccount.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/DeleteAccount.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/DeleteAccount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Esaurimento.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportXML.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ModificaCell.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Registrazione.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Ricerca.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/RicercaAvanzata.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/deleteCart.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/deleteCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/DeleteCart.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/didacusabella/mobilesolutions/managers/ClientManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/didacusabella/mobilesolutions/managers/ClientManagerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,45 +64,11 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="TestDB" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="TestDB" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="TestDB" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mobilesolutions: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ImportXML.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,11 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/adminManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/adminManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/AdminDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/SmartphoneDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/SmartphoneManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/database/AdminManager.java" />
@@ -167,6 +145,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportXML.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/DeleteAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/customException/UsernameAlreadyExistException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/customException/UsernameAlreadyExistException.java" />
       </list>
     </option>
   </component>
@@ -210,7 +193,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,114 +233,6 @@
               <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="gestioneDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="sale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="shipment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mobilesolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="smartphone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -382,6 +258,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
@@ -435,11 +320,15 @@
               <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches">
         <subPane>
           <expand>
@@ -469,7 +358,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,6 +371,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.didacusabella.mobilesolutions" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -821,6 +710,7 @@
       <workItem from="1518796501706" duration="1980000" />
       <workItem from="1518855539921" duration="17117000" />
       <workItem from="1518947301806" duration="19335000" />
+      <workItem from="1519029451096" duration="1781000" />
     </task>
     <servers />
   </component>
@@ -857,7 +747,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109488000" />
+    <option name="totallyTimeSpent" value="111269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -876,7 +766,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40446928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -884,18 +773,19 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46961325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -963,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,10 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-          <folding>
-            <marker date="1518884695942" expanded="true" signature="2246:2292" ph="SELECT t FRO... admin" />
-            <marker date="1518884695942" expanded="true" signature="2358:2410" ph="SELECT * FRO... admin" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,30 +986,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/UsernameAlreadyExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding>
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#293#294#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2031">
           <caret line="205" column="14" lean-forward="false" selection-start-line="205" selection-start-column="14" selection-end-line="205" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1518962603212" expanded="true" signature="936:990" ph="SELECT id FR... client" />
-            <marker date="1518962603212" expanded="true" signature="1042:1290" ph="INSERT INTO mobilesolutions.client... " />
-            <marker date="1518962603212" expanded="true" signature="1344:1561" ph="UPDATE mobilesolutions.client... " />
-            <marker date="1518962603212" expanded="true" signature="1614:1650" ph="SELECT * FRO... client" />
-            <marker date="1518962603212" expanded="true" signature="1703:1748" ph="DELETE FROM mobilesolutions.client... " />
-            <marker date="1518962603212" expanded="true" signature="1799:1846" ph="SELECT * FRO... client" />
-            <marker date="1518962603212" expanded="true" signature="1898:1983" ph="SELECT * FRO... client" />
+            <marker date="1519032484664" expanded="true" signature="952:1006" ph="SELECT id FR... client" />
+            <marker date="1519032484664" expanded="true" signature="1058:1306" ph="INSERT INTO mobilesolutions.client... " />
+            <marker date="1519032484664" expanded="true" signature="1360:1577" ph="UPDATE mobilesolutions.client... " />
+            <marker date="1519032484664" expanded="true" signature="1630:1666" ph="SELECT * FRO... client" />
+            <marker date="1519032484664" expanded="true" signature="1719:1764" ph="DELETE FROM mobilesolutions.client... " />
+            <marker date="1519032484664" expanded="true" signature="1815:1862" ph="SELECT * FRO... client" />
+            <marker date="1519032484664" expanded="true" signature="1914:1999" ph="SELECT * FRO... client" />
           </folding>
         </state>
       </provider>
@@ -1137,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,9 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1195,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,10 +1064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="27" column="61" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1206#1214#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,10 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1924#1932#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,26 +1107,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/AddToCart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="108" column="17" lean-forward="false" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
-          <folding>
-            <marker date="1518695085705" expanded="true" signature="817:871" ph="SELECT * FRO... booking" />
-            <marker date="1518695085705" expanded="true" signature="923:1033" ph="INSERT INTO mobilesolutions.booking... " />
-            <marker date="1518695085705" expanded="true" signature="1085:1151" ph="DELETE FROM mobilesolutions.booking... " />
-            <marker date="1518695085705" expanded="true" signature="1202:1254" ph="DELETE FROM mobilesolutions.booking... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1280,41 +1118,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="80" column="11" lean-forward="false" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ExportDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/deleteCart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ExportDB.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportDB.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
           <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1323,23 +1135,13 @@
         <state relative-caret-position="179">
           <caret line="151" column="21" lean-forward="true" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
           <folding>
-            <marker date="1518973475461" expanded="true" signature="6999:7050" ph="SELECT * FRO... smartphone" />
-            <marker date="1518973475461" expanded="true" signature="7109:7320" ph="INSERT INTO `mobilesolutions`.`smartphone`... " />
-            <marker date="1518973475461" expanded="true" signature="7383:7438" ph="DELETE FROM `mobilesolutions`.`smartphone`... " />
-            <marker date="1518973475461" expanded="true" signature="7502:7561" ph="SELECT * FRO... smartphone" />
-            <marker date="1518973475461" expanded="true" signature="7624:7664" ph="SELECT * FRO... smartphone" />
-            <marker date="1518973475461" expanded="true" signature="7727:7921" ph="UPDATE mobilesolutions.smartphone... " />
-            <marker date="1518973475461" expanded="true" signature="7978:8086" ph="LOAD XML LOC... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/DeleteAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="33" column="6" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1519031089125" expanded="true" signature="6999:7050" ph="SELECT * FRO... smartphone" />
+            <marker date="1519031089125" expanded="true" signature="7109:7320" ph="INSERT INTO `mobilesolutions`.`smartphone`... " />
+            <marker date="1519031089125" expanded="true" signature="7383:7438" ph="DELETE FROM `mobilesolutions`.`smartphone`... " />
+            <marker date="1519031089125" expanded="true" signature="7502:7561" ph="SELECT * FRO... smartphone" />
+            <marker date="1519031089125" expanded="true" signature="7624:7664" ph="SELECT * FRO... smartphone" />
+            <marker date="1519031089125" expanded="true" signature="9380:9383" ph="UPDATE mobilesolutions.smartphone... " />
+            <marker date="1519031089125" expanded="true" signature="9440:9548" ph="LOAD XML LOC... " />
           </folding>
         </state>
       </provider>
@@ -1347,18 +1149,50 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ImportXML.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/DeleteCart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="110">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportXML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/DeleteAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/customException/UsernameAlreadyExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

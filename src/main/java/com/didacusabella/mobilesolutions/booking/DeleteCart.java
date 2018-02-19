@@ -1,4 +1,4 @@
-package com.didacusabella.mobilesolutions.servlet;
+package com.didacusabella.mobilesolutions.booking;
 
 import com.didacusabella.mobilesolutions.booking.BookingManager;
 import com.didacusabella.mobilesolutions.entities.Booking;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "DeleteCart", urlPatterns = {"/DeleteCart"})
-public class deleteCart extends HttpServlet {
+public class DeleteCart extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BookingManager bookingManager = null;
         try {

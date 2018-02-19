@@ -1,6 +1,6 @@
 package com.didacusabella.mobilesolutions.client;
 
-import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
+import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.entities.Client;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.didacusabella.mobilesolutions.servlet;
+package com.didacusabella.mobilesolutions.smartphone;
 
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import org.apache.commons.fileupload.FileItem;

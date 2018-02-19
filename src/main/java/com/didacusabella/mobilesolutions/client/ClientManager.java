@@ -1,7 +1,7 @@
 package com.didacusabella.mobilesolutions.client;
 
 
-import com.didacusabella.mobilesolutions.UsernameAlreadyExistException;
+import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.database.Database;
 import com.didacusabella.mobilesolutions.database.Mappable;
 import com.didacusabella.mobilesolutions.entities.Client;

@@ -6,3 +6,7 @@ nb-configuration.xml
 /src/main/webapp/WEB-INF/database/
 /bin/
 /.idea/*
+
+\.idea/
+
+MobileSolutions\.iml

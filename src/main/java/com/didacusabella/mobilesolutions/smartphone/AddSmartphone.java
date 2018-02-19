@@ -15,8 +15,13 @@ import org.apache.commons.beanutils.BeanUtils;
 
 @WebServlet("/addSmartphone")
 public class AddSmartphone extends HttpServlet {
+  
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SmartphoneManager smartphoneManager = null;
+       this.getServletContext().getRequestDispatcher("/AdminDashboard?page=addPhone.jsp").forward(request, response);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+         SmartphoneManager smartphoneManager = null;
         AdminManager adminManager = null;
         try {
             smartphoneManager = SmartphoneManager.getInstance();
@@ -49,10 +54,6 @@ public class AddSmartphone extends HttpServlet {
 
         RequestDispatcher disp = getServletContext().getRequestDispatcher("/ok.jsp");
         disp.include(request, response);
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
     }
 
 }

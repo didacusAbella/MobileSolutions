@@ -1,7 +1,9 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.database.BeanValidator;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.beanutils.BeanUtils;
 
 /**
  *
@@ -32,7 +35,7 @@ public class EditPhone extends HttpServlet {
       int id = Integer.parseInt(request.getParameter("id"));
       Smartphone smartphone = SmartphoneManager.getInstance().getSmartphoneByID(id);
       request.setAttribute("phone", smartphone);
-      this.getServletContext().getRequestDispatcher("/MobileSolutions/Admin?page=editPhone.jsp").forward(request, response);
+      this.getServletContext().getRequestDispatcher("/AdminDashboard?page=editPhone.jsp").forward(request, response);
     } catch (SQLException ex) {
       Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -50,14 +53,19 @@ public class EditPhone extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      //TODO Map parameter with apache commons mapper and add validator
-      if(SmartphoneManager.getInstance().editSmartphone(null)){
+      Smartphone phone = new Smartphone();
+      BeanUtils.populate(phone, request.getParameterMap());
+      if(BeanValidator.<Smartphone>validateBean(phone) && SmartphoneManager.getInstance().editSmartphone(phone)){
         this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
       }else{
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
       }
     } catch (SQLException ex) {
+      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (InvocationTargetException ex) {
       Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
     }
   }

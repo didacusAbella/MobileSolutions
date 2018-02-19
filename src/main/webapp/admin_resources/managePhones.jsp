@@ -7,7 +7,7 @@
   <c:otherwise>
     <div class="grid-container fluid">
       <h2>Lista Modelli</h2>
-      <a href="inserimento.jsp" class="button">Aggiungi Telefono</a>
+      <a href="/MobileSolutions/addSmartphone" class="button">Aggiungi Telefono</a>
       <div class="grid-x">
         <div class="cell">
           <table class="stack">

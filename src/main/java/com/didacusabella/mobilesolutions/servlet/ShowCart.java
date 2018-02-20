@@ -29,7 +29,7 @@ public class ShowCart extends HttpServlet {
         try {
             BookingManager bookingManager = BookingManager.getInstance();
             SmartphoneManager smartphoneManager = SmartphoneManager.getInstance();
-            List<Booking> bookingList = new ArrayList<>();
+            List<Booking> bookingList;
             HttpSession session = request.getSession(true);
 
             Client user = (Client) session.getAttribute("user");

@@ -18,7 +18,8 @@ import java.util.ArrayList;
 @WebServlet(name = "AddToCart", urlPatterns = {"/AddToCart"})
 public class AddToCart extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Client client = (Client) request.getAttribute("user");
+        HttpSession session = request.getSession(true);
+        Client client = (Client) session.getAttribute("user");
         BookingManager bookingManager = null;
         try {
             bookingManager = BookingManager.getInstance();
@@ -30,13 +31,13 @@ public class AddToCart extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             Booking newBooking = new Booking();
-            newBooking.setProductID((Integer) request.getAttribute("idProduct"));
+            newBooking.setProductID(Integer.parseInt(request.getParameter("idProduct")));
             newBooking.setUsername(client.getId());
             newBooking.setDate(new Timestamp(System.currentTimeMillis()));
             newBooking.setQuantity(1);
             bookingManager.addBooking(newBooking);
 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ok.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
             dispatcher.forward(request, response);
         }
 

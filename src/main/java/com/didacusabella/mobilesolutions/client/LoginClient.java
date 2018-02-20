@@ -15,6 +15,11 @@ import java.sql.SQLException;
 @WebServlet(name = "LoginClient", urlPatterns = {"/LoginClient"})
 public class LoginClient extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
         ClientManager manager;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -25,8 +30,8 @@ public class LoginClient extends HttpServlet {
                 Client client = manager.getClient(username);
                 HttpSession session = request.getSession(true);
                 session.setAttribute("user", client);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-                dispatcher.forward(request, response);
+                RequestDispatcher rd = request.getRequestDispatcher("Catalog");
+                rd.forward(request,response);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/errore.jsp");
                 dispatcher.forward(request, response);
@@ -34,10 +39,5 @@ public class LoginClient extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
-        doGet(request, response);
     }
 }

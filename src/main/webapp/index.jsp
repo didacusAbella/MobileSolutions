@@ -5,7 +5,6 @@
 
 <ms:layout title="Benvenuto su Mobile Solutions">
     <jsp:body>
-        <h1>Hello</h1>
         <div class="grid-x grid-padding-x small-up-1 medium-up-3 large-up-4">
             <c:choose>
                 <c:when test="${phones == null}">

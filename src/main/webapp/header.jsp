@@ -1,4 +1,5 @@
-<%-- 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
     Document   : header
     Created on : 22-nov-2017, 15.33.17
     Author     : didacusAbella
@@ -11,20 +12,31 @@
     <div class="top-bar-left">
         <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown">
             <li class="menu-text">Mobile Solutions</li>
-            <li>
-                <a href="signin.jsp">Account</a>
-                <ul class="menu vertical">
-                    <li><a href="/MobileSolutions/ShowCart">Visualizza Carrello</a></li>
-                    <li><a href="acquisti.jsp">Visualizza Acquisti</a></li>
-                    <li><a href="editProfile.jsp">Modifica Profilo</a></li>
+            <c:choose>
+                <c:when test="${user!=null}">
                     <li>
-                        <form action="">
-                            <input type="submit" value="Logout" class="button">
-                        </form>
+                        <a>Menu</a>
+                        <ul class="menu vertical">
+                            <li><a href="/MobileSolutions/ShowCart">Visualizza Carrello</a></li>
+                            <li><a href="acquisti.jsp">Visualizza Acquisti</a></li>
+                            <li><a href="editProfile.jsp">Modifica Profilo</a></li>
+                            <li>
+                                <form action="">
+                                    <input type="submit" value="Logout" class="button">
+                                </form>
+                            </li>
+                        </ul>
                     </li>
-                </ul>
-            </li>
-            <li><a href="signup.jsp">Crea Account</a></li>
+                    <li>Benvenuto ${user.name}</li>
+
+                </c:when>
+                <c:otherwise>
+                    <li>
+                        <a href="signin.jsp">Login</a>
+                    <li><a href="signup.jsp">Crea Account</a></li>
+                    </li>
+                </c:otherwise>
+            </c:choose>
             <li><a href="advancedSearch.jsp">Ricerca Avanzata</a></li>
         </ul>
     </div>

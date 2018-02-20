@@ -7,6 +7,7 @@ import com.didacusabella.mobilesolutions.entities.Smartphone;
 import com.didacusabella.mobilesolutions.sale.SaleManager;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ import java.util.List;
  * @author Domenico Antonio Tropeano on 19/02/2018 at 14:54
  * @project MobileSolutions
  */
-@WebServlet(name = "ShowCart")
+@WebServlet(name = "ShowCart", urlPatterns = {"/ShowCart"})
 public class ShowCart extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -39,6 +40,8 @@ public class ShowCart extends HttpServlet {
                 booking.setPrice(tempSmartphone.getPrice());
             }
             request.setAttribute("cart", bookingList);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
+            dispatcher.forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }

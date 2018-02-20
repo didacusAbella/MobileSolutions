@@ -209,7 +209,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     @Override
     public Client getClient(String username) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(GET_ID_CLIENT);
+            PreparedStatement statement = dbConnection.prepareStatement(READ_CLIENT);
             statement.setString(1, username);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {

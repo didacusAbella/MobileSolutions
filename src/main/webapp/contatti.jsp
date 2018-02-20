@@ -65,9 +65,6 @@
     </div>
   </jsp:body>
 </ms:layout>
-<!--
-<tr align="center"><td><input type="submit" value="Invio" class="pulsante" onClick="return controllo()"></td><td><input type="reset" value="Reset" class="pulsante"></td></tr>            
--->
 
 
 

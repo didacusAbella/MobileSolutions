@@ -8,8 +8,8 @@
     <div class="small-12 medium-6 large-6 cell">
       <h5 class="text-center"><em>Usiamo i pi&ugrave; sicuri sistemi di pagamento per le transazioni, oltre a quelli pi&ugrave; tradizionali</em></h5>
       <div class="cell text-center">
-      <img src="img/paypal.png" alt="Paypal Image" width="100" height="100"/>
-      <img src="img/postepay.png" alt="Post Pay Image" width="100" height="100"/>
+        <a href="paymentsInfo.jsp"><img src="img/paypal.png" alt="Paypal Image" width="100" height="100"/></a>
+        <a href="paymentsInfo.jsp"><img src="img/postepay.png" alt="Post Pay Image" width="100" height="100"/></a>
       <h6><a href="privacy.jsp">Termini di Servizio</a></h6>
       <h6><a href="contatti.jsp">Contatti</a></h6>
       </div>

@@ -36,7 +36,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
 
     private static final String READ_CLIENTS = "SELECT * FROM mobilesolutions.client;";
     private static final String DELETE_CLIENT = "DELETE FROM mobilesolutions.client WHERE id=?;";
-    private static final String READ_CLIENT = "SELECT * FROM mobilesolutions.client WHERE id=?;";
+    private static final String READ_CLIENT_BY_USERNAME = "SELECT * FROM mobilesolutions.client WHERE username=?;";
     private static final String LOGIN_CLIENT = "SELECT * FROM mobilesolutions.client"
             + " WHERE username=? AND password=?;";
 
@@ -77,7 +77,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     @Override
     public Client getClient(int id) {
         try {
-            PreparedStatement stmt = dbConnection.prepareStatement(READ_CLIENT);
+            PreparedStatement stmt = dbConnection.prepareStatement(READ_CLIENT_BY_USERNAME);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             Client cl = null;
@@ -209,7 +209,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     @Override
     public Client getClient(String username) {
         try {
-            PreparedStatement statement = dbConnection.prepareStatement(READ_CLIENT);
+            PreparedStatement statement = dbConnection.prepareStatement(READ_CLIENT_BY_USERNAME);
             statement.setString(1, username);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {

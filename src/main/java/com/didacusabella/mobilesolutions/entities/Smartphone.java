@@ -10,8 +10,9 @@ import javax.validation.constraints.Size;
  */
 
 public class Smartphone {
+    private int id;
     @NotNull
-    private int id, quantity, ram, internalStorage, camera;
+    private int quantity, ram, internalStorage, camera;
     @Size(min = 4, max = 20)
     @NotNull
     private String brand, model, cpu;

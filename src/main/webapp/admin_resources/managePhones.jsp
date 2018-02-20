@@ -24,9 +24,9 @@
                   <td>${phone.model}</td>
                   <td><a class="button" href="/MobileSolutions/EditPhone?id=${phone.id}">Modifica ${phone.model}</a></td>
                   <td>
-                    <form>
+                    <form name="deletePhone" action="RemoveSmartphone">
                       <input type="hidden" value="${phone.id}" name="id"/>
-                      <input type="sumbit" class="button" value="Elimina ${phone.model}"/>
+                      <input type="submit" class="button" value="Elimina ${phone.model}"/>
                     </form>
                   </td>
                 </tr>

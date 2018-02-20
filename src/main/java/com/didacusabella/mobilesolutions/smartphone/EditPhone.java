@@ -56,10 +56,10 @@ public class EditPhone extends HttpServlet {
       Smartphone phone = new Smartphone();
       BeanUtils.populate(phone, request.getParameterMap());
       if(BeanValidator.<Smartphone>validateBean(phone) && SmartphoneManager.getInstance().editSmartphone(phone)){
-        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
       }else{
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("/admin_resources/managePhones.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
       }
     } catch (SQLException ex) {
       Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);

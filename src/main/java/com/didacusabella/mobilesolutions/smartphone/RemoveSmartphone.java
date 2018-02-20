@@ -45,10 +45,10 @@ public class RemoveSmartphone extends HttpServlet {
     try {
       int id = Integer.parseInt(request.getParameter("id"));
       if(SmartphoneManager.getInstance().deleteSmartphone(id)){
-        this.getServletContext().getRequestDispatcher("admin_resources/cancellaCell.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
       }else {
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("admin_resouces/cancellaCell.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
       }
     } catch (SQLException ex) {
       Logger.getLogger(RemoveSmartphone.class.getName()).log(Level.SEVERE, null, ex);

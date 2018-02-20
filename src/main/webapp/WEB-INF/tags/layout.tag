@@ -44,6 +44,9 @@
     <script>
       $(document).ready(function(){
         $(document).foundation();
+        $('input[type="checkbox"]').change(function(){
+          $(this).val(this.checked ? 'true' : 'false');
+        });
       });
     </script>
     <noscript>

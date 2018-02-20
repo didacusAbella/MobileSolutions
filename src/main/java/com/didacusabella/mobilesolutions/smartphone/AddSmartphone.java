@@ -10,16 +10,17 @@ import javax.servlet.http.*;
 import com.didacusabella.mobilesolutions.admin.AdminManager;
 import com.didacusabella.mobilesolutions.database.BeanValidator;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
-import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 import org.apache.commons.beanutils.BeanUtils;
 
 @WebServlet("/addSmartphone")
 public class AddSmartphone extends HttpServlet {
   
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        this.getServletContext().getRequestDispatcher("/AdminDashboard?page=addPhone.jsp").forward(request, response);
     }
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          SmartphoneManager smartphoneManager = null;
         AdminManager adminManager = null;
@@ -52,7 +53,7 @@ public class AddSmartphone extends HttpServlet {
         }
 
 
-        RequestDispatcher disp = getServletContext().getRequestDispatcher("/ok.jsp");
+        RequestDispatcher disp = getServletContext().getRequestDispatcher("/AllPhones");
         disp.include(request, response);
     }
 

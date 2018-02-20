@@ -10,13 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2de3a2ff-dcc9-4834-bf89-1a88af5dedd2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/listProducts.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ShowCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ShowCart.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java" afterPath="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/detailedPhone.tag" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/detailedPhone.tag" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,43 +54,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="lista.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/lista.jsp">
+      <file leaf-file-name="LoginClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/LoginClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <file leaf-file-name="ClientManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllPhones.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/AllPhones.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="18" column="60" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="60" />
+            <state relative-caret-position="-499">
+              <caret line="186" column="13" lean-forward="true" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="13" />
               <folding>
-                <marker date="1519055525386" expanded="true" signature="1216:1393" ph="{...}" />
+                <marker date="1519121747054" expanded="true" signature="952:1006" ph="SELECT id FR... client" />
+                <marker date="1519121747054" expanded="true" signature="1058:1306" ph="INSERT INTO mobilesolutions.client... " />
+                <marker date="1519121747054" expanded="true" signature="1360:1577" ph="UPDATE mobilesolutions.client... " />
+                <marker date="1519121747054" expanded="true" signature="1630:1666" ph="SELECT * FRO... client" />
+                <marker date="1519121747054" expanded="true" signature="1719:1764" ph="DELETE FROM mobilesolutions.client... " />
+                <marker date="1519121747054" expanded="true" signature="1827:1880" ph="SELECT * FRO... client" />
+                <marker date="1519121747054" expanded="true" signature="1932:2017" ph="SELECT * FRO... client" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="remainingPhones.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin_resources/remainingPhones.jsp">
+      <file leaf-file-name="detailedPhone.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/detailedPhone.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddToCart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookingManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="85" column="38" lean-forward="true" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+              <folding>
+                <marker date="1519136155671" expanded="true" signature="821:875" ph="SELECT * FRO... booking" />
+                <marker date="1519136155671" expanded="true" signature="929:1041" ph="INSERT INTO mobilesolutions.booking... " />
+                <marker date="1519136155671" expanded="true" signature="1095:1103" ph="DELETE FROM mobilesolutions.booking... " />
+                <marker date="1519136155671" expanded="true" signature="1095:1161" ph="DELETE FROM mobilesolutions.booking... " />
+                <marker date="1519136155671" expanded="true" signature="1214:1266" ph="DELETE FROM mobilesolutions.booking... " />
+                <marker date="1519136155671" expanded="true" signature="1319:1387" ph="SELECT * FRO... booking" />
+                <marker date="1519136155671" expanded="true" signature="1443:1528" ph="UPDATE `mobilesolutions`.`booking`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phoneComponent.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/phoneComponent.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -101,39 +133,11 @@
       <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listProducts.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/listProducts.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchResult.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/searchResult.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="centro.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/centro.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,8 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Importazione.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ImportDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/ExportDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/SmartphoneManager.java" />
@@ -207,20 +209,22 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pagamento.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/payment.tag" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/Servlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/didacusabella/mobilesolutions/managers/BookingManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/LoginClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/booking.tag.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/entities/Booking.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/booking.tag" />
         <option value="$PROJECT_DIR$/src/main/webapp/carrello.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ShowCart.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/listProducts.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/phoneComponent.tag" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/detailedPhone.tag" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java" />
       </list>
     </option>
   </component>
@@ -459,6 +463,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MobileSolutions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MobileSolutions" type="b2602c69:ProjectViewProjectNode" />
@@ -869,7 +882,7 @@
       <workItem from="1519029451096" duration="6670000" />
       <workItem from="1519039962750" duration="11788000" />
       <workItem from="1519069903979" duration="1648000" />
-      <workItem from="1519117238880" duration="1920000" />
+      <workItem from="1519117238880" duration="8439000" />
     </task>
     <servers />
   </component>
@@ -906,7 +919,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131514000" />
+    <option name="totallyTimeSpent" value="138033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -926,17 +939,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4044199" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3447514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3447514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26354167" sideWeight="0.70320404" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26354167" sideWeight="0.7018122" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26354167" sideWeight="0.29679596" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26354167" sideWeight="0.29818782" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -945,7 +959,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -964,45 +977,17 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java</url>
-          <line>116</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/LoginClient.java</url>
+          <line>24</line>
           <properties />
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/CompletaAcquisti.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/CompletaCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/CompletaDispon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ModificaCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/servlet/ModCaratteristiche.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1082,6 +1067,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,27 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-          <folding>
-            <marker date="1519048952765" expanded="true" signature="821:875" ph="SELECT * FRO... booking" />
-            <marker date="1519048952765" expanded="true" signature="929:1041" ph="INSERT INTO mobilesolutions.booking... " />
-            <marker date="1519048952765" expanded="true" signature="1095:1161" ph="DELETE FROM mobilesolutions.booking... " />
-            <marker date="1519048952765" expanded="true" signature="1214:1266" ph="DELETE FROM mobilesolutions.booking... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/Signup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1220,6 +1185,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#605#606#0" expanded="false" />
+            <element signature="e#639#640#0" expanded="false" />
+            <element signature="e#693#694#0" expanded="false" />
+            <element signature="e#739#740#0" expanded="false" />
+            <element signature="e#799#800#0" expanded="false" />
+            <element signature="e#841#842#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1252,30 +1226,6 @@
         <state relative-caret-position="286">
           <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/LoginClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="31" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4686">
-          <caret line="226" column="1" lean-forward="false" selection-start-line="226" selection-start-column="1" selection-end-line="226" selection-end-column="1" />
-          <folding>
-            <marker date="1519118885832" expanded="true" signature="952:1006" ph="SELECT id FR... client" />
-            <marker date="1519118885832" expanded="true" signature="1058:1306" ph="INSERT INTO mobilesolutions.client... " />
-            <marker date="1519118885832" expanded="true" signature="1360:1577" ph="UPDATE mobilesolutions.client... " />
-            <marker date="1519118885832" expanded="true" signature="1630:1666" ph="SELECT * FRO... client" />
-            <marker date="1519118885832" expanded="true" signature="1719:1764" ph="DELETE FROM mobilesolutions.client... " />
-            <marker date="1519118885832" expanded="true" signature="1815:1862" ph="SELECT * FRO... client" />
-            <marker date="1519118885832" expanded="true" signature="1914:1999" ph="SELECT * FRO... client" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1345,14 +1295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/listProducts.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1374,6 +1316,96 @@
         <state relative-caret-position="220">
           <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/PhoneDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/phoneInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/LoginClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/client/ClientManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-499">
+          <caret line="186" column="13" lean-forward="true" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="13" />
+          <folding>
+            <marker date="1519121747054" expanded="true" signature="952:1006" ph="SELECT id FR... client" />
+            <marker date="1519121747054" expanded="true" signature="1058:1306" ph="INSERT INTO mobilesolutions.client... " />
+            <marker date="1519121747054" expanded="true" signature="1360:1577" ph="UPDATE mobilesolutions.client... " />
+            <marker date="1519121747054" expanded="true" signature="1630:1666" ph="SELECT * FRO... client" />
+            <marker date="1519121747054" expanded="true" signature="1719:1764" ph="DELETE FROM mobilesolutions.client... " />
+            <marker date="1519121747054" expanded="true" signature="1827:1880" ph="SELECT * FRO... client" />
+            <marker date="1519121747054" expanded="true" signature="1932:2017" ph="SELECT * FRO... client" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/smartphone/Catalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/phoneComponent.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/detailedPhone.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/AddToCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/didacusabella/mobilesolutions/booking/BookingManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="85" column="38" lean-forward="true" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+          <folding>
+            <marker date="1519136155671" expanded="true" signature="821:875" ph="SELECT * FRO... booking" />
+            <marker date="1519136155671" expanded="true" signature="929:1041" ph="INSERT INTO mobilesolutions.booking... " />
+            <marker date="1519136155671" expanded="true" signature="1095:1103" ph="DELETE FROM mobilesolutions.booking... " />
+            <marker date="1519136155671" expanded="true" signature="1095:1161" ph="DELETE FROM mobilesolutions.booking... " />
+            <marker date="1519136155671" expanded="true" signature="1214:1266" ph="DELETE FROM mobilesolutions.booking... " />
+            <marker date="1519136155671" expanded="true" signature="1319:1387" ph="SELECT * FRO... booking" />
+            <marker date="1519136155671" expanded="true" signature="1443:1528" ph="UPDATE `mobilesolutions`.`booking`... " />
+          </folding>
         </state>
       </provider>
     </entry>

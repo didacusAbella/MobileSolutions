@@ -25,7 +25,6 @@ public class Catalog extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            System.out.println("Dentro");
             List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
             request.setAttribute("phones", phones);
             this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);

@@ -26,6 +26,8 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             + "(product, username, datetime, quantity) VALUES (?, ?, ?, ?);";
     private static final String REMOVE_PRODUCT = "DELETE FROM mobilesolutions.booking WHERE username=? AND product=?;";
     private static final String CLEAN_BOOKING = "DELETE FROM mobilesolutions.booking WHERE username=?;";
+    private static final String CHECK_BOOKING = "SELECT * FROM mobilesolutions.booking WHERE username=? AND product=?";
+    private static final String INCREASE_QUANTITY = "UPDATE `mobilesolutions`.`booking` SET `quantity`=? WHERE `username`=? AND`product`=?;";
 
     private BookingManager(Connection dbConnection) {
         this.dbConnection = dbConnection;
@@ -71,6 +73,23 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
 
     @Override
     public boolean addBooking(Booking booking) {
+        try {
+            PreparedStatement stmt1 = this.dbConnection.prepareStatement(CHECK_BOOKING);
+            stmt1.setInt(1, booking.getUsername());
+            stmt1.setInt(2, booking.getProductID());
+            ResultSet rs = stmt1.executeQuery();
+            if (rs.isBeforeFirst()) {
+
+            } else {
+                PreparedStatement stmt2 = this.dbConnection.prepareStatement(INCREASE_QUANTITY);
+                stmt2.setInt(1, booking.getQuantity());
+                stmt2.setInt(2, booking.getUsername());
+                stmt2.setInt(3, booking.getProductID());
+                return stmt2.execute();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         try {
             PreparedStatement stmt = this.dbConnection.prepareStatement(CREATE_BOOKING);
             stmt.setInt(1, booking.getProductID());

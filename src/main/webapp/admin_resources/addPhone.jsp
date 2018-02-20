@@ -54,9 +54,9 @@
           <span class="form-error">La CPU deve essere composta da lettere e numeri</span>
         </label>
         <fieldset>
-          <input type="checkbox" name="lte" required="true" value="lte" id="lte"/><label for="lte">LTE</label>
-          <input type="checkbox" name="bluetooth" required="true" value="bluetooth" id="bluetooth"/><label for="bluetooth">Bluetooth</label>
-          <input type="submit" value="INSERISCI" class="button">
+          <input type="checkbox" name="lte" required="true" value="false" id="lte"/><label for="lte">LTE</label>
+          <input type="checkbox" name="bluetooth" required="true" value="false" id="bluetooth"/><label for="bluetooth">Bluetooth</label>
+          <input type="submit" value="INSERISCI" class="button"/>
         </fieldset>
       </div>
     </div>

@@ -22,11 +22,11 @@
               <c:forEach items="${phones}" var="phone">
                 <tr>
                   <td>${phone.model}</td>
-                  <td><a class="button" href="/MobileSolutions/EditPhone?id=${phone.id}">Modifica ${phone.model}</a></td>
+                  <td><a class="button" href="/MobileSolutions/EditPhone?id=${phone.id}">Modifica</a></td>
                   <td>
                     <form name="deletePhone" action="RemoveSmartphone">
                       <input type="hidden" value="${phone.id}" name="id"/>
-                      <input type="submit" class="button" value="Elimina ${phone.model}"/>
+                      <input type="submit" class="button" value="Elimina"/>
                     </form>
                   </td>
                 </tr>

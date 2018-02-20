@@ -3,7 +3,7 @@
 
 <ms:layout title="Ricerca Avanzata">
   <jsp:body>
-    <form name="advancedSearch" action="" method="get" novalidate="true" data-abide>
+    <form name="advancedSearch" action="AdvancedSearch" method="get" novalidate="true" data-abide>
        <div data-abide-error class="alert callout" style="display: none;">
          <p><i class="fi-alert"></i>La compilazione del form ha degli errori</p>
        </div>
@@ -35,8 +35,8 @@
               <span class="form-error">nel campo brand devono esserci solo lettere</span>
             </label>
             <fieldset>
-              <input type="checkbox" value="bluetooth" name="bluetooth" id="bluetooth"/><label for="bluetooth">Bluetooth</label>
-              <input type="checkbox" value="lte" name="lte" id="lte"/><label for="lte">LTE</label>
+              <input type="checkbox" value="false" name="bluetooth" id="bluetooth"/><label for="bluetooth">Bluetooth</label>
+              <input type="checkbox" value="false" name="lte" id="lte"/><label for="lte">LTE</label>
             </fieldset>
             <input type="submit" class="button" value="Ricerca"/>
           </div>  

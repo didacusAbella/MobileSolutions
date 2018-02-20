@@ -207,11 +207,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
       try {
         StringJoiner queryBuilder = new StringJoiner(" AND ", "SELECT * FROM mobilesolutions.smartphone WHERE ", ";");
         criterias.forEach((param, value) -> {
-          queryBuilder.add(param.concat("=").concat(value[0]));
+          queryBuilder.add(param.concat("=").concat("\'".concat(value[0]).concat("\'")));
         });
-        PreparedStatement ps = this.dbConnection.prepareStatement(queryBuilder.toString());
+        Statement stmt = this.dbConnection.createStatement();
         List<Smartphone> smartphones = new ArrayList<>();
-        ResultSet rs = ps.executeQuery();
+        ResultSet rs = stmt.executeQuery(queryBuilder.toString());
         while(rs.next()){
           smartphones.add(mapRow(rs));
         }

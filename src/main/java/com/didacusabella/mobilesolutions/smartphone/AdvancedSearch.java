@@ -3,7 +3,10 @@ package com.didacusabella.mobilesolutions.smartphone;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -32,9 +35,14 @@ public class AdvancedSearch extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      List<Smartphone> smartphones = SmartphoneManager.getInstance().advancedSearch(request.getParameterMap());
-      request.setAttribute("smartphones", smartphones);
-      this.getServletContext().getRequestDispatcher("visCellAvanzata.jsp").forward(request, response);
+      Map<String, String[]> filteredParameters = new HashMap<>();
+      request.getParameterMap().forEach((name, value) -> {
+        if(!value[0].isEmpty())
+          filteredParameters.put(name, value);
+      });
+      List<Smartphone> smartphones = SmartphoneManager.getInstance().advancedSearch(filteredParameters);
+      request.setAttribute("phones", smartphones);
+      this.getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
     } catch (SQLException ex) {
       advacedSearchLogger.log(Level.SEVERE, null, ex);
     }
@@ -62,6 +70,6 @@ public class AdvancedSearch extends HttpServlet {
   @Override
   public String getServletInfo() {
     return "Advanced search";
-  }// </editor-fold>
+  }
 
 }

@@ -47,10 +47,9 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
     public Booking mapRow(ResultSet rs) throws SQLException {
         Booking mappedBooking = new Booking();
         mappedBooking.setUsername(rs.getInt("username"));
-        mappedBooking.setProductID(rs.getInt("productID"));
+        mappedBooking.setProductID(rs.getInt("product"));
         mappedBooking.setQuantity(rs.getInt("quantity"));
         mappedBooking.setDate(rs.getTimestamp("datetime"));
-        mappedBooking.setProductName(rs.getString("productName"));
         return mappedBooking;
     }
 

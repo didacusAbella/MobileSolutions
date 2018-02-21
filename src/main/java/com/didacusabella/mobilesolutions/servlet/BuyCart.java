@@ -18,17 +18,22 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "BuyCart", urlPatterns = {"/BuyCart"})
 public class BuyCart extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             SaleManager saleManager = SaleManager.getInstance();
             BookingManager bookingManager = BookingManager.getInstance();
             SmartphoneManager smartphoneManager = SmartphoneManager.getInstance();
             HttpSession session = request.getSession(true);
             Client client = (Client) session.getAttribute("user");
-            ArrayList<Booking> listOfBooking = (ArrayList<Booking>) session.getAttribute("cart");
+            List<Booking> listOfBooking = bookingManager.getBooking(client.getId());
             if (client == null) {
                 //Errore
             } else {
@@ -36,20 +41,17 @@ public class BuyCart extends HttpServlet {
                     Sale sale = new Sale();
                     sale.injectBooking(book);
                     sale.setDate(new Timestamp(System.currentTimeMillis()));
-                    sale.setShipmentType((Integer) request.getAttribute("shipmentType"));
-                    sale.setPaymentType((Integer) request.getAttribute("paymentType"));
+                    sale.setShipmentType(Integer.parseInt(request.getParameter("shipmentType")));
+                    sale.setPaymentType(Integer.parseInt(request.getParameter("paymentType")));
                     sale.setPrice(smartphoneManager.getSmartphoneByID(sale.getProduct()).getPrice());
                     saleManager.buyProduct(sale);
+                    bookingManager.removeAllBookings(client.getId());
                 }
             }
-            this.getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
     }
 }

@@ -37,7 +37,7 @@ public class AddToCart extends HttpServlet {
             newBooking.setQuantity(1);
             bookingManager.addBooking(newBooking);
 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Catalog");
             dispatcher.forward(request, response);
         }
 

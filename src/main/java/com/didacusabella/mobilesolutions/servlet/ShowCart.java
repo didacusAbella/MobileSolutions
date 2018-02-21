@@ -26,6 +26,10 @@ import java.util.List;
 @WebServlet(name = "ShowCart", urlPatterns = {"/ShowCart"})
 public class ShowCart extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             BookingManager bookingManager = BookingManager.getInstance();
             SmartphoneManager smartphoneManager = SmartphoneManager.getInstance();
@@ -36,7 +40,7 @@ public class ShowCart extends HttpServlet {
             bookingList = bookingManager.getBooking(user.getId());
             for (Booking booking : bookingList) {
                 Smartphone tempSmartphone = smartphoneManager.getSmartphoneByID(booking.getProductID());
-                booking.setProductName(tempSmartphone.getModel() + " " + tempSmartphone.getModel());
+                booking.setProductName(tempSmartphone.getBrand() + " " + tempSmartphone.getModel());
                 booking.setPrice(tempSmartphone.getPrice());
             }
             request.setAttribute("cart", bookingList);
@@ -45,9 +49,5 @@ public class ShowCart extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

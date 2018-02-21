@@ -11,7 +11,8 @@ import java.util.Properties;
  * @author Domenico Antonio Tropeano on 14/02/2018 at 11:06
  * @project MobileSolutions
  */
-public class Database {private static String protocol;
+public class Database {
+    private static String protocol;
     private static String hostname;
     private static String port;
     private static String username;
@@ -21,19 +22,21 @@ public class Database {private static String protocol;
     private static String mySqlUrl;
     private static List<Connection> freeDbConnections;
     static final String driver = "com.mysql.cj.jdbc.Driver";
-    // private static final boolean DEBUG = false;
-    private static final boolean LOCAL = false;
+    private static final boolean DEBUG = false;
+
 
     static {
         protocol = "jdbc:mysql://";
 
-        if (LOCAL) {
-            hostname = "localhost:";
+        if (DEBUG) {
+            hostname = "mysql1.gear.host:";
             port = "3306/";
-            dbName = "mobilesolutions";
+            dbName = "testingdb5";
             mySqlUrl = protocol + hostname + port + dbName;
-            username = "root";
-            password = "root";
+
+            /**********************************/
+            username = "testingdb5";
+            password = "Mg19?_WabyKZ";
             userInfo = new Properties();
             userInfo.put("user", username);
             userInfo.put("password", password);
@@ -106,9 +109,8 @@ public class Database {private static String protocol;
     /**
      * Rilascia la connessione
      *
-     * @param connection
-     *            rappresenta la connessione rilasciata e ri-aggiunta al pool di
-     *            connessioni.
+     * @param connection rappresenta la connessione rilasciata e ri-aggiunta al pool di
+     *                   connessioni.
      * @author Tropeano Domenico Antonio & Diego Avella
      */
 

@@ -18,7 +18,7 @@
                         <a>Menu</a>
                         <ul class="menu vertical">
                             <li><a href="/MobileSolutions/ShowCart">Visualizza Carrello</a></li>
-                            <li><a href="acquisti.jsp">Visualizza Acquisti</a></li>
+                            <li><a href="/MobileSolutions/ShowSales">Visualizza Acquisti</a></li>
                             <li><a href="/MobileSolutions/EditProfile">Modifica Profilo</a></li>
                             <li>
                                 <form action="">

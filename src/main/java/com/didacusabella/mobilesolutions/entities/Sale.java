@@ -12,6 +12,7 @@ public class Sale {
     private int product, username, quantity, shipmentType, paymentType;
     private Timestamp date;
     private double price;
+    private String productName;
 
     public Sale() {
         super();
@@ -31,6 +32,14 @@ public class Sale {
 
     public int getProduct() {
         return product;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public void setProduct(int product) {

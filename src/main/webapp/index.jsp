@@ -8,7 +8,6 @@
         <div class="grid-x grid-padding-x small-up-1 medium-up-3 large-up-4">
             <c:choose>
                 <c:when test="${phones == null}">
-                    <jsp:include page="/Catalog"/>
                 </c:when>
                 <c:otherwise>
                     <c:forEach items="${phones}" var="phone">

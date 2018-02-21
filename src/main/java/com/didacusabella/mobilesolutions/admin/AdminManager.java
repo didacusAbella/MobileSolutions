@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,6 +41,8 @@ public class AdminManager implements AdminDAO, Mappable<Admin> {
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             if (rs != null && rs.next() && rs.getString("password").equals(password)) {
+                rs.close();
+                ps.close();
                 return true;
             }
         } catch (SQLException ex) {

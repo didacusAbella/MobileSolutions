@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -61,9 +62,11 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
             while (rs.next()) {
                 returnSales.add(mapRow(rs));
             }
+            rs.close();
+            statement.close();
             return returnSales;
         } catch (SQLException e) {
-            e.printStackTrace();
+            saleManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -82,16 +85,17 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
             int insertionSuccess = statement.executeUpdate();
             if (insertionSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            saleManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
 
-    private static String QUERY_GET_ALL_SALE_FOR_USER = "SELECT * FROM mobilesolutions.sale  WHERE username=?";
-    private static String QUERY_BUY_PRODUCT = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
+    private static final String QUERY_GET_ALL_SALE_FOR_USER = "SELECT * FROM mobilesolutions.sale  WHERE username=?";
+    private static final String QUERY_BUY_PRODUCT = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
             "quantity, price, shipmentType, `paymentType`) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
 }

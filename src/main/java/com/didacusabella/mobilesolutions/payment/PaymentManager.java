@@ -83,6 +83,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
       int insertSuccess = ps.executeUpdate();
       if(insertSuccess == 1){
         this.dbConnection.commit();
+        ps.close();
         return true;
       }
     } catch (SQLException ex) {
@@ -101,6 +102,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
       int updateSuccess = ps.executeUpdate();
       if(updateSuccess == 1){
         this.dbConnection.commit();
+        ps.close();
         return true;
       }
     } catch (SQLException ex) {
@@ -117,6 +119,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
       int deleteSuccess = ps.executeUpdate();
       if(deleteSuccess == 1){
         this.dbConnection.commit();
+        ps.close();
         return true;
       }
     } catch (SQLException ex) {

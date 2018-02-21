@@ -24,7 +24,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     private static ClientManager clientManager = null;
     private final Connection dbConnection;
     private static Logger clientManagerLogger = Logger.getLogger(ClientManager.class.getName());
-    private static final String GET_ID_CLIENT = "SELECT id FROM mobilesolutions.client WHERE username=?";
+    private static final String READ_CLIENT_BY_ID = "SELECT * FROM mobilesolutions.client WHERE id=?";
     private static final String CREATE_CLIENT = "INSERT INTO mobilesolutions.client"
             + " (name, last_name, tax_code, address, cap, city, province, tel_phone, "
             + "mobile_phone, fax, username, password, email) VALUES (?, ?, ?, ?, "
@@ -77,7 +77,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     @Override
     public Client getClient(int id) {
         try {
-            PreparedStatement stmt = dbConnection.prepareStatement(READ_CLIENT_BY_USERNAME);
+            PreparedStatement stmt = dbConnection.prepareStatement(READ_CLIENT_BY_ID);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             Client cl = null;

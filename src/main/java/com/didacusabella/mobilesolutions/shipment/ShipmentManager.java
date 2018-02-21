@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -54,7 +55,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.setString(3, shipment.getDayRange());
             return statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            shipmentManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -69,9 +70,11 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             if (rs.next()) {
                 returnShipment = mapRow(rs);
             }
+            rs.close();
+            statement.close();
             return returnShipment;
         } catch (SQLException e) {
-            e.printStackTrace();
+            shipmentManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -85,9 +88,11 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             while (rs.next()) {
                 returnShipments.add(mapRow(rs));
             }
+            rs.close();
+            statement.close();
             return returnShipments;
         } catch (SQLException e) {
-            e.printStackTrace();
+            shipmentManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -103,10 +108,11 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             int updateSuccess = statement.executeUpdate();
             if (updateSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            shipmentManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -118,7 +124,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.setInt(1, id);
             return statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            shipmentManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }

@@ -84,6 +84,8 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             if (rs.next()) {
                 cl = mapRow(rs);
             }
+            rs.close();
+            stmt.close();
             return cl;
         } catch (SQLException ex) {
             clientManagerLogger.log(Level.SEVERE, null, ex);
@@ -100,6 +102,8 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             while (rs.next()) {
                 clients.add(mapRow(rs));
             }
+            rs.close();
+            stmt.close();
             return clients;
         } catch (SQLException ex) {
             clientManagerLogger.log(Level.SEVERE, null, ex);
@@ -130,6 +134,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 int insertionSuccess = statement.executeUpdate();
                 if (insertionSuccess == 1) {
                     this.dbConnection.commit();
+                    statement.close();
                     return true;
                 }
             }
@@ -147,6 +152,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             int deleteSuccess = stmt.executeUpdate();
             if (deleteSuccess == 1) {
                 this.dbConnection.commit();
+                stmt.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -176,6 +182,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             int updateSuccess = statement.executeUpdate();
             if (updateSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -192,6 +199,8 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if (rs != null && rs.next()) {
+                rs.close();
+                ps.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -215,10 +224,12 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             if (rs.next()) {
                 return mapRow(rs);
             } else {
+                rs.close();
+                statement.close();
                 return null;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            clientManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }

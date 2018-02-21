@@ -53,6 +53,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             int insertionSuccess = statement.executeUpdate();
             if (insertionSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException e) {
@@ -71,9 +72,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             while (rs.next()) {
                 returnSmartphones.add(mapRow(rs));
             }
+            rs.close();
+            statement.close();
             return returnSmartphones;
         } catch (SQLException e) {
-            e.printStackTrace();
+            smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -87,8 +90,10 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             if (rs.next()) {
                 return mapRow(rs);
             }
+            rs.close();
+            statement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -103,9 +108,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             while (rs.next()) {
                 returnSmartphoneOut.add(mapRow(rs));
             }
+            rs.close();
+            statement.close();
             return returnSmartphoneOut;
         } catch (SQLException e) {
-            e.printStackTrace();
+            smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -118,10 +125,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             int deleteSuccess = statement.executeUpdate();
             if (deleteSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -146,10 +154,11 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             int updateSuccess = statement.executeUpdate();
             if (updateSuccess == 1) {
                 this.dbConnection.commit();
+                statement.close();
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -161,7 +170,7 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
             statement.setString(1, pathToXML);
             return statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+          smartphoneManagerLogger.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -195,6 +204,8 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         while(rs.next()){
           smartphones.add(mapRow(rs));
         }
+        rs.close();
+        ps.close();
         return smartphones;
       } catch (SQLException ex) {
         smartphoneManagerLogger.log(Level.SEVERE, null, ex);
@@ -215,6 +226,8 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
         while(rs.next()){
           smartphones.add(mapRow(rs));
         }
+        rs.close();
+        stmt.close();
         return smartphones;
       } catch (SQLException ex) {
         smartphoneManagerLogger.log(Level.SEVERE, null, ex);

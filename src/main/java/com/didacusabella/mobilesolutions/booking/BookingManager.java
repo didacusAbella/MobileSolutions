@@ -63,6 +63,8 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             while (rs.next()) {
                 bookings.add(this.mapRow(rs));
             }
+            rs.close();
+            stmt.close();
             return bookings;
         } catch (SQLException ex) {
             bookingManagerLogger.log(Level.SEVERE, null, ex);
@@ -98,6 +100,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             int insertSuccess = stmt.executeUpdate();
             if (insertSuccess == 1) {
                 this.dbConnection.commit();
+                stmt.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -115,6 +118,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             int deletedProduct = stmt.executeUpdate();
             if (deletedProduct == 1) {
                 this.dbConnection.commit();
+                stmt.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -131,6 +135,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             int deletedProducts = stmt.executeUpdate();
             if (deletedProducts >= 1) {
                 this.dbConnection.commit();
+                stmt.close();
                 return true;
             }
         } catch (SQLException ex) {

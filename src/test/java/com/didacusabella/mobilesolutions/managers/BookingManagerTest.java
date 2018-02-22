@@ -45,7 +45,8 @@ public class BookingManagerTest {
      */
     @Test
     public void testMapRow() throws Exception {
-
+        Booking book = new Booking();
+        manager.addBooking(book);
         PreparedStatement stmt = Database.getConnection().prepareStatement(READ_BOOKING);
         stmt.setString(1, "ciao");
     }

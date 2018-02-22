@@ -22,7 +22,7 @@ public class Database {
     private static String mySqlUrl;
     private static List<Connection> freeDbConnections;
     static final String driver = "com.mysql.cj.jdbc.Driver";
-    private static final boolean DEBUG = false;
+    private static boolean DEBUG = false;
 
 
     static {
@@ -61,6 +61,21 @@ public class Database {
         } catch (ClassNotFoundException e) {
             System.out.println("DB driver not found:" + e.getMessage());
         }
+    }
+
+    public static void isDebug(boolean choice) {
+        DEBUG = choice;
+        hostname = "den1.mysql5.gear.host:";
+        port = "3306/";
+        dbName = "testingdb5";
+        mySqlUrl = protocol + hostname + port + dbName;
+
+        /**********************************/
+        username = "testingdb5";
+        password = "Mg19?_WabyKZ";
+        userInfo = new Properties();
+        userInfo.put("user", username);
+        userInfo.put("password", password);
     }
 
     /**

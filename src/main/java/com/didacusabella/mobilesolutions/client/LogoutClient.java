@@ -12,16 +12,19 @@ import java.io.IOException;
 @WebServlet(name = "LogoutClient", urlPatterns = {"/LogoutClient"})
 
 public class LogoutClient extends HttpServlet {
+  
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         session.removeAttribute("user");
         session.removeAttribute("cart");
         session.invalidate();
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Catalog");
         dispatcher.forward(request, response);
     }
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

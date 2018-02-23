@@ -10,9 +10,18 @@
              rtexprvalue="true" required="true" %>
 
 
-<tr>
-    <td>${sale.productName}</td>
-    <td>${sale.date}</td>
-    <td>${sale.quantity}</td>
-    <td>${sale.price}</td>
-</tr>
+
+
+
+<li class="accordion-item" data-accordion-item>
+  <a class="accordion-title">${sale.productName}</a>
+  <div class="accordion-content" data-tab-content>
+    <h5 class="subheader">Dettagli acquisto:</h5>
+    
+    <p style="font-style: italic;">Data d'acquisto: ${sale.date}</p>
+    <p style="font-style: italic;">Quantità acquistate: ${sale.quantity}</p>
+    <p style="font-style: italic;">Prezzo singola quantità: ${sale.price}</p>
+    <p style="font-style: italic;">Prezzo totale: ${sale.price * sale.quantity}</p>
+    <p style="font-style: italic;"><a href="/MobileSolutions/PhoneDetails?id=${sale.product}">Dettagli telefono</a></p>
+  </div>
+</li>

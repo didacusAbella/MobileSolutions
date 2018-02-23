@@ -9,26 +9,29 @@ import com.didacusabella.mobilesolutions.booking.BookingManager;
 import com.didacusabella.mobilesolutions.database.Database;
 import com.didacusabella.mobilesolutions.entities.Booking;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 
-
 import static org.junit.Assert.*;
 
 /**
- * @author diego
+ * @author diego & Domenico Antonio Tropeano
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BookingManagerTest {
 
     private BookingManager manager;
 
     @Before
-    public void setUp() throws SQLException {
+    public void test1setUp() throws SQLException {
         this.manager = BookingManager.getInstance();
     }
 
@@ -36,7 +39,7 @@ public class BookingManagerTest {
      * Test of getInstance method, of class BookingManager.
      */
     @Test
-    public void testGetInstance() throws Exception {
+    public void test2GetInstance() throws Exception {
         assertNotNull(this.manager);
     }
 
@@ -44,18 +47,18 @@ public class BookingManagerTest {
      * Test of mapRow method, of class BookingManager.
      */
     @Test
-    public void testMapRow() throws Exception {
-        Booking book = new Booking();
-        manager.addBooking(book);
+    public void test3MapRow() throws Exception {
         PreparedStatement stmt = Database.getConnection().prepareStatement(READ_BOOKING);
-        stmt.setString(1, "ciao");
+        stmt.setString(1, "oromis");
+        ResultSet rs = stmt.executeQuery();
+        assertEquals(rs.getRow(), 2);
     }
 
     /**
      * Test of getBooking method, of class BookingManager.
      */
     @Test
-    public void testGetBooking() {
+    public void test4GetBooking() {
         List<Booking> list = this.manager.getBooking(2);
         assertEquals(2, list.size());
     }
@@ -64,25 +67,30 @@ public class BookingManagerTest {
      * Test of addBooking method, of class BookingManager.
      */
     @Test
-    public void testAddBooking() {
+    public void test5AddBooking() {
+        int sizeBefore = manager.getBooking(2).size();
         Booking booking = new Booking(2, 2, 5, new Timestamp(Calendar.getInstance().getTime().getTime()));
-        assertTrue(this.manager.addBooking(booking));
+        assertTrue(sizeBefore < manager.getBooking(2).size());
     }
 
     /**
      * Test of removeBooking method, of class BookingManager.
      */
     @Test
-    public void testRemoveBooking() {
+    public void test6RemoveBooking() {
+        int sizeBefore = manager.getBooking(2).size();
         assertTrue(this.manager.removeBooking(2, 2));
+        assertTrue(sizeBefore < manager.getBooking(2).size());
     }
 
     /**
      * Test of removeAllBookings method, of class BookingManager.
      */
     @Test
-    public void testRemoveAllBookings() {
+    public void test7RemoveAllBookings() {
         assertTrue(this.manager.removeAllBookings(2));
+        assertTrue(manager.getBooking(2).size() == 0);
+
     }
 
     private static final String READ_BOOKING = "SELECT * FROM mobilesolutions.booking WHERE username=?;";

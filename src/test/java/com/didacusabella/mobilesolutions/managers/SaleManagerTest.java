@@ -3,7 +3,9 @@ package com.didacusabella.mobilesolutions.managers;
 import com.didacusabella.mobilesolutions.entities.Sale;
 import com.didacusabella.mobilesolutions.sale.SaleManager;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -17,30 +19,29 @@ import static org.junit.Assert.assertTrue;
  * @author Domenico Antonio Tropeano on 16/02/2018 at 12:07
  * @project MobileSolutions
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SaleManagerTest {
     private SaleManager manager;
 
     @Before
-    public void setUp() throws SQLException {
+    public void test1setUp() throws SQLException {
         this.manager = SaleManager.getInstance();
     }
 
-    /**
-     * Test of getInstance method, of class SmartphoneManager.
-     */
     @Test
-    public void testGetInstance() throws Exception {
+    public void test2GetInstance() throws Exception {
         assertNotNull(this.manager);
     }
 
     @Test
-    public void testGetAllSaleForClient() {
+    public void test3GetAllSaleForClient() {
         List<Sale> allsale = manager.getAllSaleForClient(1);
-        assertNotNull(allsale);
+        assertTrue(allsale.size() == 2);
     }
 
     @Test
-    public void testBuyProduct() {
+    public void test4BuyProduct() {
+        int beforeSize = manager.getAllSaleForClient(2).size();
         Sale sl = new Sale();
         sl.setProduct(1);
         sl.setUsername(2);
@@ -49,6 +50,8 @@ public class SaleManagerTest {
         sl.setPaymentType(1);
         sl.setQuantity(2);
         sl.setPrice(150);
-        assertTrue(manager.buyProduct(sl));
+        manager.buyProduct(sl);
+        assertTrue(beforeSize < manager.getAllSaleForClient(2).size());
     }
+
 }

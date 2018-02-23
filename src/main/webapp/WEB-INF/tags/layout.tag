@@ -33,7 +33,7 @@
     <meta name='keywords' content='e-commerce, smarthpones, telephones, mobile'/>
     <meta name='description' content='e-commerce for smartphone'/>
     <meta name='owner' content="Carmine Attanasio"/>
-    <link rel="icon" type="image/png" href="../../img/favicon.png"/>
+    <link rel="icon" type="image/png" href="./img/favicon.png"/>
     <link rel="Diego Avella" href="https://didacusabella.github.io" type="text/html"/>
     <link rel="Diego Avella" href="diego_avella@libero.it"/>
     <link rel="stylesheet" href="webjars/foundation/6.4.2/dist/css/foundation.min.css"/>

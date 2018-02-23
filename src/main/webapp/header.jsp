@@ -21,7 +21,7 @@
                             <li><a href="/MobileSolutions/ShowSales">Visualizza Acquisti</a></li>
                             <li><a href="/MobileSolutions/EditProfile">Modifica Profilo</a></li>
                             <li>
-                                <form action="">
+                              <form action="LogoutClient" method="get">
                                     <input type="submit" value="Logout" class="button">
                                 </form>
                             </li>

@@ -17,7 +17,7 @@
           <li><a href="/MobileSolutions/AdminDashboard?page=importXml.jsp">Importa XML esterno</a></li>
           <li><a href="/MobileSolutions/AllPhones">Gestione Smartphone</a></li>
           <li>
-            <form action="logout_gestore">
+            <form action="LogoutAdmin" method="get">
               <input type="submit" class="button" value="LOGOUT"/>
             </form>
           </li>

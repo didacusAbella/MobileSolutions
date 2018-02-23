@@ -2,7 +2,6 @@ package com.didacusabella.mobilesolutions.sale;
 
 import com.didacusabella.mobilesolutions.entities.Client;
 import com.didacusabella.mobilesolutions.entities.Sale;
-import com.didacusabella.mobilesolutions.entities.Smartphone;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 
 import javax.servlet.ServletException;
@@ -21,10 +20,13 @@ import java.util.List;
  */
 @WebServlet(name = "ShowSales", urlPatterns = "/ShowSales")
 public class ShowSales extends HttpServlet {
+  
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+      doGet(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             SaleManager saleManager = SaleManager.getInstance();
@@ -32,7 +34,7 @@ public class ShowSales extends HttpServlet {
             HttpSession session = request.getSession(true);
             Client client = (Client) session.getAttribute("user");
             List<Sale> listSales = saleManager.getAllSaleForClient(client.getId());
-            listSales.forEach(d -> d.setProductName(smartphoneManager.getSmartphoneByID(d.getProduct()).getBrand() + "  " + smartphoneManager.getSmartphoneByID(d.getProduct()).getModel()));
+            listSales.forEach(s -> s.setProductName(smartphoneManager.getSmartphoneByID(s.getProduct()).getBrand() + "  " + smartphoneManager.getSmartphoneByID(s.getProduct()).getModel()));
             request.setAttribute("listOfSales", listSales);
             this.getServletContext().getRequestDispatcher("/listOfSales.jsp").forward(request, response);
         } catch (SQLException e) {

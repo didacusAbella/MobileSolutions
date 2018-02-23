@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ShipmentManagerTest {
+    private static final double DELTA = 1e-15;
     private ShipmentManager manager;
 
     @Before
@@ -57,17 +58,17 @@ public class ShipmentManagerTest {
     @Test
 
     public void test6UpdateShipment() {
-        Shipment shipment = manager.getShipmentByID(3);
+        Shipment shipment = manager.getShipmentByID(1);
         shipment.setPrice(1);
         manager.updateShipment(shipment);
-        assertTrue(manager.getShipmentByID(3).getPrice() == 1);
+        assertEquals(manager.getShipmentByID(1).getPrice(), 1, DELTA);
     }
 
     @Test
 
     public void test7DeleteShipment() {
         int beforeSize = manager.getAllShipment().size();
-        manager.deleteShipment(3);
+        manager.deleteShipment(1);
         assertTrue(manager.getAllShipment().size() < beforeSize);
     }
 

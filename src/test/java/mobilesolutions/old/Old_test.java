@@ -23,7 +23,7 @@ public class Old_test {
         driver.get("http://localhost:8080/MobileSolutions/");
     }
 
-    @Test
+    ////@Test
     public void testLoginClienteOk() {
         WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
         usernameStuff.sendKeys("umber");
@@ -36,7 +36,7 @@ public class Old_test {
         driver.close();
     }
 
-    @Test
+    //@Test
     public void testLoginGestoreOk() {
         WebElement form = driver.findElement(By.name("login_gestore"));
         WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
@@ -49,7 +49,7 @@ public class Old_test {
         driver.close();
     }
 
-    @Test
+    //@Test
     public void testLoginClienteFail() {
         WebElement logged = null;
         try {
@@ -68,7 +68,7 @@ public class Old_test {
         }
     }
 
-    @Test
+    //@Test
     public void testRicercaCellOk() {
         WebElement form = driver.findElement(By.name("ricerca"));
         WebElement nameForSearch = driver.findElements(By.name("modello")).get(0);
@@ -78,7 +78,7 @@ public class Old_test {
         driver.close();
     }
 
-    @Test
+    //@Test
     public void testRicercaCellFail() {
         WebElement form = driver.findElement(By.name("ricerca"));
         WebElement nameForSearch = driver.findElements(By.name("modello")).get(0);
@@ -88,7 +88,7 @@ public class Old_test {
         driver.close();
     }
 
-    @Test
+    //@Test
     public void testInserisciCarrello() {
         WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
         usernameStuff.sendKeys("umber");
@@ -107,7 +107,7 @@ public class Old_test {
 
     }
 
-    @Test
+    //@Test
     public void testAcquistaCell() {
         WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
         usernameStuff.sendKeys("umber");
@@ -131,7 +131,7 @@ public class Old_test {
         driver.close();
     }
 
-    @Test
+    //@Test
     public void testAddCellulare() {
         WebElement form = driver.findElement(By.name("login_gestore"));
         WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
@@ -161,8 +161,9 @@ public class Old_test {
         Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
         driver.close();
     }
-    @Test
-    public void testEliminaAccount(){
+
+    //@Test
+    public void testEliminaAccount() {
         WebElement usernameStuff = driver.findElement(By.name("username"));
         usernameStuff.sendKeys("dom");
         WebElement passwordStuff = driver.findElement(By.name("password"));
@@ -176,38 +177,42 @@ public class Old_test {
         driver.close();
 
     }
-    public void testEliminaCarrello(){}
-    public void testModificaCarrello(){}
 
-    public void testModificaAccount(){
-      WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
-      usernameStuff.sendKeys("umber");
-      WebElement passwordStuff = driver.findElements(By.name("password")).get(0);
-      passwordStuff.sendKeys("umber");
-      WebElement form = driver.findElement(By.name("login_cliente"));
-      form.submit();
-      driver.get("http://localhost:8080/MobileSolutions/modificaCli.jsp");
-      WebElement nameElement = driver.findElement(By.name("nome"));
-      nameElement.sendKeys("Diego");
-      WebElement lastNameElement = driver.findElement(By.name("cognome"));
-      lastNameElement.sendKeys("Avella");
-      WebElement coElement = driver.findElement(By.name("cofiscale"));
-      coElement.sendKeys("VLLDGI93A08C361G");
-      WebElement place = driver.findElement(By.name("tipoindirizzo"));
-      WebElement tmp = driver.findElement(By.name("indirizzo"));
-      WebElement cap = driver.findElement(By.name("cap"));
-      WebElement city = driver.findElement(By.name("citta"));
-      WebElement prov = driver.findElement(By.name("prov"));
-      WebElement phoneNumber = driver.findElement(By.name("telcas"));
-      WebElement cellPhone = driver.findElement(By.name("telcel"));
-      WebElement fax = driver.findElement(By.name("fax"));
-      WebElement email = driver.findElement(By.name("email"));
-      WebElement password = driver.findElement(By.name("password"));
-      driver.close();
+    public void testEliminaCarrello() {
     }
-    
-    @Test
-    public void testModificaCellulare(){
+
+    public void testModificaCarrello() {
+    }
+
+    public void testModificaAccount() {
+        WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
+        usernameStuff.sendKeys("umber");
+        WebElement passwordStuff = driver.findElements(By.name("password")).get(0);
+        passwordStuff.sendKeys("umber");
+        WebElement form = driver.findElement(By.name("login_cliente"));
+        form.submit();
+        driver.get("http://localhost:8080/MobileSolutions/modificaCli.jsp");
+        WebElement nameElement = driver.findElement(By.name("nome"));
+        nameElement.sendKeys("Diego");
+        WebElement lastNameElement = driver.findElement(By.name("cognome"));
+        lastNameElement.sendKeys("Avella");
+        WebElement coElement = driver.findElement(By.name("cofiscale"));
+        coElement.sendKeys("VLLDGI93A08C361G");
+        WebElement place = driver.findElement(By.name("tipoindirizzo"));
+        WebElement tmp = driver.findElement(By.name("indirizzo"));
+        WebElement cap = driver.findElement(By.name("cap"));
+        WebElement city = driver.findElement(By.name("citta"));
+        WebElement prov = driver.findElement(By.name("prov"));
+        WebElement phoneNumber = driver.findElement(By.name("telcas"));
+        WebElement cellPhone = driver.findElement(By.name("telcel"));
+        WebElement fax = driver.findElement(By.name("fax"));
+        WebElement email = driver.findElement(By.name("email"));
+        WebElement password = driver.findElement(By.name("password"));
+        driver.close();
+    }
+
+    //@Test
+    public void testModificaCellulare() {
         WebElement form = driver.findElement(By.name("login_gestore"));
         WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
         usernameStuff.sendKeys("gestore");
@@ -243,102 +248,102 @@ public class Old_test {
         Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
         driver.close();
     }
-    
-    @Test
-    public void testRicercaAvanzata(){
-      driver.get("http://localhost:8080/MobileSolutions/ricercaAvanzata.jsp");
-      WebElement search = driver.findElement(By.name("ricerca"));
-      Select tech = new Select(driver.findElement(By.name("tecnologia")));
-      tech.selectByIndex(3);
-      Select price = new Select(driver.findElement(By.name("prezzoMassimo")));
-      price.selectByIndex(0);
-      Select connection= new Select(driver.findElement(By.name("connettivita")));
-      connection.selectByIndex(0);
-      Select messages = new Select(driver.findElement(By.name("messaggi")));
-      messages.selectByIndex(1);
-      Select web = new Select(driver.findElement(By.name("rete")));
-      web.selectByIndex(0);
-      Select autonomy = new Select(driver.findElement(By.name("autonomia")));
-      autonomy.selectByIndex(1);
-      Select autonmyast = new Select(driver.findElement(By.name("autonomiast")));
-      autonmyast.selectByIndex(1);
-      Select os = new Select(driver.findElement(By.name("sisoper")));
-      os.selectByIndex(0);
-      Select weight = new Select(driver.findElement(By.name("peso")));
-      weight.selectByIndex(1);
-      Select vibration = new Select(driver.findElement(By.name("vibrazione")));
-      vibration.selectByIndex(0);
-      Select browser = new Select(driver.findElement(By.name("browser")));
-      browser.selectByIndex(0);
-      Select games = new Select(driver.findElement(By.name("giochi")));
-      games.selectByIndex(0);
-      Select java = new Select(driver.findElement(By.name("java")));
-      java.selectByIndex(0);
-      Select videoCall = new Select(driver.findElement(By.name("videochiamata")));
-      videoCall.selectByIndex(0);
-      Select gps = new Select(driver.findElement(By.name("gps")));
-      gps.selectByIndex(0);
-      Select readers = new Select(driver.findElement(By.name("lettori")));
-      readers.selectByIndex(2);
-      Select voicelive = new Select(driver.findElement(By.name("vivavoce")));
-      voicelive.selectByIndex(0);
-      Select radio = new Select(driver.findElement(By.name("radio")));
-      radio.selectByIndex(0);
-      Select camera = new Select(driver.findElement(By.name("fotocamera")));
-      camera.selectByIndex(0);
-      Select internalMemory = new Select(driver.findElement(By.name("memoriaint")));
-      internalMemory.selectByIndex(0);
-      Select externalMemory = new Select(driver.findElement(By.name("memoriaest")));
-      externalMemory.selectByIndex(0);
-      search.submit();
-      Assert.assertTrue(driver.getPageSource().contains("Cellulare non presente"));
-      driver.close();
+
+    //@Test
+    public void testRicercaAvanzata() {
+        driver.get("http://localhost:8080/MobileSolutions/ricercaAvanzata.jsp");
+        WebElement search = driver.findElement(By.name("ricerca"));
+        Select tech = new Select(driver.findElement(By.name("tecnologia")));
+        tech.selectByIndex(3);
+        Select price = new Select(driver.findElement(By.name("prezzoMassimo")));
+        price.selectByIndex(0);
+        Select connection = new Select(driver.findElement(By.name("connettivita")));
+        connection.selectByIndex(0);
+        Select messages = new Select(driver.findElement(By.name("messaggi")));
+        messages.selectByIndex(1);
+        Select web = new Select(driver.findElement(By.name("rete")));
+        web.selectByIndex(0);
+        Select autonomy = new Select(driver.findElement(By.name("autonomia")));
+        autonomy.selectByIndex(1);
+        Select autonmyast = new Select(driver.findElement(By.name("autonomiast")));
+        autonmyast.selectByIndex(1);
+        Select os = new Select(driver.findElement(By.name("sisoper")));
+        os.selectByIndex(0);
+        Select weight = new Select(driver.findElement(By.name("peso")));
+        weight.selectByIndex(1);
+        Select vibration = new Select(driver.findElement(By.name("vibrazione")));
+        vibration.selectByIndex(0);
+        Select browser = new Select(driver.findElement(By.name("browser")));
+        browser.selectByIndex(0);
+        Select games = new Select(driver.findElement(By.name("giochi")));
+        games.selectByIndex(0);
+        Select java = new Select(driver.findElement(By.name("java")));
+        java.selectByIndex(0);
+        Select videoCall = new Select(driver.findElement(By.name("videochiamata")));
+        videoCall.selectByIndex(0);
+        Select gps = new Select(driver.findElement(By.name("gps")));
+        gps.selectByIndex(0);
+        Select readers = new Select(driver.findElement(By.name("lettori")));
+        readers.selectByIndex(2);
+        Select voicelive = new Select(driver.findElement(By.name("vivavoce")));
+        voicelive.selectByIndex(0);
+        Select radio = new Select(driver.findElement(By.name("radio")));
+        radio.selectByIndex(0);
+        Select camera = new Select(driver.findElement(By.name("fotocamera")));
+        camera.selectByIndex(0);
+        Select internalMemory = new Select(driver.findElement(By.name("memoriaint")));
+        internalMemory.selectByIndex(0);
+        Select externalMemory = new Select(driver.findElement(By.name("memoriaest")));
+        externalMemory.selectByIndex(0);
+        search.submit();
+        Assert.assertTrue(driver.getPageSource().contains("Cellulare non presente"));
+        driver.close();
     }
-    
-    @Test
-    public void testRimuoviCellulare(){
-      WebElement form = driver.findElement(By.name("login_gestore"));
-      WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
-      usernameStuff.sendKeys("gestore");
-      WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
-      passwordStuff.sendKeys("gestore");
-      form.submit();
-      driver.get("http://localhost:8080/MobileSolutions/cancellaCell.jsp");
-      WebElement removeForm = driver.findElement(By.cssSelector("form[action='cancellaCell']"));
-      Select model = new Select(driver.findElement(By.name("cancCell")));
-      model.selectByIndex(1);
-      removeForm.submit();
-      Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
-      driver.close();
+
+    //@Test
+    public void testRimuoviCellulare() {
+        WebElement form = driver.findElement(By.name("login_gestore"));
+        WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
+        usernameStuff.sendKeys("gestore");
+        WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
+        passwordStuff.sendKeys("gestore");
+        form.submit();
+        driver.get("http://localhost:8080/MobileSolutions/cancellaCell.jsp");
+        WebElement removeForm = driver.findElement(By.cssSelector("form[action='cancellaCell']"));
+        Select model = new Select(driver.findElement(By.name("cancCell")));
+        model.selectByIndex(1);
+        removeForm.submit();
+        Assert.assertEquals(driver.getPageSource().contains("img/ok.jpg"), true);
+        driver.close();
     }
-    
-    @Test
-    public void testVisualizzaClienti(){
-      WebElement form = driver.findElement(By.name("login_gestore"));
-      WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
-      usernameStuff.sendKeys("gestore");
-      WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
-      passwordStuff.sendKeys("gestore");
-      form.submit();
-      driver.get("http://localhost:8080/MobileSolutions/clienti.jsp");
-      Assert.assertTrue(driver.findElements(By.tagName("label")).size() > 0);
-      driver.close();
+
+    //@Test
+    public void testVisualizzaClienti() {
+        WebElement form = driver.findElement(By.name("login_gestore"));
+        WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
+        usernameStuff.sendKeys("gestore");
+        WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
+        passwordStuff.sendKeys("gestore");
+        form.submit();
+        driver.get("http://localhost:8080/MobileSolutions/clienti.jsp");
+        Assert.assertTrue(driver.findElements(By.tagName("label")).size() > 0);
+        driver.close();
     }
-    
-    @Test
-    public void testProdottiEsaurimento(){
-      WebElement form = driver.findElement(By.name("login_gestore"));
-      WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
-      usernameStuff.sendKeys("gestore");
-      WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
-      passwordStuff.sendKeys("gestore");
-      form.submit();
-      driver.get("http://localhost:8080/MobileSolutions/esaurimento.jsp");
-      WebElement innerForm = driver.findElement(By.name("scortaMinima"));
-      Select quantity = new Select(driver.findElement(By.name("scorta")));
-      quantity.selectByIndex(3);
-      innerForm.submit();
-      Assert.assertTrue(driver.getPageSource().contains("6630"));
-      driver.close();
+
+    //@Test
+    public void testProdottiEsaurimento() {
+        WebElement form = driver.findElement(By.name("login_gestore"));
+        WebElement usernameStuff = driver.findElements(By.name("username")).get(1);
+        usernameStuff.sendKeys("gestore");
+        WebElement passwordStuff = driver.findElements(By.name("password")).get(1);
+        passwordStuff.sendKeys("gestore");
+        form.submit();
+        driver.get("http://localhost:8080/MobileSolutions/esaurimento.jsp");
+        WebElement innerForm = driver.findElement(By.name("scortaMinima"));
+        Select quantity = new Select(driver.findElement(By.name("scorta")));
+        quantity.selectByIndex(3);
+        innerForm.submit();
+        Assert.assertTrue(driver.getPageSource().contains("6630"));
+        driver.close();
     }
 }

@@ -22,11 +22,11 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
   private final Connection dbConnection;
   private static PaymentManager paymentManager = null;
   private static Logger paymentManagerLogger = Logger.getLogger(PaymentManager.class.getName());
-  private static final String READ_PAYMENT = "SELECT * FROM mobilesolutions.payments WHERE id=?;";
-  private static final String READ_PAYMENTS = "SELECT * FROM mobilesolutions.payments;";
-  private static final String CREATE_PAYMENT = "INSERT INTO mobilesolutions.payments (name, price) VALUES (?, ?);";
-  private static final String UPDATE_PAYMENT = "UPDATE mobilesolutions.payments SET name=?, price=? WHERE id=?";
-  private static final String DELETE_PAYMENT = "DELETE FROM mobilesolutions.payments WHERE id=?";
+  private static final String READ_PAYMENT = "SELECT * FROM payments WHERE id=?;";
+  private static final String READ_PAYMENTS = "SELECT * FROM payments;";
+  private static final String CREATE_PAYMENT = "INSERT INTO payments (name, price) VALUES (?, ?);";
+  private static final String UPDATE_PAYMENT = "UPDATE payments SET name=?, price=? WHERE id=?";
+  private static final String DELETE_PAYMENT = "DELETE FROM payments WHERE id=?";
 
   private PaymentManager(Connection dbConnection) {
     this.dbConnection = dbConnection;

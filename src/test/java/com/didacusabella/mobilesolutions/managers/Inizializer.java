@@ -72,8 +72,7 @@ public class Inizializer {
             "INSERT INTO `testingdb5`.`payments` (`id`,`name`, `price`) VALUES ('2','Bancomat', '5');"};
     private static final String[] INIT_BOOKING = {"INSERT INTO `testingdb5`.`booking` (`product`, `username`, `datetime`, `quantity`) VALUES ('1', '2', '2018-02-18 03:56:37', '2');",
             "INSERT INTO `testingdb5`.`booking` (`product`, `username`, `datetime`, `quantity`) VALUES ('2', '1', '2018-02-18 03:56:37', '5');",
-            "INSERT INTO `testingdb5`.`booking` (`product`, `username`, `datetime`, `quantity`) VALUES ('1', '1', '2018-02-18 03:56:37', '1');",
-            "INSERT INTO `testingdb5`.`booking` (`product`, `username`, `datetime`, `quantity`) VALUES ('2', '2', '2018-02-18 03:56:37', '1');"};
+            "INSERT INTO `testingdb5`.`booking` (`product`, `username`, `datetime`, `quantity`) VALUES ('1', '1', '2018-02-18 03:56:37', '1');"};
     private static final String[] INIT_SALES = {"INSERT INTO `testingdb5`.`sale` (`product`, `username`, `datetime`, `quantity`, `price`, `shipmentType`, `paymentType`) VALUES ('1', '1', '2018-02-18 03:56:37', '1', '200', '1', '1');",
             "INSERT INTO `testingdb5`.`sale` (`product`, `username`, `datetime`, `quantity`, `price`, `shipmentType`, `paymentType`) VALUES ('1', '2', '2018-02-18 03:56:37', '2', '400', '2', '2');",
             "INSERT INTO `testingdb5`.`sale` (`product`, `username`, `datetime`, `quantity`, `price`, `shipmentType`, `paymentType`) VALUES ('2', '1', '2018-02-18 03:56:37', '3', '600', '1', '2');"};

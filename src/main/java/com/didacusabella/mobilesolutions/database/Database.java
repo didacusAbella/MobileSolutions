@@ -22,14 +22,14 @@ public class Database {
     private static String mySqlUrl;
     private static List<Connection> freeDbConnections;
     static final String driver = "com.mysql.cj.jdbc.Driver";
-    private static boolean DEBUG = false;
+    private static boolean DEBUG = true;
 
 
     static {
         protocol = "jdbc:mysql://";
 
         if (DEBUG) {
-            hostname = "mysql1.gear.host:";
+            hostname = "den1.mysql5.gear.host:";
             port = "3306/";
             dbName = "testingdb5";
             mySqlUrl = protocol + hostname + port + dbName;

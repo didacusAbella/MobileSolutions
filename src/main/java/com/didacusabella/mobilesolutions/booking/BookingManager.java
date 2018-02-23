@@ -21,13 +21,13 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
     private final Connection dbConnection;
     private static BookingManager bookingManager = null;
     private static Logger bookingManagerLogger = Logger.getLogger(BookingManager.class.getName());
-    private static final String READ_BOOKING = "SELECT * FROM mobilesolutions.booking WHERE username=?;";
-    private static final String CREATE_BOOKING = "INSERT INTO mobilesolutions.booking "
+    private static final String READ_BOOKING = "SELECT * FROM booking WHERE username=?;";
+    private static final String CREATE_BOOKING = "INSERT INTO booking "
             + "(product, username, datetime, quantity) VALUES (?, ?, ?, ?);";
-    private static final String REMOVE_PRODUCT = "DELETE FROM mobilesolutions.booking WHERE username=? AND product=?;";
-    private static final String CLEAN_BOOKING = "DELETE FROM mobilesolutions.booking WHERE username=?;";
-    private static final String CHECK_BOOKING = "SELECT * FROM mobilesolutions.booking WHERE username=? AND product=?";
-    private static final String INCREASE_QUANTITY = "UPDATE `mobilesolutions`.`booking` SET `quantity`=? WHERE `username`=? AND`product`=?;";
+    private static final String REMOVE_PRODUCT = "DELETE FROM booking WHERE username=? AND product=?;";
+    private static final String CLEAN_BOOKING = "DELETE FROM booking WHERE username=?;";
+    private static final String CHECK_BOOKING = "SELECT * FROM booking WHERE username=? AND product=?";
+    private static final String INCREASE_QUANTITY = "UPDATE booking SET `quantity`=? WHERE `username`=? AND`product`=?;";
 
     private BookingManager(Connection dbConnection) {
         this.dbConnection = dbConnection;
@@ -79,14 +79,14 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             stmt1.setInt(1, booking.getUsername());
             stmt1.setInt(2, booking.getProductID());
             ResultSet rs = stmt1.executeQuery();
-            if (rs.isBeforeFirst()) {
-
-            } else {
+            if (rs.next()) {
                 PreparedStatement stmt2 = this.dbConnection.prepareStatement(INCREASE_QUANTITY);
                 stmt2.setInt(1, booking.getQuantity());
                 stmt2.setInt(2, booking.getUsername());
                 stmt2.setInt(3, booking.getProductID());
                 return stmt2.execute();
+            } else {
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

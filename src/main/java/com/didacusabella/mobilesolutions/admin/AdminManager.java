@@ -66,8 +66,8 @@ public class AdminManager implements AdminDAO, Mappable<Admin> {
         return null;
     }
 
-    private static final String QUERY_GET_ADMIN_BY_ID = "SELECT t FROM mobilesolutions.admin WHERE id=?";
-    private static final String QUERY_GET_ADMIN_BY_USERNAME = "SELECT * FROM mobilesolutions.admin WHERE username=?";
+    private static final String QUERY_GET_ADMIN_BY_ID = "SELECT t FROM admin WHERE id=?";
+    private static final String QUERY_GET_ADMIN_BY_USERNAME = "SELECT * FROM admin WHERE username=?";
 
     @Override
     public Admin mapRow(ResultSet rs) throws SQLException {

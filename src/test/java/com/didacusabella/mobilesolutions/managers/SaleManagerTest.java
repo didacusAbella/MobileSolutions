@@ -36,14 +36,14 @@ public class SaleManagerTest {
     @Test
     public void test3GetAllSaleForClient() {
         List<Sale> allsale = manager.getAllSaleForClient(1);
-        assertTrue(allsale.size() == 2);
+        assertEquals(allsale.size(), 1);
     }
 
     @Test
     public void test4BuyProduct() {
         int beforeSize = manager.getAllSaleForClient(2).size();
         Sale sl = new Sale();
-        sl.setProduct(1);
+        sl.setProduct(2);
         sl.setUsername(2);
         sl.setDate(new Timestamp(System.currentTimeMillis()));
         sl.setShipmentType(1);

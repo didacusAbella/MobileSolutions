@@ -43,15 +43,14 @@ public class PaymentManagerTest {
     @Test
     public void test3GetPayment() {
         Payment payment = this.manager.getPayment(1);
-        assertNotNull(payment);
-        assertEquals("paypal", payment.getName());
+        assertEquals("Paypal", payment.getName());
     }
 
     /**
      * Test of getAllPayments method, of class PaymentManager.
      */
     @Test
-    public void testGetAllPayments() {
+    public void test4GetAllPayments() {
         List<Payment> list = this.manager.getAllPayments();
         assertNotNull(list);
         assertTrue(list.size() >= 1);
@@ -61,7 +60,7 @@ public class PaymentManagerTest {
      * Test of addPayment method, of class PaymentManager.
      */
     @Test
-    public void testAddPayment() {
+    public void test5AddPayment() {
         Payment payment = new Payment("postpay", 15.78);
         assertTrue(this.manager.addPayment(payment));
     }
@@ -70,18 +69,19 @@ public class PaymentManagerTest {
      * Test of updatePayment method, of class PaymentManager.
      */
     @Test
-    public void testUpdatePayment() {
-        Payment payment = new Payment("postpay", 10.98);
-        payment.setId(2);
-        assertTrue(this.manager.updatePayment(payment));
+    public void test6UpdatePayment() {
+        Payment payment = manager.getPayment(1);
+        payment.setName("postpay");
+        manager.updatePayment(payment);
+        assertEquals(manager.getPayment(1).getName(), "postpay");
     }
 
     /**
      * Test of deletePayment method, of class PaymentManager.
      */
     @Test
-    public void testDeletePayment() {
-        assertTrue(this.manager.deletePayment(2));
+    public void test7DeletePayment() {
+        assertTrue(this.manager.deletePayment(1));
     }
 
     /**

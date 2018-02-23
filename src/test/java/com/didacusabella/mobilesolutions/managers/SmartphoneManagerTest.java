@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Domenico Antonio Tropeano on 15/02/2018 at 16:35
@@ -37,6 +38,7 @@ public class SmartphoneManagerTest {
 
     @Test
     public void test3AddSmartphone() {
+        int beforeSize = manager.getAllSmartphone().size();
         Smartphone smartphone = new Smartphone();
         smartphone.setId(10);
         smartphone.setBrand("Huaweeei");
@@ -51,12 +53,12 @@ public class SmartphoneManagerTest {
         smartphone.setQuantity(100);
         smartphone.setPrice(180);
         manager.addSmartphone(smartphone);
-        assertEquals(manager.getSmartphoneByID(10).getBrand(), "Huaweeei");
+        assertTrue(manager.getAllSmartphone().size() > beforeSize);
     }
 
     @Test
     public void test4GetAllSmartphone() {
-        assertEquals(manager.getAllSmartphone().size(), 3);
+        assertEquals(manager.getAllSmartphone().size(), 4);
     }
 
 
@@ -67,7 +69,7 @@ public class SmartphoneManagerTest {
 
     @Test
     public void test6SmartphoneOUT() {
-        assertEquals(manager.getSmartphoneOUT(25).size(), 1);
+        assertEquals(manager.getSmartphoneOUT(25).size(), 2);
     }
 
     @Test

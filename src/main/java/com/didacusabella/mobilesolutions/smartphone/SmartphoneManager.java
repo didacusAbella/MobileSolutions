@@ -235,15 +235,15 @@ public class SmartphoneManager implements Mappable<Smartphone>, SmartphoneDAO {
       return null;
   }
 
-    private static final String QUERY_GET_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone WHERE id=?";
-    private static final String QUERY_ADD_SMARTPHONE = "INSERT INTO `mobilesolutions`.`smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-    private static final String QUERY_DELETE_SMARTPHONE = "DELETE FROM `mobilesolutions`.`smartphone` WHERE `id`=?;";
-    private static final String QUERY_GET_SMARTPHONE_OUT = "SELECT * FROM mobilesolutions.smartphone  WHERE quantity<=?";
-    private static final String QUERY_GET_ALL_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone ";
-    private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE mobilesolutions.smartphone SET brand=?,model=?," +
+    private static final String QUERY_GET_SMARTPHONE = "SELECT * FROM smartphone WHERE id=?";
+    private static final String QUERY_ADD_SMARTPHONE = "INSERT INTO `smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String QUERY_DELETE_SMARTPHONE = "DELETE FROM `smartphone` WHERE `id`=?;";
+    private static final String QUERY_GET_SMARTPHONE_OUT = "SELECT * FROM smartphone  WHERE quantity<=?";
+    private static final String QUERY_GET_ALL_SMARTPHONE = "SELECT * FROM smartphone ";
+    private static final String QUERY_UPDATE_SMARTPHONE = "UPDATE smartphone SET brand=?,model=?," +
             "displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?," +
             "LTE=?,camera=?,price=?,quantity=? WHERE id=?;";
-    private static final String QUERY_SEARCH_SMARTPHONE = "SELECT * FROM mobilesolutions.smartphone WHERE brand=?;";
+    private static final String QUERY_SEARCH_SMARTPHONE = "SELECT * FROM smartphone WHERE brand=?;";
     private static final String QUERY_IMPORT_DATA = "LOAD XML LOCAL INFILE ? " +
             " INTO TABLE smartphone " +
             " ROWS IDENTIFIED BY '<ROW>';";

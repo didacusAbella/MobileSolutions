@@ -24,20 +24,20 @@ public class ClientManager implements Mappable<Client>, ClientDao {
     private static ClientManager clientManager = null;
     private final Connection dbConnection;
     private static Logger clientManagerLogger = Logger.getLogger(ClientManager.class.getName());
-    private static final String READ_CLIENT_BY_ID = "SELECT * FROM mobilesolutions.client WHERE id=?";
-    private static final String CREATE_CLIENT = "INSERT INTO mobilesolutions.client"
+    private static final String READ_CLIENT_BY_ID = "SELECT * FROM client WHERE id=?";
+    private static final String CREATE_CLIENT = "INSERT INTO client"
             + " (name, last_name, tax_code, address, cap, city, province, tel_phone, "
             + "mobile_phone, fax, username, password, email) VALUES (?, ?, ?, ?, "
             + "?, ?, ?, ? , ?, ?, ?, ?, ?);";
 
-    private static final String UPDATE_CLIENT = "UPDATE mobilesolutions.client SET name=?, "
+    private static final String UPDATE_CLIENT = "UPDATE client SET name=?, "
             + "last_name=?, tax_code=?, address=?, cap=?, city=?, province=?, "
             + "tel_phone=?, mobile_phone=?, fax=?, username=?, password=?, email=? WHERE id=?;";
 
-    private static final String READ_CLIENTS = "SELECT * FROM mobilesolutions.client;";
-    private static final String DELETE_CLIENT = "DELETE FROM mobilesolutions.client WHERE id=?;";
-    private static final String READ_CLIENT_BY_USERNAME = "SELECT * FROM mobilesolutions.client WHERE username=?;";
-    private static final String LOGIN_CLIENT = "SELECT * FROM mobilesolutions.client"
+    private static final String READ_CLIENTS = "SELECT * FROM client;";
+    private static final String DELETE_CLIENT = "DELETE FROM client WHERE id=?;";
+    private static final String READ_CLIENT_BY_USERNAME = "SELECT * FROM client WHERE username=?;";
+    private static final String LOGIN_CLIENT = "SELECT * FROM client"
             + " WHERE username=? AND password=?;";
 
     private ClientManager(Connection connection) {

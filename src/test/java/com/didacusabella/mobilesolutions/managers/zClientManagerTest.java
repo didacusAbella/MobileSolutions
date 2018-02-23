@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class ClientManagerTest {
+public class zClientManagerTest {
 
     private ClientManager manager;
 
@@ -53,6 +53,7 @@ public class ClientManagerTest {
         Client client = new Client("Diego", "Avella", "VLLDGI93A08C361G", "Via Starza 10",
                 "84013", "Cava de\' Tirreni", "SA", "089341367", "3315807943", "089348956",
                 "didacusabella", "delucia", "diego_avella@libero.it");
+        client.setId(12);
         manager.insertClient(client);
         assertEquals(manager.getClient("didacusabella").getName(), "Diego");
     }
@@ -72,7 +73,7 @@ public class ClientManagerTest {
     @Test
     public void test6GetAllClients() {
         List<Client> result = this.manager.getAllClients();
-        assertEquals(2, result.size());
+        assertEquals(3, result.size());
     }
 
 
@@ -81,8 +82,9 @@ public class ClientManagerTest {
      */
     @Test
     public void test8DeleteClient() {
-        manager.deleteClient(9);
-        assertEquals(manager.getClient(9), null);
+        int id = manager.getClient("didacusabella").getId();
+        manager.deleteClient(id);
+        assertEquals(manager.getClient(id), null);
     }
 
     /**
@@ -90,11 +92,10 @@ public class ClientManagerTest {
      */
     @Test
     public void test7UpdateClient() {
-        Client client = new Client("Davide", "Avellaaa", "VLLDGI93A08C361G", "Via Starza 10",
-                "84013", "Cava de\' Tirreni", "SA", "089341367", "3315807943", "089348956",
-                "didacusabella", "delucia", "diego_avella@libero.it");
-        client.setId(9);
-        assertEquals(manager.getClient(9).getLastName(), "Avellaaa");
+        Client client = manager.getClient(2);
+        client.setLastName("Mariooo");
+        manager.updateClient(client);
+        assertEquals(manager.getClient(2).getLastName(), "Mariooo");
     }
 
 }

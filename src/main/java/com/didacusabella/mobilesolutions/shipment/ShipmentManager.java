@@ -129,9 +129,9 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
         return false;
     }
 
-    public static final String QUERY_DELETE_SHIPMENT = "DELETE FROM `mobilesolutions`.`shipment` WHERE `id`=?;";
-    public static final String QUERY_UPDATE_SHIPMENT = "UPDATE mobilesolutions.shipment SET name=?,price=?,dayRange=? WHERE id=?;";
-    public static final String QUERY_GET_ALL_SHIPMENT = "SELECT * FROM mobilesolutions.shipment";
-    public static final String QUERY_GET_SHIPMENT_BY_ID = "SELECT * FROM mobilesolutions.shipment WHERE id=?";
-    public static final String QUERY_ADD_SHIPMENT = "INSERT INTO `mobilesolutions`.`shipment` ( `name`, `price`, `dayRange`) VALUES ( ?, ?, ?);";
+    public static final String QUERY_DELETE_SHIPMENT = "DELETE FROM `shipment` WHERE `id`=?;";
+    public static final String QUERY_UPDATE_SHIPMENT = "UPDATE shipment SET name=?,price=?,dayRange=? WHERE id=?;";
+    public static final String QUERY_GET_ALL_SHIPMENT = "SELECT * FROM shipment";
+    public static final String QUERY_GET_SHIPMENT_BY_ID = "SELECT * FROM shipment WHERE id=?";
+    public static final String QUERY_ADD_SHIPMENT = "INSERT INTO .`shipment` ( `name`, `price`, `dayRange`) VALUES ( ?, ?, ?);";
 }

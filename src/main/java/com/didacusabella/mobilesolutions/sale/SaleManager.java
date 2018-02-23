@@ -94,8 +94,8 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
         return false;
     }
 
-    private static final String QUERY_GET_ALL_SALE_FOR_USER = "SELECT * FROM mobilesolutions.sale  WHERE username=?";
-    private static final String QUERY_BUY_PRODUCT = "INSERT INTO mobilesolutions.sale (`product`, username, datetime, " +
+    private static final String QUERY_GET_ALL_SALE_FOR_USER = "SELECT * FROM sale  WHERE username=?";
+    private static final String QUERY_BUY_PRODUCT = "INSERT INTO sale (`product`, username, datetime, " +
             "quantity, price, shipmentType, `paymentType`) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
 }

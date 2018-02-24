@@ -11,8 +11,8 @@
 
 
 <tr>
-    <td>${booking.productName}</td>
-    <td>${booking.quantity}</td>
-    <td>${booking.price}</td>
-    <td><a href="Vedo dettagli=${booking.productID}">Visualizza Dettagli</a></td>
+  <td>${booking.productName}</td>
+  <td>${booking.quantity}</td>
+  <td>${booking.price}</td>
+  <td><a href="/MobileSolutions/PhoneDetails?id=${booking.productID}">Visualizza Dettagli</a></td>
 </tr>

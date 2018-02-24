@@ -13,6 +13,7 @@
     <div class="grid-container">
       <div class="grid-x">
         <div class="cell">
+          <h2 class="text-center">Attenzione! Area riservata agli amministratori</h2>
           <form name="LoginAdmin" action="LoginAdmin" method="post" novalidate="true" data-abide>
             <div data-abide-error class="alert callout" style="display: none;">
               <p><i class="fi-alert"></i>Ci sono errori nella form. Controlla i campi.</p>

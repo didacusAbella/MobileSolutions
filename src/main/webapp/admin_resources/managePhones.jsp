@@ -7,15 +7,15 @@
   <c:otherwise>
     <div class="grid-container fluid">
       <h2>Lista Modelli</h2>
-      <a href="/MobileSolutions/addSmartphone" class="button">Aggiungi Telefono</a>
+      <a href="/MobileSolutions/addSmartphone" class="button"><i class="fi-plus"></i> Aggiungi Telefono</a>
       <div class="grid-x">
         <div class="cell">
           <table class="stack">
             <thead>
               <tr>
                 <th>Modello</th>
-                <th>Modifica</th>
-                <th>Elimina</th>
+                <th>Modifica <i class="fi-pencil"></i></th>
+                <th>Elimina <i class="fi-trash"></i></th>
               </tr>
             </thead>
             <tbody>

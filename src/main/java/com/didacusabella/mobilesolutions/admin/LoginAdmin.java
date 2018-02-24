@@ -1,7 +1,6 @@
 package com.didacusabella.mobilesolutions.admin;
 
 import com.didacusabella.mobilesolutions.entities.Admin;
-import com.didacusabella.mobilesolutions.entities.Booking;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,10 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet(name = "LoginAdmin", urlPatterns = {"/LoginAdmin"})
 public class LoginAdmin extends HttpServlet {
+  
+  private static Logger adminLoggerServler = Logger.getLogger(LoginAdmin.class.getName());
+  
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AdminManager manager;
         String username = request.getParameter("username");
@@ -27,20 +31,19 @@ public class LoginAdmin extends HttpServlet {
                 Admin admin = manager.getAdminByUsername(username);
                 HttpSession session = request.getSession(true);
                 session.setAttribute("admin", admin);
-                ArrayList<Booking> cart = new ArrayList();
-                session.setAttribute("cart", cart);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminDashboard");
                 dispatcher.forward(request, response);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/errore.jsp");
                 dispatcher.forward(request, response);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            adminLoggerServler.log(Level.SEVERE, null, e);
         }
 
     }
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

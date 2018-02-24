@@ -12,10 +12,10 @@
     <div class="off-canvas-wrapper">
       <div class="off-canvas position-left" id="offcanvas" data-off-canvas>
         <ul class="vertical menu">
-          <li><a href="/MobileSolutions/ShowClients">Visualizza Clienti</a></li>
-          <li><a href="/MobileSolutions/AdminDashboard?page=remainingPhones.jsp">Esaurimento Cellulari</a></li>
-          <li><a href="/MobileSolutions/AdminDashboard?page=importXml.jsp">Importa XML esterno</a></li>
-          <li><a href="/MobileSolutions/AllPhones">Gestione Smartphone</a></li>
+          <li><a href="/MobileSolutions/ShowClients"><i class="fi-torsos"></i> Visualizza Clienti</a></li>
+          <li><a href="/MobileSolutions/AdminDashboard?page=remainingPhones.jsp" class="fi-archive"> Esaurimento Cellulari</a></li>
+          <li><a href="/MobileSolutions/AdminDashboard?page=importXml.jsp"><i class="fi-page-add"></i> Importa XML esterno</a></li>
+          <li><a href="/MobileSolutions/AllPhones"><i class="fi-mobile"></i> Gestione Smartphone</a></li>
           <li>
             <form action="LogoutAdmin" method="get">
               <input type="submit" class="button" value="LOGOUT"/>
@@ -24,7 +24,7 @@
         </ul>
       </div>
       <div class="off-canvas-content" data-off-canvas-content>
-        <button type="button" class="button" data-toggle="offcanvas">Open Menu</button>
+        <button type="button" class="button" data-toggle="offcanvas"><i class="fi-list"></i> Opzioni Avanzate</button>
         <jsp:include page="${partial}"/>
       </div>
   </jsp:body>

@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 @WebServlet(name = "LoginAdmin", urlPatterns = {"/LoginAdmin"})
 public class LoginAdmin extends HttpServlet {
   
-  private static Logger adminLoggerServler = Logger.getLogger(LoginAdmin.class.getName());
+  private static final Logger LOGIN_ADMIN = Logger.getLogger(LoginAdmin.class.getName());
   
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -42,11 +42,17 @@ public class LoginAdmin extends HttpServlet {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminDashboard");
                 dispatcher.forward(request, response);
             } else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/errore.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ExceptionHandler");
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 dispatcher.forward(request, response);
             }
         } catch (SQLException e) {
-            adminLoggerServler.log(Level.SEVERE, null, e);
+            LOGIN_ADMIN.log(Level.SEVERE, null, e);
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ExceptionHandler");
+            request.setAttribute("errorMessage", "Parametri della richiesta non validi");
+            request.setAttribute("redirect", "administration.jsp");
+            dispatcher.forward(request, response);
         }
 
     }

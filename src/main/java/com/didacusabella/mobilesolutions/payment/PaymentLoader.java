@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import org.jboss.logging.Logger;
 
 /**
  * @author Domenico Antonio Tropeano on 21/02/2018 at 11:18
@@ -16,6 +17,8 @@ import java.sql.SQLException;
  */
 @WebServlet(name = "PaymentLoader", urlPatterns = "/PaymentLoader")
 public class PaymentLoader extends HttpServlet {
+  
+  private static final Logger PAYMENT_LOG = Logger.getLogger(PaymentLoader.class.getName());
   
    /**
    * Handles the HTTP <code>GET</code> method.
@@ -47,7 +50,11 @@ public class PaymentLoader extends HttpServlet {
             request.setAttribute("paymentList", paymentManager.getAllPayments());
             this.getServletContext().getRequestDispatcher("/payment.jsp").forward(request, response);
         } catch (SQLException e) {
-            e.printStackTrace();
+            PAYMENT_LOG.log(Logger.Level.FATAL, null, e);
+            request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova pi tardi");
+            request.setAttribute("redirect", "Catalog");
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
         }
     }
 }

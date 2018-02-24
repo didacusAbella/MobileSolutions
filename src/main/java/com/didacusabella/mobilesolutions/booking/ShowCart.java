@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Domenico Antonio Tropeano on 19/02/2018 at 14:54
@@ -22,6 +24,8 @@ import java.util.List;
  */
 @WebServlet(name = "ShowCart", urlPatterns = {"/ShowCart"})
 public class ShowCart extends HttpServlet {
+  
+  private static Logger showCartLogger = Logger.getLogger(ShowCart.class.getName());
   
    /**
    * Handles the HTTP <code>GET</code> method.
@@ -51,7 +55,6 @@ public class ShowCart extends HttpServlet {
             SmartphoneManager smartphoneManager = SmartphoneManager.getInstance();
             List<Booking> bookingList;
             HttpSession session = request.getSession(true);
-
             Client user = (Client) session.getAttribute("user");
             bookingList = bookingManager.getBooking(user.getId());
             for (Booking booking : bookingList) {
@@ -63,7 +66,10 @@ public class ShowCart extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
             dispatcher.forward(request, response);
         } catch (SQLException e) {
-            e.printStackTrace();
+            showCartLogger.log(Level.SEVERE, null, e);
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            request.setAttribute("errorMessage", "C'è stato un errore interno. Riprovare più tardi");
+            this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
         }
     }
 }

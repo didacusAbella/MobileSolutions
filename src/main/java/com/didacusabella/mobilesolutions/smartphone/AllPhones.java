@@ -1,5 +1,6 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.entities.Admin;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "AllPhones", urlPatterns = {"/AllPhones"})
 public class AllPhones extends HttpServlet {
+  
+  private static final Logger ALL_PHONES = Logger.getLogger(AllPhones.class.getName());
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -31,13 +35,23 @@ public class AllPhones extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
+      HttpSession session = request.getSession(true);
+      Admin admin = (Admin) session.getAttribute("admin");
+      if(admin != null){
       List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
       request.setAttribute("phones", phones);
       this.getServletContext().getRequestDispatcher("/AdminDashboard?page=managePhones.jsp").forward(request, response);
+      }else {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
+      }
     } catch (SQLException ex) {
-      Logger.getLogger(AllPhones.class.getName()).log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      ALL_PHONES.log(Level.SEVERE, null, ex);
+      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AdminDashboard");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
-   
   }
 
   /**

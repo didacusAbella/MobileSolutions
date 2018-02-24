@@ -23,7 +23,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
 
     private static ClientManager clientManager = null;
     private final Connection dbConnection;
-    private static Logger clientManagerLogger = Logger.getLogger(ClientManager.class.getName());
+    private static final Logger CLIENT_LOG = Logger.getLogger(ClientManager.class.getName());
     private static final String READ_CLIENT_BY_ID = "SELECT * FROM client WHERE id=?";
     private static final String CREATE_CLIENT = "INSERT INTO client"
             + " (name, last_name, tax_code, address, cap, city, province, tel_phone, "
@@ -88,7 +88,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             stmt.close();
             return cl;
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -106,7 +106,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
             stmt.close();
             return clients;
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -139,7 +139,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 }
             }
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -156,7 +156,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 return true;
             }
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -186,7 +186,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 return true;
             }
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -204,7 +204,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 return true;
             }
         } catch (SQLException ex) {
-            clientManagerLogger.log(Level.SEVERE, null, ex);
+            CLIENT_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -229,7 +229,7 @@ public class ClientManager implements Mappable<Client>, ClientDao {
                 return null;
             }
         } catch (SQLException e) {
-            clientManagerLogger.log(Level.SEVERE, null, e);
+            CLIENT_LOG.log(Level.SEVERE, null, e);
         }
         return null;
     }

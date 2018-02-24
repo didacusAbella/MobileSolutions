@@ -12,14 +12,14 @@
     <div class="grid-container">
       <div class="grid-x">
         <div class="cell">
-          <h1>Unauthorized</h1>
+          <h1 class="text-center">Unauthorized</h1>
           <br>
-          <h3>La pagina che hai richiesto non può essere autorizzata</h3>
-          <h3>Forse sei qui perchè:</h3>
+          <h3 class="text-center">La pagina che hai richiesto non può essere autorizzata</h3>
+          <h3 class="text-center">Forse sei qui perchè:</h3>
           <br>
-          <h3>Controlla che le credenziali che hai fornito</h3>
-          <h3>Controlla se l'indirizzo contiene errori</h3>
-          <a href="index.jsp" class="button">HOME</a>
+          <h3 class="text-center">Controlla che le credenziali che hai fornito</h3>
+          <h3 class="text-center">Controlla se l'indirizzo contiene errori</h3>
+          <a href="/MobileSolutions/signin.jsp" class="button">HOME</a>
         </div>
       </div>
     </div>

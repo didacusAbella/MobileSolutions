@@ -21,7 +21,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
   
   private final Connection dbConnection;
   private static PaymentManager paymentManager = null;
-  private static Logger paymentManagerLogger = Logger.getLogger(PaymentManager.class.getName());
+  private static final Logger PAYMENT_LOGGER = Logger.getLogger(PaymentManager.class.getName());
   private static final String READ_PAYMENT = "SELECT * FROM payments WHERE id=?;";
   private static final String READ_PAYMENTS = "SELECT * FROM payments;";
   private static final String CREATE_PAYMENT = "INSERT INTO payments (name, price) VALUES (?, ?);";
@@ -53,7 +53,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
       }
       return payment;
       } catch (SQLException ex) {
-      paymentManagerLogger.log(Level.SEVERE, null, ex);
+      PAYMENT_LOGGER.log(Level.SEVERE, null, ex);
     }
     return null;
   }
@@ -69,7 +69,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
       }
       return payments;
     } catch (SQLException ex) {
-      paymentManagerLogger.log(Level.SEVERE, null, ex);
+      PAYMENT_LOGGER.log(Level.SEVERE, null, ex);
     }
     return null;
   }
@@ -87,7 +87,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
         return true;
       }
     } catch (SQLException ex) {
-      paymentManagerLogger.log(Level.SEVERE, null, ex);
+      PAYMENT_LOGGER.log(Level.SEVERE, null, ex);
     }
     return false;
   }
@@ -106,7 +106,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
         return true;
       }
     } catch (SQLException ex) {
-      paymentManagerLogger.log(Level.SEVERE, null, ex);
+      PAYMENT_LOGGER.log(Level.SEVERE, null, ex);
     }
     return false;
   }
@@ -123,7 +123,7 @@ public class PaymentManager implements PaymentDao, Mappable<Payment> {
         return true;
       }
     } catch (SQLException ex) {
-      paymentManagerLogger.log(Level.SEVERE, null, ex);
+      PAYMENT_LOGGER.log(Level.SEVERE, null, ex);
     }
     return false;
   }

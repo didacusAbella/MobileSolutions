@@ -27,8 +27,7 @@ public class LogoutClient extends HttpServlet {
         session.removeAttribute("user");
         session.removeAttribute("cart");
         session.invalidate();
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Catalog");
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/Catalog");
         dispatcher.forward(request, response);
     }
 

@@ -1,5 +1,6 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
+import com.didacusabella.mobilesolutions.entities.Admin;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -9,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -16,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "RemoveSmartphone", urlPatterns = {"/RemoveSmartphone"})
 public class RemoveSmartphone extends HttpServlet {
+  
+  private static final Logger REMOVE_PHONE = Logger.getLogger(RemoveSmartphone.class.getName());
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -43,15 +47,28 @@ public class RemoveSmartphone extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      int id = Integer.parseInt(request.getParameter("id"));
-      if(SmartphoneManager.getInstance().deleteSmartphone(id)){
-        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
-      }else {
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
+      HttpSession session = request.getSession(true);
+      Admin admin = (Admin) session.getAttribute("admin");
+      if (admin != null) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        if (SmartphoneManager.getInstance().deleteSmartphone(id)) {
+          this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
+        } else {
+          response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+          request.setAttribute("errorMessage", "Telefono non presente");
+          request.setAttribute("redirect", "AllPhones");
+          this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
+        }
+      } else {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
       }
     } catch (SQLException ex) {
-      Logger.getLogger(RemoveSmartphone.class.getName()).log(Level.SEVERE, null, ex);
+      REMOVE_PHONE.log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      request.setAttribute("errorMessage", "C'è un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AllPhones");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
   }
 
@@ -64,5 +81,5 @@ public class RemoveSmartphone extends HttpServlet {
   public String getServletInfo() {
     return "Remove a phone";
   }
-
+  
 }

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ShowClients", urlPatterns = {"/ShowClients"})
 public class ShowClients extends HttpServlet {
   
-  private static Logger showClientsLogger = Logger.getLogger(ShowClients.class.getName());
+  private static final Logger SHOW_CLIENTS = Logger.getLogger(ShowClients.class.getName());
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -38,7 +38,10 @@ public class ShowClients extends HttpServlet {
       request.setAttribute("clients", clients);
       this.getServletContext().getRequestDispatcher("/admin_resources/adminDashboard.jsp").forward(request, response);
     } catch (SQLException ex) {
-      showClientsLogger.log(Level.SEVERE, null, ex);
+      SHOW_CLIENTS.log(Level.SEVERE, null, ex);
+      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AdminDashboard");
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
     }
   }
 
@@ -64,6 +67,6 @@ public class ShowClients extends HttpServlet {
   @Override
   public String getServletInfo() {
     return "Get all clients";
-  }// </editor-fold>
+  }
 
 }

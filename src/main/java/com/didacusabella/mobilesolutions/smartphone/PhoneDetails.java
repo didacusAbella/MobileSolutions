@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "PhoneDetails", urlPatterns = {"/PhoneDetails"})
 public class PhoneDetails extends HttpServlet {
   
-  private static Logger phoneDetailsLogger = Logger.getLogger(PhoneDetails.class.getName());
+  private static final Logger PHONE_DETAILS = Logger.getLogger(PhoneDetails.class.getName());
 
   /**
    * Handles the HTTP <code>GET</code> method.
@@ -37,7 +37,11 @@ public class PhoneDetails extends HttpServlet {
       request.setAttribute("phone", smartphone);
       this.getServletContext().getRequestDispatcher("/phoneInfo.jsp").forward(request, response);
     } catch (SQLException ex) {
-      phoneDetailsLogger.log(Level.SEVERE, null, ex);
+      PHONE_DETAILS.log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      request.setAttribute("errorMessage", "C'è un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "Catalog");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
     
   }

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class AdminManager implements AdminDAO, Mappable<Admin> {
     private static AdminManager adminManager = null;
     private final Connection dbConnection;
-    private static Logger adminManagerLogger = Logger.getLogger(AdminManager.class.getName());
+    private static final Logger ADMIN_LOGGER = Logger.getLogger(AdminManager.class.getName());
 
     public AdminManager(Connection dbConnection) {
         super();
@@ -46,7 +46,7 @@ public class AdminManager implements AdminDAO, Mappable<Admin> {
                 return true;
             }
         } catch (SQLException ex) {
-            adminManagerLogger.log(Level.SEVERE, null, ex);
+            ADMIN_LOGGER.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -61,7 +61,7 @@ public class AdminManager implements AdminDAO, Mappable<Admin> {
                 return mapRow(rs);
             }
         } catch (SQLException ex) {
-            adminManagerLogger.log(Level.SEVERE, null, ex);
+            ADMIN_LOGGER.log(Level.SEVERE, null, ex);
         }
         return null;
     }

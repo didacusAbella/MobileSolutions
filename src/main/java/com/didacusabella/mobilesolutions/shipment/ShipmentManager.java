@@ -21,7 +21,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
 
     private final Connection dbConnection;
     private static ShipmentManager shipmentManager = null;
-    private static Logger shipmentManagerLogger = Logger.getLogger(ShipmentManager.class.getName());
+    private static final Logger SHIPMENT_LOG = Logger.getLogger(ShipmentManager.class.getName());
 
     public ShipmentManager(Connection dbConnection) {
         super();
@@ -55,7 +55,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.setString(3, shipment.getDayRange());
             return statement.execute();
         } catch (SQLException e) {
-            shipmentManagerLogger.log(Level.SEVERE, null, e);
+            SHIPMENT_LOG.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -74,7 +74,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.close();
             return returnShipment;
         } catch (SQLException e) {
-            shipmentManagerLogger.log(Level.SEVERE, null, e);
+            SHIPMENT_LOG.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -92,7 +92,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.close();
             return returnShipments;
         } catch (SQLException e) {
-            shipmentManagerLogger.log(Level.SEVERE, null, e);
+            SHIPMENT_LOG.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -112,7 +112,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
                 return true;
             }
         } catch (SQLException e) {
-            shipmentManagerLogger.log(Level.SEVERE, null, e);
+            SHIPMENT_LOG.log(Level.SEVERE, null, e);
         }
         return false;
     }
@@ -124,7 +124,7 @@ public class ShipmentManager implements Mappable<Shipment>, ShipmentDAO {
             statement.setInt(1, id);
             return statement.execute();
         } catch (SQLException e) {
-            shipmentManagerLogger.log(Level.SEVERE, null, e);
+            SHIPMENT_LOG.log(Level.SEVERE, null, e);
         }
         return false;
     }

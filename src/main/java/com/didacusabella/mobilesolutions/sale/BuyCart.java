@@ -16,13 +16,36 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet(name = "BuyCart", urlPatterns = {"/BuyCart"})
 public class BuyCart extends HttpServlet {
+  
+  private static final Logger BUY_CART = Logger.getLogger(BuyCart.class.getName());
+  
+   /**
+   * Handles the HTTP <code>GET</code> method.
+   *
+   * @param request servlet request
+   * @param response servlet response
+   * @throws ServletException if a servlet-specific error occurs
+   * @throws IOException if an I/O error occurs
+   */
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 
+   /**
+   * Handles the HTTP <code>POST</code> method.
+   *
+   * @param request servlet request
+   * @param response servlet response
+   * @throws ServletException if a servlet-specific error occurs
+   * @throws IOException if an I/O error occurs
+   */
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             SaleManager saleManager = SaleManager.getInstance();
@@ -30,10 +53,11 @@ public class BuyCart extends HttpServlet {
             SmartphoneManager smartphoneManager = SmartphoneManager.getInstance();
             HttpSession session = request.getSession(true);
             Client client = (Client) session.getAttribute("user");
-            List<Booking> listOfBooking = bookingManager.getBooking(client.getId());
             if (client == null) {
-                //Errore
+               response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+               this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
             } else {
+              List<Booking> listOfBooking = bookingManager.getBooking(client.getId());
                 for (Booking book : listOfBooking) {
                     Sale sale = new Sale();
                     sale.injectBooking(book);
@@ -48,7 +72,11 @@ public class BuyCart extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/Catalog").forward(request, response);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            BUY_CART.log(Level.SEVERE, null, e);
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            request.setAttribute("errorMessage", "C'è stato un errore. Riprova");
+            request.setAttribute("redirect", "Catalog");
+            this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
         }
     }
 }

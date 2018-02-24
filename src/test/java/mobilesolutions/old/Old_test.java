@@ -1,14 +1,13 @@
 package mobilesolutions.old;
 
+import com.didacusabella.mobilesolutions.testutilities.SeleniumDriverFactory;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.mobilesolutions.testutilities.SeleniumDriverFactory;
 
 /**
  * @author Domenico Antonio Tropeano on 12/02/2018 at 14:56

@@ -5,6 +5,10 @@ package com.didacusabella.mobilesolutions.customException;
  * @project MobileSolutions
  */
 public class UsernameAlreadyExistException extends Exception {
+  
+    /**
+     * Create a new custom exception if the username already exist
+     */
     public UsernameAlreadyExistException() {
         super("Username already Exist");
     }

@@ -1,4 +1,0 @@
-<!ELEMENT data (prod+)>
-<!ELEMENT prod (modello, quantita)>
-<!ELEMENT modello (#PCDATA)>
-<!ELEMENT quantita (#PCDATA)>

@@ -1,6 +1,0 @@
-<!ELEMENT data (vendita+)>
-<!ELEMENT vendita (marca, modello, prezzo, cliente)>
-<!ELEMENT marca (#PCDATA)>
-<!ELEMENT modello (#PCDATA)>
-<!ELEMENT prezzo (#PCDATA)>
-<!ELEMENT cliente (#PCDATA)>

@@ -1,9 +1,0 @@
-<!ELEMENT dati (gestore)>
-<!ELEMENT gestore (username, password, nome, cognome)>
-<!ELEMENT nome (#PCDATA)>
-<!ELEMENT cognome (#PCDATA)>
-<!ELEMENT username (#PCDATA)>
-<!ELEMENT password (#PCDATA)>
-<!ELEMENT email (#PCDATA)>
-<!ELEMENT indirizzo (#PCDATA)>
-<!ELEMENT telefono (#PCDATA)>

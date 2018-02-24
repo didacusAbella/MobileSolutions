@@ -89,7 +89,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
 
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            bookingManagerLogger.log(Level.SEVERE, null, e);
         }
         try {
             PreparedStatement stmt = this.dbConnection.prepareStatement(CREATE_BOOKING);

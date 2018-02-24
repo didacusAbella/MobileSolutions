@@ -1,11 +1,9 @@
-package com.didacusabella.mobilesolutions.servlet;
+package com.didacusabella.mobilesolutions.sale;
 
 import com.didacusabella.mobilesolutions.booking.BookingManager;
-import com.didacusabella.mobilesolutions.client.ClientManager;
 import com.didacusabella.mobilesolutions.entities.Booking;
 import com.didacusabella.mobilesolutions.entities.Client;
 import com.didacusabella.mobilesolutions.entities.Sale;
-import com.didacusabella.mobilesolutions.sale.SaleManager;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 
 import javax.servlet.ServletException;
@@ -17,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "BuyCart", urlPatterns = {"/BuyCart"})
@@ -48,7 +45,7 @@ public class BuyCart extends HttpServlet {
                     bookingManager.removeAllBookings(client.getId());
                 }
             }
-            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/Catalog").forward(request, response);
 
         } catch (SQLException e) {
             e.printStackTrace();

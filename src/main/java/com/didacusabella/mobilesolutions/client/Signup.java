@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  */
 @WebServlet(name = "Signup", urlPatterns = {"/Signup"})
 public class Signup extends HttpServlet {
+  
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -53,7 +54,7 @@ public class Signup extends HttpServlet {
             newClient.setPassword(org.apache.commons.codec.digest.DigestUtils.sha256Hex(newClient.getPassword()));
             if (BeanValidator.<Client>validateBean(newClient))
                 if (clientManager.insertClient(newClient)) {
-                    this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+                    this.getServletContext().getRequestDispatcher("/Catalog").forward(request, response);
                 } else {
                     response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                     this.getServletContext().getRequestDispatcher("/signup.jsp").forward(request, response);

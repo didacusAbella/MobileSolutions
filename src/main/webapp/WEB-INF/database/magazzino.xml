@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE data SYSTEM "magazzino.dtd">
-<data>
- <prod>
-  <modello>6630</modello>
-  <quantita>4</quantita>
- </prod>
-</data>
-

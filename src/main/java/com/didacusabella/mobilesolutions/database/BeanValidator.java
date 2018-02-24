@@ -9,6 +9,7 @@ import javax.validation.ValidatorFactory;
 /**
  *
  * @author diego
+ * This class hadle bean validation
  */
 public class BeanValidator {
   

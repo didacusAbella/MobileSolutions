@@ -25,6 +25,7 @@ public interface ClientDao {
    * Add a new client into the database
    * @param client the client to add
    * @return true if the insertion goes successfully
+   * @throws com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException if the username already exist
    */
   boolean insertClient(Client client) throws UsernameAlreadyExistException;
   /**
@@ -47,5 +48,10 @@ public interface ClientDao {
    */
   boolean login(String username, String password);
 
+  /**
+   * Retrieve a client by username
+   * @param username the username of the client
+   * @return a Client instance if is registered in the system
+   */
   Client getClient(String username);
 }

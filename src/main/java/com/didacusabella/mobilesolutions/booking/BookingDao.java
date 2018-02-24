@@ -9,6 +9,7 @@ import java.util.List;
  * Database Access Pattern for Booking entity
  */
 public interface BookingDao {
+  
   /**
    * Get the booking of a specific client
    * @param username the id of the client
@@ -29,6 +30,7 @@ public interface BookingDao {
    * @return 
    */
   boolean removeBooking(int product, int username);
+  
   /**
    * Remove all products of a specific client from booking
    * @param username the id of the client

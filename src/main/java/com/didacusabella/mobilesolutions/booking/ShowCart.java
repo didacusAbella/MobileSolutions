@@ -1,10 +1,8 @@
-package com.didacusabella.mobilesolutions.servlet;
+package com.didacusabella.mobilesolutions.booking;
 
-import com.didacusabella.mobilesolutions.booking.BookingManager;
 import com.didacusabella.mobilesolutions.entities.Booking;
 import com.didacusabella.mobilesolutions.entities.Client;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
-import com.didacusabella.mobilesolutions.sale.SaleManager;
 import com.didacusabella.mobilesolutions.smartphone.SmartphoneManager;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,10 +22,29 @@ import java.util.List;
  */
 @WebServlet(name = "ShowCart", urlPatterns = {"/ShowCart"})
 public class ShowCart extends HttpServlet {
+  
+   /**
+   * Handles the HTTP <code>GET</code> method.
+   *
+   * @param request servlet request
+   * @param response servlet response
+   * @throws ServletException if a servlet-specific error occurs
+   * @throws IOException if an I/O error occurs
+   */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
+   /**
+   * Handles the HTTP <code>POST</code> method.
+   *
+   * @param request servlet request
+   * @param response servlet response
+   * @throws ServletException if a servlet-specific error occurs
+   * @throws IOException if an I/O error occurs
+   */
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             BookingManager bookingManager = BookingManager.getInstance();

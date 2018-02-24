@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.beanutils.BeanUtils;
 
-@WebServlet("/addSmartphone")
+@WebServlet(name = "AddSmartphone", urlPatterns = {"/AddSmartphone"})
 public class AddSmartphone extends HttpServlet {
 
   private static final Logger ADD_SMARTPHONE = Logger.getLogger(AddSmartphone.class.getName());

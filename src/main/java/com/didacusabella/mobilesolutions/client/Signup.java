@@ -4,6 +4,7 @@ import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistExc
 import com.didacusabella.mobilesolutions.database.BeanValidator;
 import com.didacusabella.mobilesolutions.entities.Client;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * @author diego

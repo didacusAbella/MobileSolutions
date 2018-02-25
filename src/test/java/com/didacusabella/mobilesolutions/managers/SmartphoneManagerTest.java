@@ -9,9 +9,7 @@ import org.junit.runners.MethodSorters;
 
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Domenico Antonio Tropeano on 15/02/2018 at 16:35

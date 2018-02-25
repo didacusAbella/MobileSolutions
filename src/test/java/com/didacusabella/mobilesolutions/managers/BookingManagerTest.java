@@ -6,15 +6,12 @@
 package com.didacusabella.mobilesolutions.managers;
 
 import com.didacusabella.mobilesolutions.booking.BookingManager;
-import com.didacusabella.mobilesolutions.database.Database;
 import com.didacusabella.mobilesolutions.entities.Booking;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;

@@ -1,7 +1,6 @@
 package com.didacusabella.mobilesolutions.managers;
 
 import com.didacusabella.mobilesolutions.admin.AdminManager;
-import com.didacusabella.mobilesolutions.shipment.ShipmentManager;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -9,9 +8,7 @@ import org.junit.runners.MethodSorters;
 
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Domenico Antonio Tropeano on 23/02/2018 at 16:16

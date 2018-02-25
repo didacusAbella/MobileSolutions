@@ -1,6 +1,7 @@
 package com.didacusabella.mobilesolutions.payment;
 
 import com.didacusabella.mobilesolutions.shipment.ShipmentManager;
+import org.jboss.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import org.jboss.logging.Logger;
 
 /**
  * @author Domenico Antonio Tropeano on 21/02/2018 at 11:18

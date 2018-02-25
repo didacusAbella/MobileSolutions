@@ -11,9 +11,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Domenico Antonio Tropeano on 16/02/2018 at 12:07

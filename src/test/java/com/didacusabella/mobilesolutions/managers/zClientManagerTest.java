@@ -1,18 +1,18 @@
 package com.didacusabella.mobilesolutions.managers;
 
-import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.client.ClientManager;
+import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException;
 import com.didacusabella.mobilesolutions.entities.Client;
-
-import java.sql.SQLException;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.*;
+import java.sql.SQLException;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @author diego & Domenico Antonio Tropeano

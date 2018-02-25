@@ -2,19 +2,15 @@ package com.didacusabella.mobilesolutions.managers;
 
 import com.didacusabella.mobilesolutions.entities.Payment;
 import com.didacusabella.mobilesolutions.payment.PaymentManager;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+import java.sql.SQLException;
+import java.util.List;
 
 import static org.junit.Assert.*;
-
-import org.junit.Ignore;
-import org.junit.runners.MethodSorters;
 
 /**
  * @author diego

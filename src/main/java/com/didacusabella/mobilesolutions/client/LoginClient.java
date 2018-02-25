@@ -1,6 +1,7 @@
 package com.didacusabella.mobilesolutions.client;
 
 import com.didacusabella.mobilesolutions.entities.Client;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +14,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.codec.digest.DigestUtils;
 
 @WebServlet(name = "LoginClient", urlPatterns = {"/LoginClient"})
 public class LoginClient extends HttpServlet {

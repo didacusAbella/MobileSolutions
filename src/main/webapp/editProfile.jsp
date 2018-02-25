@@ -33,7 +33,7 @@
             </label>
             <label>Città:
               <input type="text" value="${client.city}" name="city" pattern="alpha" required="true" minlength="2" maxlength="100"/>
-              <span class="form-error">Il campo password deve contenere solo lettere</span>
+              <span class="form-error">Il campo città deve contenere solo lettere</span>
             </label>
             <label>Telefono Cellulare:
               <input type="text" value="${client.mobilePhone}" name="mobilePhone" required="true"  pattern="integer" minlength="2" maxlength="14"/>

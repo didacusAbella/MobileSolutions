@@ -1,4 +1,4 @@
-package com.didacusabella.mobilesolutions.managers;
+package com.didacusabella.mobilesolutions.systemTest;
 
 import com.didacusabella.mobilesolutions.database.Database;
 
@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @author Domenico Antonio Tropeano on 22/02/2018 at 10:11
  * @project MobileSolutions
  */
-public class Inizializer {
+public class InizializerForSystemTesting {
     public static void main(String[] args) {
         Database.isDebug(true);
         clearDB();
@@ -59,10 +59,10 @@ public class Inizializer {
 
     private static final String[] DROP_ALL_DATA = {"DELETE FROM sale;", "DELETE FROM booking;", "DELETE FROM shipment;",
             "DELETE FROM payments;", "DELETE FROM smartphone;", "DELETE FROM admin;", "DELETE FROM client;"};
-    private static final String[] INIT_ADMIN = {"INSERT INTO `testingdb5`.`admin` (`username`, `password`, `firstName`, `lastName`) VALUES ('gestore', 'gestore', 'Mario', 'Rossi');",
-            "INSERT INTO `testingdb5`.`admin` (`username`, `password`, `firstName`, `lastName`) VALUES ('admin', 'admin', 'Lucia', 'Bianchi');"};
-    private static final String[] INIT_CLIENT = {"INSERT INTO `testingdb5`.`client` (`id`,`name`, `last_name`, `tax_code`, `address`, `cap`, `city`, `province`, `tel_phone`, `mobile_phone`, `fax`, `username`, `password`, `email`) VALUES ('1','Domenico', 'Tropeano', 'TRPDNC95M01A509H', 'Via Tropeani 24', '83010', 'Grottolella', 'Av', '0825702375', '3395000044', '0825702375', 'oromis', 'umber', 'dtropeano@hotmail.it');",
-            "INSERT INTO `testingdb5`.`client` (`id`,`name`, `last_name`, `tax_code`, `address`, `cap`, `city`, `province`, `tel_phone`, `mobile_phone`, `fax`, `username`, `password`, `email`) VALUES ('2','Mario', 'Rossi', 'FFJFKVKF555', 'Via Roma', '82554', 'Roma', 'RM', '082571552', '5855668855', '58855225', 'umber', 'umber', 'umber@umber.it');"};
+    private static final String[] INIT_ADMIN = {"INSERT INTO `testingdb5`.`admin` (`username`, `password`, `firstName`, `lastName`) VALUES ('gestore', '995ad93a109cf254d8ceef71ba56800dd304edec925c5439d66780f2dee63ee3', 'Mario', 'Rossi');",
+            "INSERT INTO `testingdb5`.`admin` (`username`, `password`, `firstName`, `lastName`) VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Lucia', 'Bianchi');"};
+    private static final String[] INIT_CLIENT = {"INSERT INTO `testingdb5`.`client` (`id`,`name`, `last_name`, `tax_code`, `address`, `cap`, `city`, `province`, `tel_phone`, `mobile_phone`, `fax`, `username`, `password`, `email`) VALUES ('1','Domenico', 'Tropeano', 'TRPDNC95M01A509H', 'Via Tropeani 24', '83010', 'Grottolella', 'Av', '0825702375', '3395000044', '0825702375', 'oromis', '1984a84582a6e0634d402d39cec81e3ec64df939324276605120c43102155a33', 'dtropeano@hotmail.it');",
+            "INSERT INTO `testingdb5`.`client` (`id`,`name`, `last_name`, `tax_code`, `address`, `cap`, `city`, `province`, `tel_phone`, `mobile_phone`, `fax`, `username`, `password`, `email`) VALUES ('2','Mario', 'Rossi', 'FFJFKVKF555', 'Via Roma', '82554', 'Roma', 'RM', '082571552', '5855668855', '58855225', 'umber', '1f543cef8c9eae6d76767e55570b0e5a78197cabf9e7b3eb314eeeee42e3c7fb', 'umber@umber.it');"};
     private static final String[] INIT_SMARTPHONE = {"INSERT INTO `testingdb5`.`smartphone` (`id`,`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES ('1','Samsung', 'S8', '5.2', 'Android ', '2.0Ghz quad Core', '8', '64', '1', '1', '20', '800', '20');",
             "INSERT INTO `testingdb5`.`smartphone` (`id`,`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES ('2','Apple', 'Iphone X', '5.3', 'iOS', '2.1 Octacore', '4', '256', '1', '1', '12', '1400', '200');",
             "INSERT INTO `testingdb5`.`smartphone` (`id`, `brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES ('3', 'Samsung', 'S9', '5.2', 'Android ', '2.0Ghz quad Core', '8', '64', '1', '1', '20', '800', '20');"};

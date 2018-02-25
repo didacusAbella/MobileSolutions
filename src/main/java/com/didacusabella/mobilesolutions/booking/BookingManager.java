@@ -81,7 +81,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             ResultSet rs = stmt1.executeQuery();
             if (rs.next()) {
                 PreparedStatement stmt2 = this.dbConnection.prepareStatement(INCREASE_QUANTITY);
-                stmt2.setInt(1, booking.getQuantity());
+                stmt2.setInt(1, rs.getInt("quantity") + 1);
                 stmt2.setInt(2, booking.getUsername());
                 stmt2.setInt(3, booking.getProductID());
                 return stmt2.execute();

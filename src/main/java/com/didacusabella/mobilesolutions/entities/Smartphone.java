@@ -1,5 +1,6 @@
 package com.didacusabella.mobilesolutions.entities;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -12,7 +13,19 @@ import javax.validation.constraints.Size;
 public class Smartphone {
     private int id;
     @NotNull
-    private int quantity, ram, internalStorage, camera;
+    @Max(99)
+    @Min(1)
+    private int ram;
+    @NotNull
+    @Max(9999)
+    @Min(-1)
+    private int quantity;
+    @Min(0)
+    @Max(999)
+    private int internalStorage;
+    @Min(0)
+    @Max(100)
+    private int camera;
     @Size(min = 4, max = 20)
     @NotNull
     private String brand, model, cpu;
@@ -24,6 +37,7 @@ public class Smartphone {
     private String os;
     private boolean bluetooth, lte;
     @Min(0)
+    @Max(10000)
     private double price;
 
     public Smartphone() {

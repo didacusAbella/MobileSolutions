@@ -25,9 +25,9 @@ public class LoginTest {
     public void testLoginClientOk() {
         driver.get("http://localhost:8080/MobileSolutions/signin.jsp");
         WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
-        usernameStuff.sendKeys("cane");
+        usernameStuff.sendKeys("umber");
         WebElement passwordStuff = driver.findElements(By.name("password")).get(0);
-        passwordStuff.sendKeys("cane");
+        passwordStuff.sendKeys("umber");
         WebElement form = driver.findElement(By.name("signinClient"));
         form.submit();
         boolean logged = driver.getPageSource().contains("Benvenuto");
@@ -53,7 +53,7 @@ public class LoginTest {
     public void testLoginClientWrongPassword() {
         driver.get("http://localhost:8080/MobileSolutions/signin.jsp");
         WebElement usernameStuff = driver.findElements(By.name("username")).get(0);
-        usernameStuff.sendKeys("cane");
+        usernameStuff.sendKeys("umber");
         WebElement passwordStuff = driver.findElements(By.name("password")).get(0);
         passwordStuff.sendKeys("cagnolino");
         WebElement form = driver.findElement(By.name("signinClient"));

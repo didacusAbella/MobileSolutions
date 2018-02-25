@@ -54,7 +54,7 @@ public class LoginClient extends HttpServlet {
         Client client = manager.getClient(username);
         HttpSession session = request.getSession(true);
         session.setAttribute("user", client);
-        RequestDispatcher rd = request.getRequestDispatcher("Catalog");
+        RequestDispatcher rd = request.getRequestDispatcher("/Catalog");
         rd.forward(request, response);
       } else {
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

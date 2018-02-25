@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Domenico Antonio Tropeano on 21/02/2018 at 12:19
@@ -20,6 +22,8 @@ import java.util.List;
  */
 @WebServlet(name = "ShowSales", urlPatterns = "/ShowSales")
 public class ShowSales extends HttpServlet {
+  
+  private static final Logger SHOW_SALES = Logger.getLogger(ShowSales.class.getName());
   
    /**
    * Handles the HTTP <code>POST</code> method.
@@ -54,7 +58,11 @@ public class ShowSales extends HttpServlet {
             request.setAttribute("listOfSales", listSales);
             this.getServletContext().getRequestDispatcher("/listOfSales.jsp").forward(request, response);
         } catch (SQLException e) {
-            e.printStackTrace();
+            SHOW_SALES.log(Level.SEVERE, null, e);
+            request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova");
+            request.setAttribute("redirect", "Catalog");
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
         }
     }
 }

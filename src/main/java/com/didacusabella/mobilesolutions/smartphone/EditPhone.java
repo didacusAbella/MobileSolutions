@@ -1,6 +1,7 @@
 package com.didacusabella.mobilesolutions.smartphone;
 
 import com.didacusabella.mobilesolutions.database.BeanValidator;
+import com.didacusabella.mobilesolutions.entities.Admin;
 import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
@@ -20,7 +22,9 @@ import org.apache.commons.beanutils.BeanUtils;
  */
 @WebServlet(name = "EditPhone", urlPatterns = {"/EditPhone"})
 public class EditPhone extends HttpServlet {
-  
+
+  private static final Logger EDIT_PHONE = Logger.getLogger(Catalog.class.getName());
+
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -33,12 +37,23 @@ public class EditPhone extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      int id = Integer.parseInt(request.getParameter("id"));
-      Smartphone smartphone = SmartphoneManager.getInstance().getSmartphoneByID(id);
-      request.setAttribute("phone", smartphone);
-      this.getServletContext().getRequestDispatcher("/AdminDashboard?page=editPhone.jsp").forward(request, response);
+      HttpSession session = request.getSession(true);
+      Admin admin = (Admin) session.getAttribute("admin");
+      if (admin != null) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Smartphone smartphone = SmartphoneManager.getInstance().getSmartphoneByID(id);
+        request.setAttribute("phone", smartphone);
+        this.getServletContext().getRequestDispatcher("/AdminDashboard?page=editPhone.jsp").forward(request, response);
+      } else {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
+      }
     } catch (SQLException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AdminDashboard");
+      EDIT_PHONE.log(Level.SEVERE, null, ex);
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
   }
 
@@ -54,20 +69,36 @@ public class EditPhone extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      Smartphone phone = new Smartphone();
-      BeanUtils.populate(phone, request.getParameterMap());
-      if(BeanValidator.<Smartphone>validateBean(phone) && SmartphoneManager.getInstance().editSmartphone(phone)){
-        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
-      }else{
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
+      HttpSession session = request.getSession(true);
+      Admin admin = (Admin) session.getAttribute("admin");
+      if (admin != null) {
+        Smartphone phone = new Smartphone();
+        BeanUtils.populate(phone, request.getParameterMap());
+        if (BeanValidator.<Smartphone>validateBean(phone)) {
+          if (SmartphoneManager.getInstance().editSmartphone(phone)) {
+            this.getServletContext().getRequestDispatcher("/AllPhones").forward(request, response);
+          } else {
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+            request.setAttribute("redirect", "AdminDashboard");
+            this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
+          }
+        } else {
+          response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+          request.setAttribute("errorMessage", "Parametri non validi. Controlla i campi della form.");
+          request.setAttribute("redirect", "AdminDashboard?page=editPhone.jsp");
+          this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
+        }
+      } else {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
       }
-    } catch (SQLException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
-    } catch (InvocationTargetException ex) {
-      Logger.getLogger(EditPhone.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException | IllegalAccessException | InvocationTargetException ex) {
+      EDIT_PHONE.log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AdminDashboard");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
   }
 

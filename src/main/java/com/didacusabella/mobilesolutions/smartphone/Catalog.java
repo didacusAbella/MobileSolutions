@@ -19,7 +19,9 @@ import java.util.logging.Logger;
  */
 @WebServlet(name = "Catalog", urlPatterns = {"/Catalog"})
 public class Catalog extends HttpServlet {
-  
+
+  private static final Logger CATALOG = Logger.getLogger(Catalog.class.getName());
+
   /**
    * Handles the HTTP <code>POST</code> method.
    *
@@ -28,12 +30,12 @@ public class Catalog extends HttpServlet {
    * @throws ServletException if a servlet-specific error occurs
    * @throws IOException if an I/O error occurs
    */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
+  @Override
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    doGet(request, response);
+  }
 
-   /**
+  /**
    * Handles the HTTP <code>GET</code> method.
    *
    * @param request servlet request
@@ -41,14 +43,18 @@ public class Catalog extends HttpServlet {
    * @throws ServletException if a servlet-specific error occurs
    * @throws IOException if an I/O error occurs
    */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
-            request.setAttribute("phones", phones);
-            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(AllPhones.class.getName()).log(Level.SEVERE, null, ex);
-        }
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    try {
+      List<Smartphone> phones = SmartphoneManager.getInstance().getAllSmartphone();
+      request.setAttribute("phones", phones);
+      this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+    } catch (SQLException ex) {
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      CATALOG.log(Level.SEVERE, null, ex);
+      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
+      request.setAttribute("redirect", "AdminDashboard");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
+  }
 }

@@ -11,7 +11,7 @@
         <a href="paymentsInfo.jsp"><img src="img/paypal.png" alt="Paypal Image" width="100" height="100"/></a>
         <a href="paymentsInfo.jsp"><img src="img/postepay.png" alt="Post Pay Image" width="100" height="100"/></a>
       <h6><a href="privacy.jsp">Termini di Servizio</a></h6>
-      <h6><a href="contatti.jsp">Contatti</a></h6>
+      <h6><a href="contatcs.jsp">Contatti</a></h6>
       </div>
     </div>
     <div class="small-12 medium-6 large-6 cell">

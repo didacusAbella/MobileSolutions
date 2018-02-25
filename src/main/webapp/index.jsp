@@ -8,6 +8,7 @@
     <div class="grid-x grid-padding-x small-up-1 medium-up-3 large-up-4" style="margin-top: 10px;">
       <c:choose>
         <c:when test="${phones == null}">
+          <h1>Non ci sono telefoni</h1>
         </c:when>
         <c:otherwise>
           <c:forEach items="${phones}" var="phone">

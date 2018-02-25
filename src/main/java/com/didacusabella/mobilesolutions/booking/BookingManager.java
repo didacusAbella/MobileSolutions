@@ -20,7 +20,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
 
     private final Connection dbConnection;
     private static BookingManager bookingManager = null;
-    private static Logger bookingManagerLogger = Logger.getLogger(BookingManager.class.getName());
+    private static final Logger BOOKING_LOG = Logger.getLogger(BookingManager.class.getName());
     private static final String READ_BOOKING = "SELECT * FROM booking WHERE username=?;";
     private static final String CREATE_BOOKING = "INSERT INTO booking "
             + "(product, username, datetime, quantity) VALUES (?, ?, ?, ?);";
@@ -67,7 +67,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
             stmt.close();
             return bookings;
         } catch (SQLException ex) {
-            bookingManagerLogger.log(Level.SEVERE, null, ex);
+            BOOKING_LOG.log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -89,7 +89,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
 
             }
         } catch (SQLException e) {
-            bookingManagerLogger.log(Level.SEVERE, null, e);
+            BOOKING_LOG.log(Level.SEVERE, null, e);
         }
         try {
             PreparedStatement stmt = this.dbConnection.prepareStatement(CREATE_BOOKING);
@@ -104,7 +104,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
                 return true;
             }
         } catch (SQLException ex) {
-            bookingManagerLogger.log(Level.SEVERE, null, ex);
+            BOOKING_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -122,7 +122,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
                 return true;
             }
         } catch (SQLException ex) {
-            bookingManagerLogger.log(Level.SEVERE, null, ex);
+            BOOKING_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -139,7 +139,7 @@ public class BookingManager implements Mappable<Booking>, BookingDao {
                 return true;
             }
         } catch (SQLException ex) {
-            bookingManagerLogger.log(Level.SEVERE, null, ex);
+            BOOKING_LOG.log(Level.SEVERE, null, ex);
         }
         return false;
     }

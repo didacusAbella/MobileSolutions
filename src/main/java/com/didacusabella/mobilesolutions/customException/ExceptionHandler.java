@@ -1,11 +1,6 @@
-package com.didacusabella.mobilesolutions.smartphone;
+package com.didacusabella.mobilesolutions.customException;
 
-import com.didacusabella.mobilesolutions.entities.Smartphone;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author diego
  */
-@WebServlet(name = "Search", urlPatterns = {"/Search"})
-public class Search extends HttpServlet {
-  
-  private static final Logger SEARCH = Logger.getLogger(Search.class.getName());
-  
+@WebServlet(name = "ExceptionHandler", urlPatterns = {"/ExceptionHandler"})
+public class ExceptionHandler extends HttpServlet {
+
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -32,18 +25,17 @@ public class Search extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    try {
-      String brand = request.getParameter("brand");
-      List<Smartphone> smartphones = SmartphoneManager.getInstance().search(brand);
-      request.setAttribute("phones", smartphones);
-      this.getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
-    } catch (SQLException ex) {
-      SEARCH.log(Level.SEVERE, null, ex);
-      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-      request.setAttribute("errorMessage", "C'è stato un errore interno. Riprova più tardi");
-      request.setAttribute("redirect", "Catalog");
-      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
-    }
+   switch(response.getStatus()){
+     case HttpServletResponse.SC_NOT_FOUND:
+       this.getServletContext().getRequestDispatcher("/not_found.jsp").forward(request, response);
+       break;
+     case HttpServletResponse.SC_UNAUTHORIZED:
+       this.getServletContext().getRequestDispatcher("/unauthorized.jsp").forward(request, response);
+       break;
+     default:
+       this.getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
+       break;
+   }
   }
 
   /**
@@ -67,7 +59,7 @@ public class Search extends HttpServlet {
    */
   @Override
   public String getServletInfo() {
-    return "Simple search";
+    return "Exception handling request";
   }
 
 }

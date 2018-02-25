@@ -1,4 +1,4 @@
-<form name="insertNote" action="addSmartphone" method="post" novalidate="true" data-abide>
+<form name="addSmartphone" action="AddSmartphone" method="post" novalidate="true" data-abide>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i>Ci sono errori nella Form. Controlla i campi</p>
   </div>

@@ -22,7 +22,7 @@ public class Database {
     private static String mySqlUrl;
     private static List<Connection> freeDbConnections;
     static final String driver = "com.mysql.cj.jdbc.Driver";
-    private static boolean DEBUG = true;
+    private static boolean DEBUG = false;
 
 
     static {

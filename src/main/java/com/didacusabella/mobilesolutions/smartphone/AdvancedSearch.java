@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "AdvancedSearch", urlPatterns = {"/AdvancedSearch"})
 public class AdvancedSearch extends HttpServlet {
 
-  private static Logger advacedSearchLogger = Logger.getLogger(AdvancedSearch.class.getName());
+  private static final Logger ADVANCED_SEARCH = Logger.getLogger(AdvancedSearch.class.getName());
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -44,7 +44,11 @@ public class AdvancedSearch extends HttpServlet {
       request.setAttribute("phones", smartphones);
       this.getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
     } catch (SQLException ex) {
-      advacedSearchLogger.log(Level.SEVERE, null, ex);
+      ADVANCED_SEARCH.log(Level.SEVERE, null, ex);
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      request.setAttribute("errorMessage", "Ci sono degli errori interni. Riprova più tardi");
+      request.setAttribute("redirect", "advancedSearch.jsp");
+      this.getServletContext().getRequestDispatcher("/ExceptionHandler").forward(request, response);
     }
   }
 

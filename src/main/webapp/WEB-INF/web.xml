@@ -24,11 +24,11 @@
     </welcome-file-list>
     <!--Error page handling-->
     <error-page>
-        <error-code>404</error-code>
-        <location>/not_found.jsp</location>
+      <error-code>404</error-code>
+      <location>/ExceptionHandler</location>
     </error-page>
     <error-page>
-        <error-code>401</error-code>
-        <location>/unauthorized.jsp</location>
+      <exception-type>java.lang.Throwable</exception-type>
+      <location>/ExceptionHandler</location>
     </error-page>
 </web-app>

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class SaleManager implements SaleDAO, Mappable<Sale> {
     private static SaleManager saleManager = null;
     private final Connection dbConnection;
-    private static Logger saleManagerLogger = Logger.getLogger(SaleManager.class.getName());
+    private static final Logger SALE_LOGGER = Logger.getLogger(SaleManager.class.getName());
 
     public SaleManager(Connection dbConnection) {
         super();
@@ -66,7 +66,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
             statement.close();
             return returnSales;
         } catch (SQLException e) {
-            saleManagerLogger.log(Level.SEVERE, null, e);
+            SALE_LOGGER.log(Level.SEVERE, null, e);
         }
         return null;
     }
@@ -89,7 +89,7 @@ public class SaleManager implements SaleDAO, Mappable<Sale> {
                 return true;
             }
         } catch (SQLException e) {
-            saleManagerLogger.log(Level.SEVERE, null, e);
+            SALE_LOGGER.log(Level.SEVERE, null, e);
         }
         return false;
     }

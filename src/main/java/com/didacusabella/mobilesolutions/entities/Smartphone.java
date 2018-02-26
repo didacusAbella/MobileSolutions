@@ -26,7 +26,7 @@ public class Smartphone {
     @Min(0)
     @Max(100)
     private int camera;
-    @Size(min = 4, max = 20)
+    @Size(min = 1, max = 20)
     @NotNull
     private String brand, model, cpu;
     @NotNull

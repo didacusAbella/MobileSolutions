@@ -51,8 +51,9 @@
   <div class="top-bar-right">
     <form name="search" action="Search" method="get">
       <ul class="menu">
-        <li><input type="search" name="brand" placeholder="Cerca per brand"></li>
-        <li><input type="submit" class="button" value="Cerca"/></li>
+        <li><input type="search" name="brand" required="true"
+                   pattern="^[a-zA-Z\s]*$" maxlength="20" placeholder="Cerca per brand"></li>
+        <li><input name="searchButton" type="submit" class="button" value="Cerca"/></li>
       </ul>
     </form>
   </div>

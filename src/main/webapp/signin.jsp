@@ -20,12 +20,12 @@
                             <legend>Login</legend>
                             <label> Username
                                 <input name="username" type="text" placeholder="Inserisci Username"
-                                       pattern="alpha_numeric" maxlength="15" required="true"/>
+                                       pattern="^[a-zA-Z\s]*$" maxlength="15" required="true"/>
                                 <span class="form-error">Il campo username deve contenere solo lettere e numeri</span>
                             </label>
                             <label>Password
                                 <input name="password" type="password" placeholder="Inserisci Password"
-                                       pattern="alpha_numeric" maxlength="20" required="true"/>
+                                       pattern="^[a-zA-Z\s]*$" maxlength="20" required="true"/>
                                 <span class="form-error">Il campo password deve contenere solo lettere e numeri</span>
                             </label>
                             <label>

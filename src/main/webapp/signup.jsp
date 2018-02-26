@@ -153,7 +153,7 @@
             <label>Città
               <input type="text" name="city" placeholder="Inserisci città" required="true" pattern="alpha"
                      required="true" minlength="2" maxlength="100"/>
-              <span class="form-error">Il campo password deve contenere solo lettere</span>
+              <span class="form-error">Il campo città deve contenere solo lettere</span>
             </label>
           </div>
           <div class="large-6 medium-6 small-12 cell">
@@ -179,7 +179,7 @@
             </label>
             <label>Password
               <input type="password" name="password" placeholder="Inserisci Password"
-                     pattern="alpha_numeric" required="true" minlength="2" maxlength="20"/>
+                     pattern="^[a-zA-Z\s]*$" required="true" minlength="2" maxlength="20"/>
               <span class="form-error">Il campo password deve essere composto da lettere e numeri</span>
             </label>
             <label>Email

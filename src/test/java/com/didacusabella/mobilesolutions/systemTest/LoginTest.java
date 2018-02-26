@@ -31,7 +31,7 @@ public class LoginTest {
         WebElement form = driver.findElement(By.name("signinClient"));
         form.submit();
         boolean logged = driver.getPageSource().contains("Benvenuto");
-        Assert.assertNotEquals(logged, null);
+        Assert.assertTrue(logged);
         driver.close();
     }
 
@@ -45,7 +45,7 @@ public class LoginTest {
         WebElement form = driver.findElement(By.name("signinClient"));
         form.submit();
         boolean logged = driver.getPageSource().contains("I parametri della richiesta sono errati. Controlla i campi");
-        Assert.assertNotEquals(logged, null);
+        Assert.assertTrue(logged);
         driver.close();
     }
 
@@ -59,7 +59,7 @@ public class LoginTest {
         WebElement form = driver.findElement(By.name("signinClient"));
         form.submit();
         boolean logged = driver.getPageSource().contains("I parametri della richiesta sono errati. Controlla i campi");
-        Assert.assertNotEquals(logged, null);
+        Assert.assertTrue(logged);
         driver.close();
     }
 

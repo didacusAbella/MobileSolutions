@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Payment</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.entities</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Payment (com.didacusabella.mobilesolutions.entities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Payment</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66,7%
+  </span>
+  <span class="absValue">
+    (6/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62,5%
+  </span>
+  <span class="absValue">
+    (10/ 16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.entities;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; *
+<i>5</i>&nbsp; * @author diego
+<i>6</i>&nbsp; * Entity class that map &lt;i&gt;payment&lt;/i&gt; table
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;public class Payment {
+<i>9</i>&nbsp;  
+<i>10</i>&nbsp;  private int id;
+<i>11</i>&nbsp;  private String name;
+<i>12</i>&nbsp;  private double price;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;  public Payment() {
+<b class="fc"><i>15</i>&nbsp;    super();</b>
+<b class="fc"><i>16</i>&nbsp;  }</b>
+<i>17</i>&nbsp;
+<b class="nc"><i>18</i>&nbsp;  public Payment(String name, double price) {</b>
+<b class="nc"><i>19</i>&nbsp;    this.name = name;</b>
+<b class="nc"><i>20</i>&nbsp;    this.price = price;</b>
+<b class="nc"><i>21</i>&nbsp;  }</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;  public int getId() {
+<b class="fc"><i>24</i>&nbsp;    return id;</b>
+<i>25</i>&nbsp;  }
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;  public void setId(int id) {
+<b class="fc"><i>28</i>&nbsp;    this.id = id;</b>
+<b class="fc"><i>29</i>&nbsp;  }</b>
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;  public String getName() {
+<b class="fc"><i>32</i>&nbsp;    return name;</b>
+<i>33</i>&nbsp;  }
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;  public void setName(String name) {
+<b class="fc"><i>36</i>&nbsp;    this.name = name;</b>
+<b class="fc"><i>37</i>&nbsp;  }</b>
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;  public double getPrice() {
+<b class="nc"><i>40</i>&nbsp;    return price;</b>
+<i>41</i>&nbsp;  }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;  public void setPrice(double price) {
+<b class="fc"><i>44</i>&nbsp;    this.price = price;</b>
+<b class="fc"><i>45</i>&nbsp;  }</b>
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;  @Override
+<i>48</i>&nbsp;  public String toString() {
+<b class="nc"><i>49</i>&nbsp;    return &quot;Payment{&quot; + &quot;id=&quot; + id + &quot;, name=&quot; + name + &quot;, price=&quot; + price + &#39;}&#39;;</b>
+<i>50</i>&nbsp;  }
+<i>51</i>&nbsp;  
+<i>52</i>&nbsp;  
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

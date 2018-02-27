@@ -1,0 +1,335 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SmartphoneManager</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.smartphone</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SmartphoneManager (com.didacusabella.mobilesolutions.smartphone)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SmartphoneManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71,4%
+  </span>
+  <span class="absValue">
+    (10/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61,9%
+  </span>
+  <span class="absValue">
+    (91/ 147)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.smartphone;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.database.Database;
+<i>4</i>&nbsp;import com.didacusabella.mobilesolutions.database.Mappable;
+<i>5</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Smartphone;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.sql.*;
+<i>8</i>&nbsp;import java.util.ArrayList;
+<i>9</i>&nbsp;import java.util.List;
+<i>10</i>&nbsp;import java.util.Map;
+<i>11</i>&nbsp;import java.util.StringJoiner;
+<i>12</i>&nbsp;import java.util.logging.Level;
+<i>13</i>&nbsp;import java.util.logging.Logger;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;/**
+<i>16</i>&nbsp; * @author Domenico Antonio Tropeano on 15/02/2018 at 11:51
+<i>17</i>&nbsp; * @project MobileSolutions
+<i>18</i>&nbsp; */
+<i>19</i>&nbsp;public class SmartphoneManager implements Mappable&lt;Smartphone&gt;, SmartphoneDAO {
+<b class="fc"><i>20</i>&nbsp;    private static SmartphoneManager smartphoneManager = null;</b>
+<i>21</i>&nbsp;    private final Connection dbConnection;
+<b class="fc"><i>22</i>&nbsp;    private static final Logger SMARTPHONE_LOG = Logger.getLogger(SmartphoneManager.class.getName());</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    public SmartphoneManager(Connection dbConnection) {
+<b class="fc"><i>25</i>&nbsp;        super();</b>
+<b class="fc"><i>26</i>&nbsp;        this.dbConnection = dbConnection;</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    public static SmartphoneManager getInstance() throws SQLException {
+<b class="fc"><i>30</i>&nbsp;        if (smartphoneManager == null) {</b>
+<b class="fc"><i>31</i>&nbsp;            smartphoneManager = new SmartphoneManager(Database.getConnection());</b>
+<b class="fc"><i>32</i>&nbsp;            return smartphoneManager;</b>
+<i>33</i>&nbsp;        } else
+<b class="fc"><i>34</i>&nbsp;            return smartphoneManager;</b>
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Override
+<i>38</i>&nbsp;    public boolean addSmartphone(Smartphone smartphone) {
+<i>39</i>&nbsp;        try {
+<b class="fc"><i>40</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_ADD_SMARTPHONE, Statement.RETURN_GENERATED_KEYS);</b>
+<b class="fc"><i>41</i>&nbsp;            statement.setString(1, smartphone.getBrand());</b>
+<b class="fc"><i>42</i>&nbsp;            statement.setString(2, smartphone.getModel());</b>
+<b class="fc"><i>43</i>&nbsp;            statement.setString(3, smartphone.getDisplayInch());</b>
+<b class="fc"><i>44</i>&nbsp;            statement.setString(4, smartphone.getOs());</b>
+<b class="fc"><i>45</i>&nbsp;            statement.setString(5, smartphone.getCpu());</b>
+<b class="fc"><i>46</i>&nbsp;            statement.setInt(6, smartphone.getRam());</b>
+<b class="fc"><i>47</i>&nbsp;            statement.setInt(7, smartphone.getInternalStorage());</b>
+<b class="fc"><i>48</i>&nbsp;            statement.setBoolean(8, smartphone.isBluetooth());</b>
+<b class="fc"><i>49</i>&nbsp;            statement.setBoolean(9, smartphone.isLte());</b>
+<b class="fc"><i>50</i>&nbsp;            statement.setInt(10, smartphone.getCamera());</b>
+<b class="fc"><i>51</i>&nbsp;            statement.setDouble(11, smartphone.getPrice());</b>
+<b class="fc"><i>52</i>&nbsp;            statement.setInt(12, smartphone.getQuantity());</b>
+<b class="fc"><i>53</i>&nbsp;            int insertionSuccess = statement.executeUpdate();</b>
+<b class="fc"><i>54</i>&nbsp;            if (insertionSuccess == 1) {</b>
+<b class="fc"><i>55</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="fc"><i>56</i>&nbsp;                statement.close();</b>
+<b class="fc"><i>57</i>&nbsp;                return true;</b>
+<i>58</i>&nbsp;            }
+<b class="nc"><i>59</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>60</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<b class="nc"><i>61</i>&nbsp;        }</b>
+<b class="nc"><i>62</i>&nbsp;        return false;</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    @Override
+<i>66</i>&nbsp;    public List&lt;Smartphone&gt; getAllSmartphone() {
+<i>67</i>&nbsp;        try {
+<b class="fc"><i>68</i>&nbsp;            List&lt;Smartphone&gt; returnSmartphones = new ArrayList&lt;&gt;();</b>
+<i>69</i>&nbsp;
+<b class="fc"><i>70</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_ALL_SMARTPHONE);</b>
+<b class="fc"><i>71</i>&nbsp;            ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>72</i>&nbsp;            while (rs.next()) {</b>
+<b class="fc"><i>73</i>&nbsp;                returnSmartphones.add(mapRow(rs));</b>
+<i>74</i>&nbsp;            }
+<b class="fc"><i>75</i>&nbsp;            rs.close();</b>
+<b class="fc"><i>76</i>&nbsp;            statement.close();</b>
+<b class="fc"><i>77</i>&nbsp;            return returnSmartphones;</b>
+<b class="nc"><i>78</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>79</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<i>80</i>&nbsp;        }
+<b class="nc"><i>81</i>&nbsp;        return null;</b>
+<i>82</i>&nbsp;    }
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;    @Override
+<i>85</i>&nbsp;    public Smartphone getSmartphoneByID(int id) {
+<i>86</i>&nbsp;        try {
+<b class="fc"><i>87</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_SMARTPHONE);</b>
+<b class="fc"><i>88</i>&nbsp;            statement.setInt(1, id);</b>
+<b class="fc"><i>89</i>&nbsp;            ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>90</i>&nbsp;            if (rs.next()) {</b>
+<b class="fc"><i>91</i>&nbsp;                return mapRow(rs);</b>
+<i>92</i>&nbsp;            }
+<b class="nc"><i>93</i>&nbsp;            rs.close();</b>
+<b class="nc"><i>94</i>&nbsp;            statement.close();</b>
+<b class="nc"><i>95</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>96</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<b class="nc"><i>97</i>&nbsp;        }</b>
+<b class="nc"><i>98</i>&nbsp;        return null;</b>
+<i>99</i>&nbsp;    }
+<i>100</i>&nbsp;
+<i>101</i>&nbsp;    @Override
+<i>102</i>&nbsp;    public List&lt;Smartphone&gt; getSmartphoneOUT(int min) {
+<i>103</i>&nbsp;        try {
+<b class="fc"><i>104</i>&nbsp;            List&lt;Smartphone&gt; returnSmartphoneOut = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>105</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_GET_SMARTPHONE_OUT);</b>
+<b class="fc"><i>106</i>&nbsp;            statement.setInt(1, min);</b>
+<b class="fc"><i>107</i>&nbsp;            ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>108</i>&nbsp;            while (rs.next()) {</b>
+<b class="nc"><i>109</i>&nbsp;                returnSmartphoneOut.add(mapRow(rs));</b>
+<i>110</i>&nbsp;            }
+<b class="fc"><i>111</i>&nbsp;            rs.close();</b>
+<b class="fc"><i>112</i>&nbsp;            statement.close();</b>
+<b class="fc"><i>113</i>&nbsp;            return returnSmartphoneOut;</b>
+<b class="nc"><i>114</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>115</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<i>116</i>&nbsp;        }
+<b class="nc"><i>117</i>&nbsp;        return null;</b>
+<i>118</i>&nbsp;    }
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;    @Override
+<i>121</i>&nbsp;    public boolean deleteSmartphone(int id) {
+<i>122</i>&nbsp;        try {
+<b class="nc"><i>123</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_DELETE_SMARTPHONE);</b>
+<b class="nc"><i>124</i>&nbsp;            statement.setInt(1, id);</b>
+<b class="nc"><i>125</i>&nbsp;            int deleteSuccess = statement.executeUpdate();</b>
+<b class="nc"><i>126</i>&nbsp;            if (deleteSuccess == 1) {</b>
+<b class="nc"><i>127</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="nc"><i>128</i>&nbsp;                statement.close();</b>
+<b class="nc"><i>129</i>&nbsp;                return true;</b>
+<i>130</i>&nbsp;            }
+<b class="nc"><i>131</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>132</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<b class="nc"><i>133</i>&nbsp;        }</b>
+<b class="nc"><i>134</i>&nbsp;        return false;</b>
+<i>135</i>&nbsp;    }
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;    @Override
+<i>138</i>&nbsp;    public boolean editSmartphone(Smartphone sm) {
+<i>139</i>&nbsp;        try {
+<b class="fc"><i>140</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_UPDATE_SMARTPHONE);</b>
+<b class="fc"><i>141</i>&nbsp;            statement.setString(1, sm.getBrand());</b>
+<b class="fc"><i>142</i>&nbsp;            statement.setString(2, sm.getModel());</b>
+<b class="fc"><i>143</i>&nbsp;            statement.setString(3, sm.getDisplayInch());</b>
+<b class="fc"><i>144</i>&nbsp;            statement.setString(4, sm.getOs());</b>
+<b class="fc"><i>145</i>&nbsp;            statement.setString(5, sm.getCpu());</b>
+<b class="fc"><i>146</i>&nbsp;            statement.setInt(6, sm.getRam());</b>
+<b class="fc"><i>147</i>&nbsp;            statement.setInt(7, sm.getInternalStorage());</b>
+<b class="fc"><i>148</i>&nbsp;            statement.setBoolean(8, sm.isBluetooth());</b>
+<b class="fc"><i>149</i>&nbsp;            statement.setBoolean(9, sm.isLte());</b>
+<b class="fc"><i>150</i>&nbsp;            statement.setInt(10, sm.getCamera());</b>
+<b class="fc"><i>151</i>&nbsp;            statement.setDouble(11, sm.getPrice());</b>
+<b class="fc"><i>152</i>&nbsp;            statement.setInt(12, sm.getQuantity());</b>
+<b class="fc"><i>153</i>&nbsp;            statement.setInt(13, sm.getId());</b>
+<b class="fc"><i>154</i>&nbsp;            int updateSuccess = statement.executeUpdate();</b>
+<b class="fc"><i>155</i>&nbsp;            if (updateSuccess == 1) {</b>
+<b class="fc"><i>156</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="fc"><i>157</i>&nbsp;                statement.close();</b>
+<b class="fc"><i>158</i>&nbsp;                return true;</b>
+<i>159</i>&nbsp;            }
+<b class="nc"><i>160</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>161</i>&nbsp;            SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<b class="nc"><i>162</i>&nbsp;        }</b>
+<b class="nc"><i>163</i>&nbsp;        return false;</b>
+<i>164</i>&nbsp;    }
+<i>165</i>&nbsp;
+<i>166</i>&nbsp;    @Override
+<i>167</i>&nbsp;    public boolean importXML(String pathToXML) {
+<i>168</i>&nbsp;        try {
+<b class="nc"><i>169</i>&nbsp;            PreparedStatement statement = dbConnection.prepareStatement(QUERY_IMPORT_DATA);</b>
+<b class="nc"><i>170</i>&nbsp;            statement.setString(1, pathToXML);</b>
+<b class="nc"><i>171</i>&nbsp;            return statement.execute();</b>
+<b class="nc"><i>172</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>173</i>&nbsp;          SMARTPHONE_LOG.log(Level.SEVERE, null, e);</b>
+<i>174</i>&nbsp;        }
+<b class="nc"><i>175</i>&nbsp;        return false;</b>
+<i>176</i>&nbsp;    }
+<i>177</i>&nbsp;
+<i>178</i>&nbsp;    @Override
+<i>179</i>&nbsp;    public Smartphone mapRow(ResultSet rs) throws SQLException {
+<b class="fc"><i>180</i>&nbsp;        Smartphone returnSmartphone = new Smartphone();</b>
+<b class="fc"><i>181</i>&nbsp;        returnSmartphone.setId(rs.getInt(&quot;id&quot;));</b>
+<b class="fc"><i>182</i>&nbsp;        returnSmartphone.setBrand(rs.getString(&quot;brand&quot;));</b>
+<b class="fc"><i>183</i>&nbsp;        returnSmartphone.setModel(rs.getString(&quot;model&quot;));</b>
+<b class="fc"><i>184</i>&nbsp;        returnSmartphone.setDisplayInch(rs.getString(&quot;displayInch&quot;));</b>
+<b class="fc"><i>185</i>&nbsp;        returnSmartphone.setOs(rs.getString(&quot;os&quot;));</b>
+<b class="fc"><i>186</i>&nbsp;        returnSmartphone.setCpu(rs.getString(&quot;cpu&quot;));</b>
+<b class="fc"><i>187</i>&nbsp;        returnSmartphone.setRam(rs.getInt(&quot;ram&quot;));</b>
+<b class="fc"><i>188</i>&nbsp;        returnSmartphone.setInternalStorage(rs.getInt(&quot;internal_storage&quot;));</b>
+<b class="fc"><i>189</i>&nbsp;        returnSmartphone.setBluetooth(rs.getBoolean(&quot;bluetooth&quot;));</b>
+<b class="fc"><i>190</i>&nbsp;        returnSmartphone.setLte(rs.getBoolean(&quot;LTE&quot;));</b>
+<b class="fc"><i>191</i>&nbsp;        returnSmartphone.setCamera(rs.getInt(&quot;camera&quot;));</b>
+<b class="fc"><i>192</i>&nbsp;        returnSmartphone.setPrice(rs.getDouble(&quot;price&quot;));</b>
+<b class="fc"><i>193</i>&nbsp;        returnSmartphone.setQuantity(rs.getInt(&quot;quantity&quot;));</b>
+<b class="fc"><i>194</i>&nbsp;        return returnSmartphone;</b>
+<i>195</i>&nbsp;    }
+<i>196</i>&nbsp;    
+<i>197</i>&nbsp;  @Override
+<i>198</i>&nbsp;  public List&lt;Smartphone&gt; search(String brand) {
+<i>199</i>&nbsp;      try {
+<b class="fc"><i>200</i>&nbsp;        List&lt;Smartphone&gt; smartphones = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>201</i>&nbsp;        PreparedStatement ps = this.dbConnection.prepareStatement(QUERY_SEARCH_SMARTPHONE);</b>
+<b class="fc"><i>202</i>&nbsp;        ps.setString(1, brand);</b>
+<b class="fc"><i>203</i>&nbsp;        ResultSet rs = ps.executeQuery();</b>
+<b class="fc"><i>204</i>&nbsp;        while(rs.next()){</b>
+<b class="fc"><i>205</i>&nbsp;          smartphones.add(mapRow(rs));</b>
+<i>206</i>&nbsp;        }
+<b class="fc"><i>207</i>&nbsp;        rs.close();</b>
+<b class="fc"><i>208</i>&nbsp;        ps.close();</b>
+<b class="fc"><i>209</i>&nbsp;        return smartphones;</b>
+<b class="nc"><i>210</i>&nbsp;      } catch (SQLException ex) {</b>
+<b class="nc"><i>211</i>&nbsp;        SMARTPHONE_LOG.log(Level.SEVERE, null, ex);</b>
+<i>212</i>&nbsp;      }
+<b class="nc"><i>213</i>&nbsp;    return null;</b>
+<i>214</i>&nbsp;  }
+<i>215</i>&nbsp;
+<i>216</i>&nbsp;  @Override
+<i>217</i>&nbsp;  public List&lt;Smartphone&gt; advancedSearch(Map&lt;String, String[]&gt; criterias) {
+<i>218</i>&nbsp;      try {
+<b class="nc"><i>219</i>&nbsp;        StringJoiner queryBuilder = new StringJoiner(&quot; AND &quot;, &quot;SELECT * FROM mobilesolutions.smartphone WHERE &quot;, &quot;;&quot;);</b>
+<b class="nc"><i>220</i>&nbsp;        criterias.forEach((param, value) -&gt; {</b>
+<b class="nc"><i>221</i>&nbsp;          queryBuilder.add(param.concat(&quot;=&quot;).concat(&quot;\&#39;&quot;.concat(value[0]).concat(&quot;\&#39;&quot;)));</b>
+<b class="nc"><i>222</i>&nbsp;        });</b>
+<b class="nc"><i>223</i>&nbsp;        Statement stmt = this.dbConnection.createStatement();</b>
+<b class="nc"><i>224</i>&nbsp;        List&lt;Smartphone&gt; smartphones = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>225</i>&nbsp;        ResultSet rs = stmt.executeQuery(queryBuilder.toString());</b>
+<b class="nc"><i>226</i>&nbsp;        while(rs.next()){</b>
+<b class="nc"><i>227</i>&nbsp;          smartphones.add(mapRow(rs));</b>
+<i>228</i>&nbsp;        }
+<b class="nc"><i>229</i>&nbsp;        rs.close();</b>
+<b class="nc"><i>230</i>&nbsp;        stmt.close();</b>
+<b class="nc"><i>231</i>&nbsp;        return smartphones;</b>
+<b class="nc"><i>232</i>&nbsp;      } catch (SQLException ex) {</b>
+<b class="nc"><i>233</i>&nbsp;        SMARTPHONE_LOG.log(Level.SEVERE, null, ex);</b>
+<i>234</i>&nbsp;      }
+<b class="nc"><i>235</i>&nbsp;      return null;</b>
+<i>236</i>&nbsp;  }
+<i>237</i>&nbsp;
+<i>238</i>&nbsp;    private static final String QUERY_GET_SMARTPHONE = &quot;SELECT * FROM smartphone WHERE id=?&quot;;
+<i>239</i>&nbsp;    private static final String QUERY_ADD_SMARTPHONE = &quot;INSERT INTO `smartphone` (`brand`, `model`, `displayInch`, `os`, `cpu`, `ram`, `internal_storage`, `bluetooth`, `LTE`, `camera`, `price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);&quot;;
+<i>240</i>&nbsp;    private static final String QUERY_DELETE_SMARTPHONE = &quot;DELETE FROM `smartphone` WHERE `id`=?;&quot;;
+<i>241</i>&nbsp;    private static final String QUERY_GET_SMARTPHONE_OUT = &quot;SELECT * FROM smartphone  WHERE quantity&lt;=?&quot;;
+<i>242</i>&nbsp;    private static final String QUERY_GET_ALL_SMARTPHONE = &quot;SELECT * FROM smartphone &quot;;
+<i>243</i>&nbsp;    private static final String QUERY_UPDATE_SMARTPHONE = &quot;UPDATE smartphone SET brand=?,model=?,&quot; +
+<i>244</i>&nbsp;            &quot;displayInch=?,os=?,cpu=?,ram=?,internal_storage=?,bluetooth=?,&quot; +
+<i>245</i>&nbsp;            &quot;LTE=?,camera=?,price=?,quantity=? WHERE id=?;&quot;;
+<i>246</i>&nbsp;    private static final String QUERY_SEARCH_SMARTPHONE = &quot;SELECT * FROM smartphone WHERE brand=?;&quot;;
+<i>247</i>&nbsp;    private static final String QUERY_IMPORT_DATA = &quot;LOAD XML LOCAL INFILE ? &quot; +
+<i>248</i>&nbsp;            &quot; INTO TABLE smartphone &quot; +
+<i>249</i>&nbsp;            &quot; ROWS IDENTIFIED BY &#39;&lt;ROW&gt;&#39;;&quot;;
+<i>250</i>&nbsp;
+<i>251</i>&nbsp;
+<i>252</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Mappable</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.database</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Mappable (com.didacusabella.mobilesolutions.database)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">Mappable</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<i>2</i>&nbsp;package com.didacusabella.mobilesolutions.database;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import java.sql.ResultSet;
+<i>5</i>&nbsp;import java.sql.SQLException;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; *
+<i>9</i>&nbsp; * @author diego
+<i>10</i>&nbsp; * Interface for map an object to table row
+<i>11</i>&nbsp; * @param &lt;T&gt; generic entity to map
+<i>12</i>&nbsp; */
+<i>13</i>&nbsp;public interface Mappable&lt;T&gt; {
+<i>14</i>&nbsp;  
+<i>15</i>&nbsp;  /**
+<i>16</i>&nbsp;   * Map a result set with a specific object
+<i>17</i>&nbsp;   * @param rs the result set
+<i>18</i>&nbsp;   * @return a custom mapped object
+<i>19</i>&nbsp;   * @throws SQLException if an error occurred
+<i>20</i>&nbsp;   */
+<i>21</i>&nbsp;  T mapRow(ResultSet rs) throws SQLException;
+<i>22</i>&nbsp;  
+<i>23</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Database</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.database</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Database (com.didacusabella.mobilesolutions.database)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Database</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (3/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    40,4%
+  </span>
+  <span class="absValue">
+    (23/ 57)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.database;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.sql.Connection;
+<i>4</i>&nbsp;import java.sql.DriverManager;
+<i>5</i>&nbsp;import java.sql.SQLException;
+<i>6</i>&nbsp;import java.util.LinkedList;
+<i>7</i>&nbsp;import java.util.List;
+<i>8</i>&nbsp;import java.util.Properties;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * @author Domenico Antonio Tropeano on 14/02/2018 at 11:06
+<i>12</i>&nbsp; * @project MobileSolutions
+<i>13</i>&nbsp; */
+<b class="nc"><i>14</i>&nbsp;public class Database {</b>
+<i>15</i>&nbsp;    private static String protocol;
+<i>16</i>&nbsp;    private static String hostname;
+<i>17</i>&nbsp;    private static String port;
+<i>18</i>&nbsp;    private static String username;
+<i>19</i>&nbsp;    private static String password;
+<i>20</i>&nbsp;    private static String dbName;
+<i>21</i>&nbsp;    private static Properties userInfo;
+<i>22</i>&nbsp;    private static String mySqlUrl;
+<i>23</i>&nbsp;    private static List&lt;Connection&gt; freeDbConnections;
+<i>24</i>&nbsp;    static final String driver = &quot;com.mysql.cj.jdbc.Driver&quot;;
+<b class="fc"><i>25</i>&nbsp;    private static boolean DEBUG = true;</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    static {
+<b class="fc"><i>29</i>&nbsp;        protocol = &quot;jdbc:mysql://&quot;;</b>
+<i>30</i>&nbsp;
+<b class="fc"><i>31</i>&nbsp;        if (DEBUG) {</b>
+<b class="fc"><i>32</i>&nbsp;            hostname = &quot;den1.mysql5.gear.host:&quot;;</b>
+<b class="fc"><i>33</i>&nbsp;            port = &quot;3306/&quot;;</b>
+<b class="fc"><i>34</i>&nbsp;            dbName = &quot;testingdb5&quot;;</b>
+<b class="fc"><i>35</i>&nbsp;            mySqlUrl = protocol + hostname + port + dbName;</b>
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;            /**********************************/
+<b class="fc"><i>38</i>&nbsp;            username = &quot;testingdb5&quot;;</b>
+<b class="fc"><i>39</i>&nbsp;            password = &quot;Mg19?_WabyKZ&quot;;</b>
+<b class="fc"><i>40</i>&nbsp;            userInfo = new Properties();</b>
+<b class="fc"><i>41</i>&nbsp;            userInfo.put(&quot;user&quot;, username);</b>
+<b class="fc"><i>42</i>&nbsp;            userInfo.put(&quot;password&quot;, password);</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;        } else {
+<b class="nc"><i>45</i>&nbsp;            hostname = &quot;mysql1.gear.host:&quot;;</b>
+<b class="nc"><i>46</i>&nbsp;            port = &quot;3306/&quot;;</b>
+<b class="nc"><i>47</i>&nbsp;            dbName = &quot;mobilesolutions&quot;;</b>
+<b class="nc"><i>48</i>&nbsp;            mySqlUrl = protocol + hostname + port + dbName;</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;            /**********************************/
+<b class="nc"><i>51</i>&nbsp;            username = &quot;mobilesolutions&quot;;</b>
+<b class="nc"><i>52</i>&nbsp;            password = &quot;P@ssw0rd&quot;;</b>
+<b class="nc"><i>53</i>&nbsp;            userInfo = new Properties();</b>
+<b class="nc"><i>54</i>&nbsp;            userInfo.put(&quot;user&quot;, username);</b>
+<b class="nc"><i>55</i>&nbsp;            userInfo.put(&quot;password&quot;, password);</b>
+<i>56</i>&nbsp;        }
+<i>57</i>&nbsp;
+<b class="fc"><i>58</i>&nbsp;        freeDbConnections = new LinkedList&lt;Connection&gt;();</b>
+<i>59</i>&nbsp;        try {
+<b class="fc"><i>60</i>&nbsp;            Class.forName(driver);</b>
+<b class="nc"><i>61</i>&nbsp;        } catch (ClassNotFoundException e) {</b>
+<b class="nc"><i>62</i>&nbsp;            System.out.println(&quot;DB driver not found:&quot; + e.getMessage());</b>
+<b class="fc"><i>63</i>&nbsp;        }</b>
+<b class="fc"><i>64</i>&nbsp;    }</b>
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    public static void isDebug(boolean choice) {
+<b class="nc"><i>67</i>&nbsp;        DEBUG = choice;</b>
+<b class="nc"><i>68</i>&nbsp;        hostname = &quot;den1.mysql5.gear.host:&quot;;</b>
+<b class="nc"><i>69</i>&nbsp;        port = &quot;3306/&quot;;</b>
+<b class="nc"><i>70</i>&nbsp;        dbName = &quot;testingdb5&quot;;</b>
+<b class="nc"><i>71</i>&nbsp;        mySqlUrl = protocol + hostname + port + dbName;</b>
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;        /**********************************/
+<b class="nc"><i>74</i>&nbsp;        username = &quot;testingdb5&quot;;</b>
+<b class="nc"><i>75</i>&nbsp;        password = &quot;Mg19?_WabyKZ&quot;;</b>
+<b class="nc"><i>76</i>&nbsp;        userInfo = new Properties();</b>
+<b class="nc"><i>77</i>&nbsp;        userInfo.put(&quot;user&quot;, username);</b>
+<b class="nc"><i>78</i>&nbsp;        userInfo.put(&quot;password&quot;, password);</b>
+<b class="nc"><i>79</i>&nbsp;    }</b>
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;    /**
+<i>82</i>&nbsp;     * Inizializza le connessioni
+<i>83</i>&nbsp;     *
+<i>84</i>&nbsp;     * @return
+<i>85</i>&nbsp;     * @throws SQLException
+<i>86</i>&nbsp;     * @author Tropeano Domenico Antonio &amp; Diego Avella
+<i>87</i>&nbsp;     */
+<i>88</i>&nbsp;
+<i>89</i>&nbsp;    private static synchronized Connection createDBConnection() throws SQLException {
+<i>90</i>&nbsp;
+<b class="fc"><i>91</i>&nbsp;        Connection newConnection = null;</b>
+<b class="fc"><i>92</i>&nbsp;        newConnection = DriverManager.getConnection(mySqlUrl, userInfo);</b>
+<b class="fc"><i>93</i>&nbsp;        newConnection.setAutoCommit(false);</b>
+<b class="fc"><i>94</i>&nbsp;        return newConnection;</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    /**
+<i>98</i>&nbsp;     * Fornisce una connessione al database
+<i>99</i>&nbsp;     *
+<i>100</i>&nbsp;     * @return
+<i>101</i>&nbsp;     * @throws SQLException
+<i>102</i>&nbsp;     */
+<i>103</i>&nbsp;    public static synchronized Connection getConnection() throws SQLException {
+<i>104</i>&nbsp;        Connection connection;
+<i>105</i>&nbsp;
+<b class="fc"><i>106</i>&nbsp;        if (!freeDbConnections.isEmpty()) {</b>
+<b class="nc"><i>107</i>&nbsp;            connection = (Connection) freeDbConnections.get(0);</b>
+<b class="nc"><i>108</i>&nbsp;            freeDbConnections.remove(0);</b>
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;            try {
+<b class="nc"><i>111</i>&nbsp;                if (connection.isClosed())</b>
+<b class="nc"><i>112</i>&nbsp;                    connection = getConnection();</b>
+<b class="nc"><i>113</i>&nbsp;            } catch (SQLException e) {</b>
+<b class="nc"><i>114</i>&nbsp;                connection.close();</b>
+<b class="nc"><i>115</i>&nbsp;                connection = getConnection();</b>
+<b class="nc"><i>116</i>&nbsp;            }</b>
+<i>117</i>&nbsp;        } else {
+<b class="fc"><i>118</i>&nbsp;            connection = createDBConnection();</b>
+<i>119</i>&nbsp;        }
+<i>120</i>&nbsp;
+<b class="fc"><i>121</i>&nbsp;        return connection;</b>
+<i>122</i>&nbsp;    }
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    /**
+<i>125</i>&nbsp;     * Rilascia la connessione
+<i>126</i>&nbsp;     *
+<i>127</i>&nbsp;     * @param connection rappresenta la connessione rilasciata e ri-aggiunta al pool di
+<i>128</i>&nbsp;     *                   connessioni.
+<i>129</i>&nbsp;     * @author Tropeano Domenico Antonio &amp; Diego Avella
+<i>130</i>&nbsp;     */
+<i>131</i>&nbsp;
+<i>132</i>&nbsp;    public static synchronized void releaseConnection(Connection connection) throws SQLException {
+<b class="nc"><i>133</i>&nbsp;        if (connection != null)</b>
+<b class="nc"><i>134</i>&nbsp;            freeDbConnections.add(connection);</b>
+<b class="nc"><i>135</i>&nbsp;    }</b>
+<i>136</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

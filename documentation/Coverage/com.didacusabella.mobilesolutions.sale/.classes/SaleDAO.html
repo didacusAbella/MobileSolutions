@@ -1,0 +1,75 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SaleDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.sale</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SaleDAO (com.didacusabella.mobilesolutions.sale)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">SaleDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.sale;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Sale;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * @author Domenico Antonio Tropeano on 15/02/2018 at 12:43
+<i>9</i>&nbsp; * @project MobileSolutions
+<i>10</i>&nbsp; * Database Access Object Pattern for Sale Table
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public interface SaleDAO {
+<i>13</i>&nbsp;  
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * Retrieve all payments for  specific client
+<i>16</i>&nbsp;     * @param clientID the id of the client
+<i>17</i>&nbsp;     * @return a list of sales
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    List&lt;Sale&gt; getAllSaleForClient(int clientID);
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;     * Buy a product and add a sale for a specific user
+<i>23</i>&nbsp;     * @param sl the sale to add
+<i>24</i>&nbsp;     * @return true if the Sale was addedd with success
+<i>25</i>&nbsp;     */
+<i>26</i>&nbsp;    boolean buyProduct(Sale sl);
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

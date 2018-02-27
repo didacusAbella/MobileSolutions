@@ -1,0 +1,89 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BookingDao</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.booking</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BookingDao (com.didacusabella.mobilesolutions.booking)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">BookingDao</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.booking;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Booking;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; *
+<i>9</i>&nbsp; * @author diego
+<i>10</i>&nbsp; * Database Access Pattern for Booking entity
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public interface BookingDao {
+<i>13</i>&nbsp;  
+<i>14</i>&nbsp;  /**
+<i>15</i>&nbsp;   * Get the booking of a specific client
+<i>16</i>&nbsp;   * @param username the id of the client
+<i>17</i>&nbsp;   * @return the booking of the user
+<i>18</i>&nbsp;   */
+<i>19</i>&nbsp;  List&lt;Booking&gt; getBooking(int username);
+<i>20</i>&nbsp;  /**
+<i>21</i>&nbsp;   * Add a product to the booking
+<i>22</i>&nbsp;   * @param booking the booking object
+<i>23</i>&nbsp;   * @return true if the product was addedd successfully
+<i>24</i>&nbsp;   */
+<i>25</i>&nbsp;  boolean addBooking(Booking booking);
+<i>26</i>&nbsp;  
+<i>27</i>&nbsp;  /**
+<i>28</i>&nbsp;   * Remove a specific product from the booking of a specific client
+<i>29</i>&nbsp;   * @param product
+<i>30</i>&nbsp;   * @param username
+<i>31</i>&nbsp;   * @return 
+<i>32</i>&nbsp;   */
+<i>33</i>&nbsp;  boolean removeBooking(int product, int username);
+<i>34</i>&nbsp;  
+<i>35</i>&nbsp;  /**
+<i>36</i>&nbsp;   * Remove all products of a specific client from booking
+<i>37</i>&nbsp;   * @param username the id of the client
+<i>38</i>&nbsp;   * @return true if the products are removed successfully
+<i>39</i>&nbsp;   */
+<i>40</i>&nbsp;  boolean removeAllBookings(int username);
+<i>41</i>&nbsp;  
+<i>42</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

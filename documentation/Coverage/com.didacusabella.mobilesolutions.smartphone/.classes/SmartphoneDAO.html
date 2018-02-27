@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SmartphoneDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.smartphone</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SmartphoneDAO (com.didacusabella.mobilesolutions.smartphone)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">SmartphoneDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.smartphone;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Smartphone;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.List;
+<i>7</i>&nbsp;import java.util.Map;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * @author Domenico Antonio Tropeano on 15/02/2018 at 11:51
+<i>11</i>&nbsp; * @project MobileSolutions
+<i>12</i>&nbsp; * Database Access Object Patten for Smartphone Table
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;public interface SmartphoneDAO {
+<i>15</i>&nbsp;    /**
+<i>16</i>&nbsp;     * Add Smartphone to database
+<i>17</i>&nbsp;     *
+<i>18</i>&nbsp;     * @param smartphone object
+<i>19</i>&nbsp;     * @return &lt;code&gt;true&lt;/code&gt; if the smartphone is correctly added;
+<i>20</i>&nbsp;     * &lt;code&gt;false&lt;/code&gt; otherwise
+<i>21</i>&nbsp;     */
+<i>22</i>&nbsp;    boolean addSmartphone(Smartphone smartphone);
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * Get all Smartphone in the database
+<i>26</i>&nbsp;     *
+<i>27</i>&nbsp;     * @return List&lt;Smartphone&gt; a list of smartphones
+<i>28</i>&nbsp;     */
+<i>29</i>&nbsp;    List&lt;Smartphone&gt; getAllSmartphone();
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * Retrieve a smartphone by id
+<i>33</i>&nbsp;     * @param id the id of the smartphone
+<i>34</i>&nbsp;     * @return a smartphone instance
+<i>35</i>&nbsp;     */
+<i>36</i>&nbsp;    Smartphone getSmartphoneByID(int id);
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    /**
+<i>39</i>&nbsp;     * Retrieve all smartphone that are finishing
+<i>40</i>&nbsp;     * @param min the min quantity
+<i>41</i>&nbsp;     * @return a list of smartphones
+<i>42</i>&nbsp;     */
+<i>43</i>&nbsp;    List&lt;Smartphone&gt; getSmartphoneOUT(int min);
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    /**
+<i>46</i>&nbsp;     * Delete a smartphone from the database
+<i>47</i>&nbsp;     * @param id the id of the smartphone
+<i>48</i>&nbsp;     * @return true if was removed wth success
+<i>49</i>&nbsp;     */
+<i>50</i>&nbsp;    boolean deleteSmartphone(int id);
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    /**
+<i>53</i>&nbsp;     * Update smartphone details
+<i>54</i>&nbsp;     * @param sm the updated smartphone
+<i>55</i>&nbsp;     * @return true if the update goes with success
+<i>56</i>&nbsp;     */
+<i>57</i>&nbsp;    boolean editSmartphone(Smartphone sm);
+<i>58</i>&nbsp;    
+<i>59</i>&nbsp;    /**
+<i>60</i>&nbsp;     * Search a smartphone by brand
+<i>61</i>&nbsp;     * @param brand the brand of the smartphone
+<i>62</i>&nbsp;     * @return a list of smartphones by brand
+<i>63</i>&nbsp;     */
+<i>64</i>&nbsp;    List&lt;Smartphone&gt; search(String brand);
+<i>65</i>&nbsp;    
+<i>66</i>&nbsp;    /**
+<i>67</i>&nbsp;     * Advanced search smartphones based on various criterias
+<i>68</i>&nbsp;     * @param criterias the list of criterias to search
+<i>69</i>&nbsp;     * @return a list of smartphones that match all criterias
+<i>70</i>&nbsp;     */
+<i>71</i>&nbsp;    List&lt;Smartphone&gt; advancedSearch(Map&lt;String, String[]&gt; criterias);
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;    /**
+<i>74</i>&nbsp;     * Import a dataser using an XML
+<i>75</i>&nbsp;     * @param pathToXML the path to file
+<i>76</i>&nbsp;     * @return true if the import goes with success
+<i>77</i>&nbsp;     */
+<i>78</i>&nbsp;    boolean importXML(String pathToXML);
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

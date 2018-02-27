@@ -5,6 +5,13 @@ E-Commerce for smartphone
 
 Mobile Solutions is an e-commerce created in 2008 for selling smarphone. This project will be used for learn how to do Software Maintenance..
 
+## Special Mentioning
+
+A very great thanks to our collegue, the graduated student ***Carmine Attanasio*** that gave me the permission to use his project.
+
+
+2017-2018
+
 ## Change Request description
 
 1. Substitute XML storage Layer with a RDBMS Storage Layer.
@@ -46,7 +53,7 @@ The new system is designed to follow the MVC Architectural Pattern trying to obt
 2. Selenium WebDriver
 3. IntellijIdea Code Coverage
 
-## Special Mentioning
+### Author
 
-A very great thanks to my collegue, the graduated student ***Carmine Attanasio*** that gave me the permission to use his project.
-2017-2018
+Avella Diego
+Tropeano Domenico Antonio

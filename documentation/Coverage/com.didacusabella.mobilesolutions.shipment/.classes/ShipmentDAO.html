@@ -1,0 +1,94 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ShipmentDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.shipment</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ShipmentDAO (com.didacusabella.mobilesolutions.shipment)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ShipmentDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.shipment;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Shipment;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * @author Domenico Antonio Tropeano on 15/02/2018 at 15:13
+<i>9</i>&nbsp; * @project MobileSolutions
+<i>10</i>&nbsp; * Database Access Object Pattern for Shipment Table
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public interface ShipmentDAO {
+<i>13</i>&nbsp;  
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * Add a new shipment to the system
+<i>16</i>&nbsp;     * @param shipment the new shipment
+<i>17</i>&nbsp;     * @return true if was addedd with success
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    boolean addShipment(Shipment shipment);
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;     * Retrieve a shipment by id
+<i>23</i>&nbsp;     * @param id the id of the shipment
+<i>24</i>&nbsp;     * @return a Shipment instance
+<i>25</i>&nbsp;     */
+<i>26</i>&nbsp;    Shipment getShipmentByID(int id);
+<i>27</i>&nbsp;    
+<i>28</i>&nbsp;    /**
+<i>29</i>&nbsp;     * Get all possible shipments
+<i>30</i>&nbsp;     * @return a list of shipments
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    List&lt;Shipment&gt; getAllShipment();
+<i>33</i>&nbsp;    
+<i>34</i>&nbsp;    /**
+<i>35</i>&nbsp;     * Update a specific shipment
+<i>36</i>&nbsp;     * @param shipment the shipment to update
+<i>37</i>&nbsp;     * @return true if the shipment was updated with success
+<i>38</i>&nbsp;     */
+<i>39</i>&nbsp;    boolean updateShipment(Shipment shipment);
+<i>40</i>&nbsp;    
+<i>41</i>&nbsp;    /**
+<i>42</i>&nbsp;     * Delete a shipment
+<i>43</i>&nbsp;     * @param id the id of the shipment
+<i>44</i>&nbsp;     * @return true if the shipment was removed with success
+<i>45</i>&nbsp;     */
+<i>46</i>&nbsp;    boolean deleteShipment(int id);
+<i>47</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

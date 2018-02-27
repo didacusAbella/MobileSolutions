@@ -1,0 +1,105 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ClientDao</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.client</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ClientDao (com.didacusabella.mobilesolutions.client)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ClientDao</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.client;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException;
+<i>4</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Client;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.List;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;/**
+<i>9</i>&nbsp; *
+<i>10</i>&nbsp; * @author didacusAbella
+<i>11</i>&nbsp; * Database Access Object Pattern for Client entity
+<i>12</i>&nbsp; */
+<i>13</i>&nbsp;public interface ClientDao {
+<i>14</i>&nbsp;  /**
+<i>15</i>&nbsp;   * Get a single client by id
+<i>16</i>&nbsp;   * @param id the id of the client
+<i>17</i>&nbsp;   * @return a client reference associated with this id
+<i>18</i>&nbsp;   */
+<i>19</i>&nbsp;  Client getClient(int id);
+<i>20</i>&nbsp;  /**
+<i>21</i>&nbsp;   * Get all clients in table
+<i>22</i>&nbsp;   * @return a list of clients
+<i>23</i>&nbsp;   */
+<i>24</i>&nbsp;  List&lt;Client&gt; getAllClients();
+<i>25</i>&nbsp;  /**
+<i>26</i>&nbsp;   * Add a new client into the database
+<i>27</i>&nbsp;   * @param client the client to add
+<i>28</i>&nbsp;   * @return true if the insertion goes successfully
+<i>29</i>&nbsp;   * @throws com.didacusabella.mobilesolutions.customException.UsernameAlreadyExistException if the username already exist
+<i>30</i>&nbsp;   */
+<i>31</i>&nbsp;  boolean insertClient(Client client) throws UsernameAlreadyExistException;
+<i>32</i>&nbsp;  /**
+<i>33</i>&nbsp;   * Update a client&#39;s infomation
+<i>34</i>&nbsp;   * @param client the client to update
+<i>35</i>&nbsp;   * @return true if the update goes successfully
+<i>36</i>&nbsp;   */
+<i>37</i>&nbsp;  boolean updateClient(Client client);
+<i>38</i>&nbsp;  /**
+<i>39</i>&nbsp;   * Delete a client from the database
+<i>40</i>&nbsp;   * @param id the id of the client
+<i>41</i>&nbsp;   * @return true if the client was removed successfully
+<i>42</i>&nbsp;   */
+<i>43</i>&nbsp;  boolean deleteClient(int id);
+<i>44</i>&nbsp;  /**
+<i>45</i>&nbsp;   * Login a client into the system
+<i>46</i>&nbsp;   * @param username the username of the client
+<i>47</i>&nbsp;   * @param password the password of the client
+<i>48</i>&nbsp;   * @return true if the client was found into the database
+<i>49</i>&nbsp;   */
+<i>50</i>&nbsp;  boolean login(String username, String password);
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;  /**
+<i>53</i>&nbsp;   * Retrieve a client by username
+<i>54</i>&nbsp;   * @param username the username of the client
+<i>55</i>&nbsp;   * @return a Client instance if is registered in the system
+<i>56</i>&nbsp;   */
+<i>57</i>&nbsp;  Client getClient(String username);
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

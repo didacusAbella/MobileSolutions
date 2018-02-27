@@ -1,0 +1,94 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PaymentDao</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.payment</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PaymentDao (com.didacusabella.mobilesolutions.payment)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">PaymentDao</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.payment;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Payment;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; *
+<i>9</i>&nbsp; * @author diego
+<i>10</i>&nbsp; * Database Access Object pattern for Payment Table
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public interface PaymentDao {
+<i>13</i>&nbsp;  
+<i>14</i>&nbsp;  /**
+<i>15</i>&nbsp;   * Get the payment type by id
+<i>16</i>&nbsp;   * @param id the id of payment
+<i>17</i>&nbsp;   * @return a Payment instance
+<i>18</i>&nbsp;   */
+<i>19</i>&nbsp;  Payment getPayment(int id);
+<i>20</i>&nbsp;  
+<i>21</i>&nbsp;  /**
+<i>22</i>&nbsp;   * get all payments
+<i>23</i>&nbsp;   * @return all possible payments
+<i>24</i>&nbsp;   */
+<i>25</i>&nbsp;  List&lt;Payment&gt; getAllPayments();
+<i>26</i>&nbsp;  
+<i>27</i>&nbsp;  /**
+<i>28</i>&nbsp;   * Add a new type of Payment
+<i>29</i>&nbsp;   * @param payment the new payment
+<i>30</i>&nbsp;   * @return true if the payment was addedd successfully
+<i>31</i>&nbsp;   */
+<i>32</i>&nbsp;  boolean addPayment(Payment payment);
+<i>33</i>&nbsp;  
+<i>34</i>&nbsp;  /**
+<i>35</i>&nbsp;   * Update an existing payment
+<i>36</i>&nbsp;   * @param payment the payment to update
+<i>37</i>&nbsp;   * @return true if the update was successfully
+<i>38</i>&nbsp;   */
+<i>39</i>&nbsp;  boolean updatePayment(Payment payment);
+<i>40</i>&nbsp;  
+<i>41</i>&nbsp;  /**
+<i>42</i>&nbsp;   * Delete a type of payment
+<i>43</i>&nbsp;   * @param id the id of payment
+<i>44</i>&nbsp;   * @return true if the payment was removed successfully
+<i>45</i>&nbsp;   */
+<i>46</i>&nbsp;  boolean deletePayment(int id);
+<i>47</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

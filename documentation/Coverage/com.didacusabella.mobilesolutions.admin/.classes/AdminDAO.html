@@ -1,0 +1,72 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AdminDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.admin</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AdminDAO (com.didacusabella.mobilesolutions.admin)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">AdminDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.admin;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Admin;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * @author Domenico Antonio Tropeano on 15/02/2018 at 10:39
+<i>7</i>&nbsp; * @project MobileSolutions
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public interface AdminDAO {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;     * Login an admin into the syste,
+<i>13</i>&nbsp;     * @param username the username of the admin
+<i>14</i>&nbsp;     * @param password the password of the admin
+<i>15</i>&nbsp;     * @return true if the admin is registered to system. False otherwise
+<i>16</i>&nbsp;     */
+<i>17</i>&nbsp;    boolean login(String username, String password);
+<i>18</i>&nbsp;    
+<i>19</i>&nbsp;    /**
+<i>20</i>&nbsp;     * Retrieve an username by his username
+<i>21</i>&nbsp;     * @param username the username of the admin
+<i>22</i>&nbsp;     * @return an Admin instance
+<i>23</i>&nbsp;     */
+<i>24</i>&nbsp;    Admin getAdminByUsername(String username);
+<i>25</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

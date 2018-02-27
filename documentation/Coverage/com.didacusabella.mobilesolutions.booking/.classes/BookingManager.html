@@ -1,0 +1,230 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BookingManager</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.booking</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BookingManager (com.didacusabella.mobilesolutions.booking)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BookingManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87,5%
+  </span>
+  <span class="absValue">
+    (7/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61%
+  </span>
+  <span class="absValue">
+    (47/ 77)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.booking;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.database.Database;
+<i>4</i>&nbsp;import com.didacusabella.mobilesolutions.database.Mappable;
+<i>5</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Booking;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.sql.Connection;
+<i>8</i>&nbsp;import java.sql.PreparedStatement;
+<i>9</i>&nbsp;import java.sql.ResultSet;
+<i>10</i>&nbsp;import java.sql.SQLException;
+<i>11</i>&nbsp;import java.util.ArrayList;
+<i>12</i>&nbsp;import java.util.List;
+<i>13</i>&nbsp;import java.util.logging.Level;
+<i>14</i>&nbsp;import java.util.logging.Logger;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;/**
+<i>17</i>&nbsp; * @author didacusabella
+<i>18</i>&nbsp; */
+<i>19</i>&nbsp;public class BookingManager implements Mappable&lt;Booking&gt;, BookingDao {
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    private final Connection dbConnection;
+<b class="fc"><i>22</i>&nbsp;    private static BookingManager bookingManager = null;</b>
+<b class="fc"><i>23</i>&nbsp;    private static final Logger BOOKING_LOG = Logger.getLogger(BookingManager.class.getName());</b>
+<i>24</i>&nbsp;    private static final String READ_BOOKING = &quot;SELECT * FROM booking WHERE username=?;&quot;;
+<i>25</i>&nbsp;    private static final String CREATE_BOOKING = &quot;INSERT INTO booking &quot;
+<i>26</i>&nbsp;            + &quot;(product, username, datetime, quantity) VALUES (?, ?, ?, ?);&quot;;
+<i>27</i>&nbsp;    private static final String REMOVE_PRODUCT = &quot;DELETE FROM booking WHERE username=? AND product=?;&quot;;
+<i>28</i>&nbsp;    private static final String CLEAN_BOOKING = &quot;DELETE FROM booking WHERE username=?;&quot;;
+<i>29</i>&nbsp;    private static final String CHECK_BOOKING = &quot;SELECT * FROM booking WHERE username=? AND product=?&quot;;
+<i>30</i>&nbsp;    private static final String INCREASE_QUANTITY = &quot;UPDATE booking SET `quantity`=? WHERE `username`=? AND`product`=?;&quot;;
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;    private BookingManager(Connection dbConnection) {</b>
+<b class="fc"><i>33</i>&nbsp;        this.dbConnection = dbConnection;</b>
+<b class="fc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    public static BookingManager getInstance() throws SQLException {
+<b class="fc"><i>38</i>&nbsp;        if (bookingManager == null) {</b>
+<b class="fc"><i>39</i>&nbsp;            bookingManager = new BookingManager(Database.getConnection());</b>
+<b class="fc"><i>40</i>&nbsp;            return bookingManager;</b>
+<i>41</i>&nbsp;        } else
+<b class="fc"><i>42</i>&nbsp;            return bookingManager;</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    @Override
+<i>47</i>&nbsp;    public Booking mapRow(ResultSet rs) throws SQLException {
+<b class="fc"><i>48</i>&nbsp;        Booking mappedBooking = new Booking();</b>
+<b class="fc"><i>49</i>&nbsp;        mappedBooking.setUsername(rs.getInt(&quot;username&quot;));</b>
+<b class="fc"><i>50</i>&nbsp;        mappedBooking.setProductID(rs.getInt(&quot;product&quot;));</b>
+<b class="fc"><i>51</i>&nbsp;        mappedBooking.setQuantity(rs.getInt(&quot;quantity&quot;));</b>
+<b class="fc"><i>52</i>&nbsp;        mappedBooking.setDate(rs.getTimestamp(&quot;datetime&quot;));</b>
+<b class="fc"><i>53</i>&nbsp;        return mappedBooking;</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    @Override
+<i>57</i>&nbsp;    public List&lt;Booking&gt; getBooking(int username) {
+<i>58</i>&nbsp;        try {
+<b class="fc"><i>59</i>&nbsp;            PreparedStatement stmt = this.dbConnection.prepareStatement(READ_BOOKING);</b>
+<b class="fc"><i>60</i>&nbsp;            stmt.setInt(1, username);</b>
+<b class="fc"><i>61</i>&nbsp;            List&lt;Booking&gt; bookings = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>62</i>&nbsp;            ResultSet rs = stmt.executeQuery();</b>
+<b class="fc"><i>63</i>&nbsp;            while (rs.next()) {</b>
+<b class="fc"><i>64</i>&nbsp;                bookings.add(this.mapRow(rs));</b>
+<i>65</i>&nbsp;            }
+<b class="fc"><i>66</i>&nbsp;            rs.close();</b>
+<b class="fc"><i>67</i>&nbsp;            stmt.close();</b>
+<b class="fc"><i>68</i>&nbsp;            return bookings;</b>
+<b class="nc"><i>69</i>&nbsp;        } catch (SQLException ex) {</b>
+<b class="nc"><i>70</i>&nbsp;            BOOKING_LOG.log(Level.SEVERE, null, ex);</b>
+<i>71</i>&nbsp;        }
+<b class="nc"><i>72</i>&nbsp;        return null;</b>
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    @Override
+<i>76</i>&nbsp;    public boolean addBooking(Booking booking) {
+<i>77</i>&nbsp;        try {
+<b class="fc"><i>78</i>&nbsp;            PreparedStatement stmt1 = this.dbConnection.prepareStatement(CHECK_BOOKING);</b>
+<b class="fc"><i>79</i>&nbsp;            stmt1.setInt(1, booking.getUsername());</b>
+<b class="fc"><i>80</i>&nbsp;            stmt1.setInt(2, booking.getProductID());</b>
+<b class="fc"><i>81</i>&nbsp;            ResultSet rs = stmt1.executeQuery();</b>
+<b class="fc"><i>82</i>&nbsp;            if (rs.next()) {</b>
+<b class="nc"><i>83</i>&nbsp;                PreparedStatement stmt2 = this.dbConnection.prepareStatement(INCREASE_QUANTITY);</b>
+<b class="nc"><i>84</i>&nbsp;                stmt2.setInt(1, rs.getInt(&quot;quantity&quot;) + 1);</b>
+<b class="nc"><i>85</i>&nbsp;                stmt2.setInt(2, booking.getUsername());</b>
+<b class="nc"><i>86</i>&nbsp;                stmt2.setInt(3, booking.getProductID());</b>
+<b class="nc"><i>87</i>&nbsp;                return stmt2.execute();</b>
+<i>88</i>&nbsp;            } else {
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;            }
+<b class="nc"><i>91</i>&nbsp;        } catch (SQLException e) {</b>
+<b class="nc"><i>92</i>&nbsp;            BOOKING_LOG.log(Level.SEVERE, null, e);</b>
+<b class="fc"><i>93</i>&nbsp;        }</b>
+<i>94</i>&nbsp;        try {
+<b class="fc"><i>95</i>&nbsp;            PreparedStatement stmt = this.dbConnection.prepareStatement(CREATE_BOOKING);</b>
+<b class="fc"><i>96</i>&nbsp;            stmt.setInt(1, booking.getProductID());</b>
+<b class="fc"><i>97</i>&nbsp;            stmt.setInt(2, booking.getUsername());</b>
+<b class="fc"><i>98</i>&nbsp;            stmt.setTimestamp(3, booking.getDate());</b>
+<b class="fc"><i>99</i>&nbsp;            stmt.setInt(4, booking.getQuantity());</b>
+<b class="fc"><i>100</i>&nbsp;            int insertSuccess = stmt.executeUpdate();</b>
+<b class="fc"><i>101</i>&nbsp;            if (insertSuccess == 1) {</b>
+<b class="fc"><i>102</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="fc"><i>103</i>&nbsp;                stmt.close();</b>
+<b class="fc"><i>104</i>&nbsp;                return true;</b>
+<i>105</i>&nbsp;            }
+<b class="nc"><i>106</i>&nbsp;        } catch (SQLException ex) {</b>
+<b class="nc"><i>107</i>&nbsp;            BOOKING_LOG.log(Level.SEVERE, null, ex);</b>
+<b class="nc"><i>108</i>&nbsp;        }</b>
+<b class="nc"><i>109</i>&nbsp;        return false;</b>
+<i>110</i>&nbsp;    }
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;    @Override
+<i>113</i>&nbsp;    public boolean removeBooking(int product, int username) {
+<i>114</i>&nbsp;        try {
+<b class="nc"><i>115</i>&nbsp;            PreparedStatement stmt = this.dbConnection.prepareStatement(REMOVE_PRODUCT);</b>
+<b class="nc"><i>116</i>&nbsp;            stmt.setInt(1, username);</b>
+<b class="nc"><i>117</i>&nbsp;            stmt.setInt(2, product);</b>
+<b class="nc"><i>118</i>&nbsp;            int deletedProduct = stmt.executeUpdate();</b>
+<b class="nc"><i>119</i>&nbsp;            if (deletedProduct == 1) {</b>
+<b class="nc"><i>120</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="nc"><i>121</i>&nbsp;                stmt.close();</b>
+<b class="nc"><i>122</i>&nbsp;                return true;</b>
+<i>123</i>&nbsp;            }
+<b class="nc"><i>124</i>&nbsp;        } catch (SQLException ex) {</b>
+<b class="nc"><i>125</i>&nbsp;            BOOKING_LOG.log(Level.SEVERE, null, ex);</b>
+<b class="nc"><i>126</i>&nbsp;        }</b>
+<b class="nc"><i>127</i>&nbsp;        return false;</b>
+<i>128</i>&nbsp;    }
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;    @Override
+<i>131</i>&nbsp;    public boolean removeAllBookings(int username) {
+<i>132</i>&nbsp;        try {
+<b class="fc"><i>133</i>&nbsp;            PreparedStatement stmt = this.dbConnection.prepareStatement(CLEAN_BOOKING);</b>
+<b class="fc"><i>134</i>&nbsp;            stmt.setInt(1, username);</b>
+<b class="fc"><i>135</i>&nbsp;            int deletedProducts = stmt.executeUpdate();</b>
+<b class="fc"><i>136</i>&nbsp;            if (deletedProducts &gt;= 1) {</b>
+<b class="fc"><i>137</i>&nbsp;                this.dbConnection.commit();</b>
+<b class="fc"><i>138</i>&nbsp;                stmt.close();</b>
+<b class="fc"><i>139</i>&nbsp;                return true;</b>
+<i>140</i>&nbsp;            }
+<b class="nc"><i>141</i>&nbsp;        } catch (SQLException ex) {</b>
+<b class="nc"><i>142</i>&nbsp;            BOOKING_LOG.log(Level.SEVERE, null, ex);</b>
+<b class="nc"><i>143</i>&nbsp;        }</b>
+<b class="nc"><i>144</i>&nbsp;        return false;</b>
+<i>145</i>&nbsp;    }
+<i>146</i>&nbsp;
+<i>147</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DeleteAccount</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.didacusabella.mobilesolutions.client</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DeleteAccount (com.didacusabella.mobilesolutions.client)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DeleteAccount</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    59,1%
+  </span>
+  <span class="absValue">
+    (13/ 22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.didacusabella.mobilesolutions.client;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.didacusabella.mobilesolutions.entities.Client;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import javax.servlet.RequestDispatcher;
+<i>6</i>&nbsp;import javax.servlet.ServletException;
+<i>7</i>&nbsp;import javax.servlet.annotation.WebServlet;
+<i>8</i>&nbsp;import javax.servlet.http.HttpServlet;
+<i>9</i>&nbsp;import javax.servlet.http.HttpServletRequest;
+<i>10</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>11</i>&nbsp;import javax.servlet.http.HttpSession;
+<i>12</i>&nbsp;import java.io.IOException;
+<i>13</i>&nbsp;import java.sql.SQLException;
+<i>14</i>&nbsp;import java.util.logging.Level;
+<i>15</i>&nbsp;import java.util.logging.Logger;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;@WebServlet(name = &quot;DeleteAccount&quot;, urlPatterns = {&quot;/DeleteAccount&quot;})
+<b class="fc"><i>18</i>&nbsp;public class DeleteAccount extends HttpServlet {</b>
+<i>19</i>&nbsp;  
+<b class="fc"><i>20</i>&nbsp;  private static final Logger DELETE_ACCOUNT = Logger.getLogger(DeleteAccount.class.getName());</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;  /**
+<i>23</i>&nbsp;   * Handles the HTTP &lt;code&gt;GET&lt;/code&gt; method.
+<i>24</i>&nbsp;   *
+<i>25</i>&nbsp;   * @param request servlet request
+<i>26</i>&nbsp;   * @param response servlet response
+<i>27</i>&nbsp;   * @throws ServletException if a servlet-specific error occurs
+<i>28</i>&nbsp;   * @throws IOException if an I/O error occurs
+<i>29</i>&nbsp;   */
+<i>30</i>&nbsp;  @Override
+<i>31</i>&nbsp;  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<i>32</i>&nbsp;    ClientManager clientManager;
+<i>33</i>&nbsp;    try {
+<b class="fc"><i>34</i>&nbsp;      clientManager = ClientManager.getInstance();</b>
+<b class="fc"><i>35</i>&nbsp;      HttpSession session = request.getSession(true);</b>
+<b class="fc"><i>36</i>&nbsp;      Client client = (Client) session.getAttribute(&quot;user&quot;);</b>
+<b class="fc"><i>37</i>&nbsp;      if (clientManager.deleteClient(client.getId())) {</b>
+<b class="nc"><i>38</i>&nbsp;        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(&quot;/Catalog&quot;);</b>
+<b class="nc"><i>39</i>&nbsp;        dispatcher.forward(request, response);</b>
+<b class="nc"><i>40</i>&nbsp;      } else {</b>
+<b class="fc"><i>41</i>&nbsp;        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);</b>
+<b class="fc"><i>42</i>&nbsp;        request.setAttribute(&quot;errorMessage&quot;, &quot;Account non presente nei nostri archivi&quot;);</b>
+<b class="fc"><i>43</i>&nbsp;        this.getServletContext().getRequestDispatcher(&quot;/ExceptionHandler&quot;).forward(request, response);</b>
+<i>44</i>&nbsp;      }
+<b class="nc"><i>45</i>&nbsp;    } catch (SQLException e) {</b>
+<b class="nc"><i>46</i>&nbsp;      DELETE_ACCOUNT.log(Level.SEVERE, null, e);</b>
+<b class="nc"><i>47</i>&nbsp;      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);</b>
+<b class="nc"><i>48</i>&nbsp;      request.setAttribute(&quot;errorMessage&quot;, &quot;C&#39;è stato un errore interno. Riprova più tardi.&quot;);</b>
+<b class="nc"><i>49</i>&nbsp;      request.setAttribute(&quot;redirect&quot;, &quot;Catalog&quot;);</b>
+<b class="nc"><i>50</i>&nbsp;      this.getServletContext().getRequestDispatcher(&quot;/ExceptionHandler&quot;).forward(request, response);</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;
+<b class="fc"><i>53</i>&nbsp;  }</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;  /**
+<i>56</i>&nbsp;   * Handles the HTTP &lt;code&gt;POST&lt;/code&gt; method.
+<i>57</i>&nbsp;   *
+<i>58</i>&nbsp;   * @param request servlet request
+<i>59</i>&nbsp;   * @param response servlet response
+<i>60</i>&nbsp;   * @throws ServletException if a servlet-specific error occurs
+<i>61</i>&nbsp;   * @throws IOException if an I/O error occurs
+<i>62</i>&nbsp;   */
+<i>63</i>&nbsp;  @Override
+<i>64</i>&nbsp;  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<b class="fc"><i>65</i>&nbsp;    doGet(request, response);</b>
+<b class="fc"><i>66</i>&nbsp;  }</b>
+<i>67</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-02-27 17:59</div>
+</div>
+</body>
+</html>
